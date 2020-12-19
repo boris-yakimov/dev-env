@@ -10,22 +10,34 @@
         {
             "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
             "hidden": false,
-            "name": "Ubuntu-20.04",
+            "name": "Linux",
             "source": "Windows.Terminal.Wsl",
-            "backgroundImage" : "ms-appdata:///roaming/itgixlogo.png", // custom image
-            "backgroundImageOpacity" : 0.50,
+			"backgroundImage" : "ms-appdata:///roaming/itgixlogo.png", // custom image
+			"backgroundImageOpacity" : 0.50,
             "backgroundImageAlignment" : "center",
             "backgroundImageStretchMode" : "none",
-            "fontFace": "MesloLGS NF", 
-  	    //"fontFace": "Cascadia Mono", // default
-	    "fontSize": 12, // default
-	    "fontWeight": "normal" // default
+            //"fontFace": "MesloLGS NF",
+            //"fontFace": "Cascadia Mono", // default (does Not inlude powerline glyphs)
+            "fontFace": "Cascadia Code PL", // includes powerline glyphs and ligatures
+            "fontSize": 13,
+            "fontWeight": "normal",
+            "closeOnExit": true
         },
         {
             "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
             "name": "PowerShell",
             "commandline": "powershell.exe",
             "hidden": false,
+			"backgroundImage" : "ms-appdata:///roaming/itgixlogo.png", // custom image
+            "backgroundImageOpacity" : 0.50,
+            "backgroundImageAlignment" : "center",
+            "backgroundImageStretchMode" : "none",
+            //"fontFace": "MesloLGS NF",
+            //"fontFace": "Cascadia Mono", // default (does Not inlude powerline glyphs)
+            "fontFace": "Cascadia Code PL", // includes powerline glyphs and ligatures
+            "fontSize": 12,
+            "fontWeight": "normal",
+            "closeOnExit": true
         },
         {
             "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",

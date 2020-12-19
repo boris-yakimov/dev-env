@@ -2,7 +2,15 @@
 
 ## win
 
-### IDE
+1. git
+2. visual studio
+3. atom
+4. golang
+5. python
+6. docker
+7. windows power toys
+
+### ide
 visual studio
 	- Wakatime
 	- Atom Material Theme
@@ -20,32 +28,85 @@ notepad++
 
 ### terminal
 windows terminal
-	windows-terminal/settings.json
+	- windows-terminal/settings.json
 
-### other
+### powershell
 
-windows power toys
+Install posh-git and oh-my-posh
+```
+# You could have the following to allow for scripts execution 
+# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Install-Module posh-git -Scope CurrentUser
+Install-Module oh-my-posh -Scope CurrentUser
+```
 
-## wsl
-golang
-python
-git
-docker
-hashicorp repo
-terraform
-helm
+Enable prompt
+```
+# Start the default settings (might not work so optional)
+Set-Prompt
+
+# To enable the engine edit your PowerShell profile, run
+notepad $PROFILE
+
+# and append the following lines to the profile file you just opened (or created in case the file was not there already):
+
+Import-Module posh-git
+Import-Module oh-my-posh
+Set-Theme Paradox
+```
+
+## wsl 
+
+Install/Config : 
+
+1. golang
+2. python
+3. git
+4. docker
+5. terraform // hashicorp repo
+6. helm
+7. ssh keys
+
 
 ### zsh
-oh-my-zsh
-powerlevel10k theme/prompt - https://github.com/romkatv/powerlevel10k
-	p10kconfigure
+apt-get install zsh
+```
 cp zsh/.zshrc ~/.zshrc
+```
+
+Install oh-my-zsh
+```
+# When prompted to set zsh as your default shell say Yes
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+
+Install powerlevel10k theme/prompt - https://github.com/romkatv/powerlevel10k
+```
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git
+$ZSH_CUSTOM/themes/powerlevel10k
+```
+
+Change zsh theme : 
+```
+vim ~/.zshrc
+ZSH_THEME=powerlevel10k/powerlevel10k
+```
+
+```
+source ~/.zshrc
+p10kconfigure
+```
+
+If we dont see diamond in powerlevel10k rather we see unicode stuff like []; the windows terminal theme is lacking support or windows fonts for it are not installed :
+https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup
+https://docs.microsoft.com/en-us/windows/terminal/cascadia-code
 
 ### nvim
 apt install nodejs
 apt install neovim
-cp nvim/init.vim
-Install Plug and CoC
-PlugInstall
+cp nvim/init.vim ~/.config/nvim/init.vim
+vim-plug - https://github.com/junegunn/vim-plug
 NERDCommenter
+PlugInstall
 
