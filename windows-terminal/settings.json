@@ -12,8 +12,8 @@
             "hidden": false,
             "name": "Ubuntu-20.04",
             "source": "Windows.Terminal.Wsl",
-            "backgroundImage" : "ms-appdata:///roaming/",
-            "backgroundImageOpacity" : 0.30,
+            "backgroundImage" : "ms-appdata:///roaming/itgixlogo.png", // custom image
+            "backgroundImageOpacity" : 0.50,
             "backgroundImageAlignment" : "center",
             "backgroundImageStretchMode" : "none",
             "fontFace": "MesloLGS NF", 
