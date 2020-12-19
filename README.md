@@ -36,7 +36,7 @@ helm
 
 ### zsh
 oh-my-zsh
-powerlevel10k theme/prompt
+powerlevel10k theme/prompt - https://github.com/romkatv/powerlevel10k
 cp zsh/.zshrc ~/.zshrc
 
 ### nvim
@@ -45,4 +45,5 @@ apt install neovim
 cp nvim/init.vim
 Install Plug and CoC
 PlugInstall
+NERDCommenter
 
