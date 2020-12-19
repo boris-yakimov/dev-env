@@ -21,6 +21,9 @@ notepad++
 ### terminal
 windows terminal
 
+### other
+
+windows power toys
 
 ## wsl
 golang
@@ -32,8 +35,9 @@ terraform
 helm
 
 ### zsh
-cp zsh/.zshrc ~/.zshrc
 oh-my-zsh
+powerlevel10k theme/prompt
+cp zsh/.zshrc ~/.zshrc
 
 ### nvim
 apt install nodejs
