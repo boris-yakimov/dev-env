@@ -6,7 +6,7 @@
 2. visual studio
 3. atom
 4. golang
-5. python
+5. python + pip
 6. docker
 7. windows power toys
 
@@ -60,7 +60,7 @@ Set-Theme Paradox
 Install/Config : 
 
 1. golang
-2. python
+2. python + pip
 3. git
 4. docker
 5. terraform // hashicorp repo
@@ -111,3 +111,19 @@ vim-plug - https://github.com/junegunn/vim-plug
 NERDCommenter
 PlugInstall
 
+verify everything is good with : 
+```
+nvim +checkhealth
+```
+
+configure python provider: 
+```
+pip3 install --upgrade pynvim
+pip3 install --upgrade neovim-remote
+nvim +checkhealth
+```
+
+nvim clipboard failing in :healthcheck can be ignored,we can copy paste stuff by disabling mouse VISUAL mode in vim temporarily :
+```
+:set mouse=
+```

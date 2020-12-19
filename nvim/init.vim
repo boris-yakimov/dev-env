@@ -5,37 +5,68 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall
 endif
 
+
+"'' VIM PRE-PLUG ''"
+filetype plugin indent on
+set exrc
+set hidden
+set nobackup
+set nocompatible
+set nowritebackup
+set secure
+set shortmess+=c
+set termguicolors
+set updatetime=300
+syntax enable
+
+"To ALWAYS use the clipboard for ALL operations (instead of interacting with the '+' and/or '*' registers explicitly):
+"no point of this for now, we can copy/paste by disabling mouse VISUAL mode with - :set mouse:
+":set clipboard+=unnamedplus
+
 call plug#begin('~/.config/nvim/plugged')
+
 "File Search:
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
 "File Browser:
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'mkitt/tabline.vim'
 Plug 'ryanoasis/vim-devicons'
-"Color:
+
+"Theme:
 Plug 'morhetz/gruvbox'
-"Golang:
+
+""" Language Support ''"
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'fatih/vim-go'
+Plug 'rust-lang/rust.vim'
+
+
 "Autocomplete:
 Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-go'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+
 "Snippets:
 Plug 'ncm2/ncm2-ultisnips'
 Plug 'SirVer/ultisnips'
+
 "Git:
 Plug 'tpope/vim-fugitive'
-""" Utilities
+
+" Utilities
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'voldikss/vim-floaterm'
 Plug 'takac/vim-hardtime' " see http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
+
+" Lightline
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -64,16 +95,16 @@ endif
 
 "'' Go ''"
 if filereadable(expand("~/.config/nvim/plugged/vim-go/plugin/go.vim"))
-  let g:go_code_completion_enabled = 0
+  let g:go_code_completion_enabled = 1 
   let g:go_fmt_command = "goimports"
-  let g:go_gpls_enabled = 0
-  let g:go_doc_keywordprg_enabled = 0
+  let g:go_gpls_enabled = 1
+  let g:go_doc_keywordprg_enabled = 1
 
-  let g:go_highlight_array_whitespace_error = 0
-  let g:go_highlight_chan_whitespace_error = 0
-  let g:go_highlight_extra_types = 0
-  let g:go_highlight_space_tab_error = 0
-  let g:go_highlight_trailing_whitespace_error = 0
+  let g:go_highlight_array_whitespace_error = 1
+  let g:go_highlight_chan_whitespace_error = 1
+  let g:go_highlight_extra_types = 1
+  let g:go_highlight_space_tab_error = 1
+  let g:go_highlight_trailing_whitespace_error = 1
   let g:go_highlight_operators = 1
   let g:go_highlight_functions = 1
   let g:go_highlight_function_parameters = 1
@@ -84,6 +115,11 @@ if filereadable(expand("~/.config/nvim/plugged/vim-go/plugin/go.vim"))
   let g:go_highlight_generate_tags = 1
   let g:go_highlight_variable_declarations = 1
   let g:go_highlight_variable_assignments = 1
+endif
+
+"'' Lightline ''"
+if filereadable(expand("~/.config/nvim/plugged/lightline.vim/plugin/lightline.vim"))
+  let g:lightline = {'colorscheme' : 'horizon'}
 endif
 
 "COPY/PASTE:
