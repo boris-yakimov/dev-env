@@ -26,6 +26,7 @@ export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.e
 alias browse='/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
 alias home='cd /mnt/c/Users/yakim/Desktop'
 alias code='/mnt/c/Users/yakim/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe'
+alias notepad++='/mnt/c/Users/yakim/AppData/Local/Microsoft/WindowsApps/notepad++.exe'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

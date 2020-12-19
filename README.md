@@ -71,6 +71,7 @@ Install/Config :
 ### zsh
 apt-get install zsh
 ```
+sed -i s/yakim/<your new user>/g zsh/.zshrc 
 cp zsh/.zshrc ~/.zshrc
 ```
 
