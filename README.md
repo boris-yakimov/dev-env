@@ -20,6 +20,7 @@ notepad++
 
 ### terminal
 windows terminal
+	windows-terminal/settings.json
 
 ### other
 
@@ -37,6 +38,7 @@ helm
 ### zsh
 oh-my-zsh
 powerlevel10k theme/prompt - https://github.com/romkatv/powerlevel10k
+	p10kconfigure
 cp zsh/.zshrc ~/.zshrc
 
 ### nvim
