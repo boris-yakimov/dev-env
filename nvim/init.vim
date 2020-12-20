@@ -6,23 +6,6 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 
-"'' VIM PRE-PLUG ''"
-filetype plugin indent on
-set exrc
-set hidden
-set nobackup
-set nocompatible
-set nowritebackup
-set secure
-set shortmess+=c
-set termguicolors
-set updatetime=300
-syntax enable
-
-"To ALWAYS use the clipboard for ALL operations (instead of interacting with the '+' and/or '*' registers explicitly):
-"no point of this for now, we can copy/paste by disabling mouse VISUAL mode with - :set mouse:
-":set clipboard+=unnamedplus
-
 call plug#begin('~/.config/nvim/plugged')
 
 "File Search:
@@ -42,7 +25,6 @@ Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
-
 
 "Autocomplete:
 Plug 'ncm2/ncm2'
@@ -69,12 +51,55 @@ Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
+"'' Configure Lightline Theme and such ''"
+"if filereadable(expand("~/.config/nvim/plugged/lightline.vim/plugin/lightline.vim"))
+"  let g:lightline = {'colorscheme' : 'horizon'}
+"endif
+
+""""'' /// START - Custom settings ''"""""
+" Change how vim represents characters on the screen
+set encoding=utf-8
+" Set the encoding of files written
+set fileencoding=utf-8
+set noerrorbells
+
+" Indentation : 
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
+" ts - show existing tab with 4 spaces width
+" sw - when indenting with '>', use 4 spaces width
+" sts - control <tab> and <bs> keys to match tabstop
+"Control all other files
+set shiftwidth=4
+
+set expandtab
+set nowrap
+set noshowmode
+
+filetype plugin indent on
+
+"Allow backspace to delete indentation and inserted text
+" i.e. how it works in most programs
+set backspace=indent,eol,start
+" indent  allow backspacing over autoindent
+" eol     allow backspacing over line breaks (join lines)
+" start   allow backspacing over the start of insert; CTRL-W and CTRL-U
+"        stop once at the start of insert.
+
+" Move line numbers relative to position
+"set relativenumber
+
+"To ALWAYS use the clipboard for ALL operations (instead of interacting with the '+' and/or '*' registers explicitly):
+"no point of this for now, we can copy/paste by disabling mouse VISUAL mode with - :set mouse:
+":set clipboard+=unnamedplus
+
+""""'' /// END - Custom settings ''"""""
+
 "'' Conquer of Completion (CoC) ''"
 if filereadable(expand("~/.config/nvim/plugged/coc.nvim/plugin/coc.vim"))
   let g:coc_global_extensions=[
         \'coc-actions',
         \'coc-docker',
-        \'coc-elixir',
         \'coc-floaterm',
         \'coc-go',
         \'coc-highlight',
@@ -87,22 +112,39 @@ if filereadable(expand("~/.config/nvim/plugged/coc.nvim/plugin/coc.vim"))
         \'coc-sh',
         \'coc-sql',
         \'coc-tabnine',
-        \'coc-tailwindcss',
         \'coc-yaml',
         \]
 endif
 
-"'' Go ''"
+" Coc settings
+set updatetime=300
+set shortmess+=c
+
+"'' VIM Custom Keymaps ''"
+
+
+"'' Go Cnfiguration''"
 if filereadable(expand("~/.config/nvim/plugged/vim-go/plugin/go.vim"))
-  let g:go_code_completion_enabled = 1 
+  "Run goimports along with gofmt on each save
+  "Might be be slow on large codebases, if so, just comment it out
   let g:go_fmt_command = "goimports"
+  
+  "Automatically get signature/type info for object under cursor
+  "Status line types/signatures.
+  let g:go_auto_type_info = 1
+
+  "If you want to disable gofmt on save
+  "let g:go_fmt_autosave = 0
+
+  " Use GoPls instead of GoDef
+  let g:go_def_mode = 'gopls'
+  let g:go_info_mode= 'gopls'
+
+  "Copied from -
+  "https://github.com/awesome-streamers/awesome-streamerrc/blob/master/TheAltF4Stream/init.vim
+  let g:go_code_completion_enabled = 1 
   let g:go_gpls_enabled = 1
   let g:go_doc_keywordprg_enabled = 1
-
-  "go definitions
-  let g:go_def_mode = 'godef'
-  let g:go_decls_includes = "func,type"
-
   let g:go_highlight_array_whitespace_error = 1
   let g:go_highlight_chan_whitespace_error = 1
   let g:go_highlight_extra_types = 1
@@ -120,10 +162,6 @@ if filereadable(expand("~/.config/nvim/plugged/vim-go/plugin/go.vim"))
   let g:go_highlight_variable_assignments = 1
 endif
 
-"'' Lightline ''"
-"if filereadable(expand("~/.config/nvim/plugged/lightline.vim/plugin/lightline.vim"))
-"  let g:lightline = {'colorscheme' : 'horizon'}
-"endif
 
 """ The rest is default
 
@@ -145,10 +183,6 @@ vnoremap > >gv
 "COLOR:
 "------
 colorscheme gruvbox
-
-"AUTO IMPORT:
-"------------
-let g:go_fmt_command = "goimports"
 
 "AUTOCOMPLETE:
 "-------------
