@@ -63,7 +63,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'voldikss/vim-floaterm'
-Plug 'takac/vim-hardtime' " see http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
 
 " Lightline
 Plug 'itchyny/lightline.vim'
@@ -100,6 +99,10 @@ if filereadable(expand("~/.config/nvim/plugged/vim-go/plugin/go.vim"))
   let g:go_gpls_enabled = 1
   let g:go_doc_keywordprg_enabled = 1
 
+  "go definitions
+  let g:go_def_mode = 'godef'
+  let g:go_decls_includes = "func,type"
+
   let g:go_highlight_array_whitespace_error = 1
   let g:go_highlight_chan_whitespace_error = 1
   let g:go_highlight_extra_types = 1
@@ -118,9 +121,11 @@ if filereadable(expand("~/.config/nvim/plugged/vim-go/plugin/go.vim"))
 endif
 
 "'' Lightline ''"
-if filereadable(expand("~/.config/nvim/plugged/lightline.vim/plugin/lightline.vim"))
-  let g:lightline = {'colorscheme' : 'horizon'}
-endif
+"if filereadable(expand("~/.config/nvim/plugged/lightline.vim/plugin/lightline.vim"))
+"  let g:lightline = {'colorscheme' : 'horizon'}
+"endif
+
+""" The rest is default
 
 "COPY/PASTE:
 "-----------
