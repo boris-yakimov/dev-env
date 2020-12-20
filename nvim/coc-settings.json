@@ -1,0 +1,9 @@
+{
+	"languageserver": {
+		"golang": {
+			"command": "gopls",
+			"rootPatterns": ["go.mod", "./.config/nvim/", ".git/", ".hg/"],
+			"filetypes": ["go"]
+        }
+    }
+}

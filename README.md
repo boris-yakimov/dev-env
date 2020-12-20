@@ -154,6 +154,11 @@ verify everything is good with :
 nvim +checkhealth
 ```
 
+verify everything is good with a Go project : 
+```
+:CocList diagnostics
+```
+
 configure python provider: 
 ```
 pip3 install --upgrade pynvim
