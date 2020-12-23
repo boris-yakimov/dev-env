@@ -25,7 +25,7 @@ export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
 export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
 alias browse='/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
 alias home='cd /mnt/c/Users/yakim/Desktop'
-alias code='/mnt/c/Users/yakim/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe'
+#alias code='/mnt/c/Users/yakim/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe'
 alias notepad++='/mnt/c/Users/yakim/AppData/Local/Microsoft/WindowsApps/notepad++.exe'
 
 # Set name of the theme to load --- if set to "random", it will

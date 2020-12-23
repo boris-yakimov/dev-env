@@ -9,6 +9,7 @@
 5. python + pip
 6. docker
 7. windows power toys
+8. neovim
 
 ### ide
 visual studio
@@ -31,6 +32,14 @@ windows terminal
 	- windows-terminal/settings.json
 
 ### powershell
+
+Install chocolatey and scoop
+```
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+```
+```
+Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+```
 
 Install posh-git and oh-my-posh
 ```
@@ -57,12 +66,18 @@ Set-Theme Paradox
 
 ## wsl 
 
+Set default WSL distro
+```
+wsl --setdefault Ubuntu-20.04
+wsl --list -v
+```
+
 Install/Config : 
 
 1. golang
 2. python + pip
 3. git
-4. docker
+4. docker - enable Docker WSL integration 
 5. terraform // hashicorp repo
 6. helm
 7. ssh keys
@@ -70,10 +85,6 @@ Install/Config :
 
 ### zsh
 apt-get install zsh
-```
-sed -i s/yakim/<your new user>/g zsh/.zshrc 
-cp zsh/.zshrc ~/.zshrc
-```
 
 Install oh-my-zsh
 ```
@@ -81,21 +92,42 @@ Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-
-Install powerlevel10k theme/prompt - https://github.com/romkatv/powerlevel10k
+Add custom .zshrc vars
 ```
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git
-$ZSH_CUSTOM/themes/powerlevel10k
+# Custom
+export PATH=$PATH:/usr/local/go/bin
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
+#export DISPLAY=:0
+export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
+alias browse='/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
+alias home='cd /mnt/c/Users/yakim/Desktop'
+#alias code='/mnt/c/Users/yakim/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe'
+alias notepad++='/mnt/c/Users/yakim/AppData/Local/Microsoft/WindowsApps/notepad++.exe'
+```
+
+repalce user in .zshrc
+```
+sed -i s/yakim/<new user>/g ~/.zshrc
+source ~/.zshrc
+```
+
+Install powerlevel10k theme/prompt for oh-my-zsh - https://github.com/romkatv/powerlevel10k
+```
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
 Change zsh theme : 
 ```
 vim ~/.zshrc
-ZSH_THEME=powerlevel10k/powerlevel10k
+ZSH_THEME="powerlevel10k/powerlevel10k"
+source ~/.zshrc
 ```
 
+source should show the Powerlevel10k setup screen, if not run it manually : 
 ```
-source ~/.zshrc
 p10kconfigure
 ```
 
@@ -103,12 +135,49 @@ If we dont see diamond in powerlevel10k rather we see unicode stuff like []; the
 https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup
 https://docs.microsoft.com/en-us/windows/terminal/cascadia-code
 
-### nvim - good guide - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
+We need to install these fonts :
+1. CascadiaCode
+2. CascadiaCodePL
+3. CascadiaMono
+4. CascadiaMonoPL
+
+### nvim 
+- good guide - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
+
+1. vim-plug - https://github.com/junegunn/vim-plug
+2. NERDCommenter
+3. Coc and Tabnine - autocomplete
+4. NERDTree
+5. Theme - morhetz/gruvbox
+6. Golang/Python/Rust support
+7. CoC
+8. Lightline
+9. win32yank - clipboard - guide https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
+    ```
+    sudo curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+    sudo unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+    sudo chmod +x /tmp/win32yank.exe
+    sudo mv /tmp/win32yank.exe /usr/local/bin
+    ```
+
 apt install nodejs
 apt install neovim
+
+Install yarn (Coc autocomplete needs it)
+https://classic.yarnpkg.com/en/docs/install#debian-stable
+
+Copy custom configs
+```
+mkdir -p ~/.config/nvim/
 cp nvim/init.vim ~/.config/nvim/init.vim
-vim-plug - https://github.com/junegunn/vim-plug
-NERDCommenter
+cp 
+```
+
+configure python provider: 
+```
+pip3 install --upgrade pynvim
+pip3 install --upgrade neovim-remote
+```
 
 Install plugins and Go binaries (requires GOBIN to be set properly in zsh and env var) - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
 ```
@@ -118,35 +187,6 @@ nvim +GoInstallBinaries
 verify tools are in $GOBIN
 ```
 ls -la $GOBIN
-
-output : 
-total 193800
-drwxr-xr-x 2 root root     4096 Dec 20 13:05 .
-drwxr-xr-x 5 root root     4096 Dec  5 17:40 ..
--rwxr-xr-x 1 root root  2860404 Dec 20 13:05 asmfmt
--rwxr-xr-x 1 root root 15926434 Dec  5 17:53 dlv
--rwxr-xr-x 1 root root  5491433 Dec 20 13:04 errcheck
--rwxr-xr-x 1 root root  5673946 Dec 20 13:04 fillstruct
--rwxr-xr-x 1 root root  3515629 Dec  5 17:28 go-outline
--rwxr-xr-x 1 root root 10732151 Dec  5 17:28 gocode
--rwxr-xr-x 1 root root 10290723 Dec  5 17:29 gocode-gomod
--rwxr-xr-x 1 root root  7386515 Dec  5 17:29 godef
--rwxr-xr-x 1 root root  5173695 Dec  5 17:29 goimports
--rwxr-xr-x 1 root root 31211352 Dec 20 13:05 golangci-lint
--rwxr-xr-x 1 root root  5300970 Dec  5 17:29 golint
--rwxr-xr-x 1 root root  3610803 Dec 20 13:05 gomodifytags
--rwxr-xr-x 1 root root  5283930 Dec  5 17:28 gopkgs
--rwxr-xr-x 1 root root 22440979 Dec 20 13:04 gopls
--rwxr-xr-x 1 root root  5277056 Dec 20 13:04 gorename
--rwxr-xr-x 1 root root  3099060 Dec 20 13:04 gotags
--rwxr-xr-x 1 root root  9034530 Dec 20 13:04 guru
--rwxr-xr-x 1 root root  2755416 Dec 20 13:04 iferr
--rwxr-xr-x 1 root root  5878581 Dec 20 13:04 impl
--rwxr-xr-x 1 root root  5285935 Dec 20 13:05 keyify
--rwxr-xr-x 1 root root  3499857 Dec 20 13:04 motion
--rwxr-xr-x 1 root root  8568488 Dec  6 18:49 protoc-gen-go
--rwxr-xr-x 1 root root  8284236 Dec  5 20:15 protoc-gen-go-grpc
--rwxr-xr-x 1 root root 11804962 Dec 20 13:05 staticcheck
 ```
 
 verify everything is good with : 
@@ -154,16 +194,14 @@ verify everything is good with :
 nvim +checkhealth
 ```
 
+Verify Coc configuration
+```
+nvim +CocConfig
+```
+
 verify everything is good with a Go project : 
 ```
 :CocList diagnostics
-```
-
-configure python provider: 
-```
-pip3 install --upgrade pynvim
-pip3 install --upgrade neovim-remote
-nvim +checkhealth
 ```
 
 nvim clipboard failing in :healthcheck can be ignored,we can copy paste stuff by disabling mouse VISUAL mode in vim temporarily :
