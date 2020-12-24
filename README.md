@@ -150,9 +150,8 @@ We need to install these fonts :
 4. NERDTree
 5. Theme - morhetz/gruvbox
 6. Golang/Python/Rust support
-7. CoC
-8. Lightline
-9. win32yank - clipboard - guide https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
+7. Lightline
+8. win32yank - clipboard - guide https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
     ```
     sudo curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
     sudo unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
@@ -197,6 +196,26 @@ nvim +checkhealth
 Verify Coc configuration
 ```
 nvim +CocConfig
+```
+
+Install Coc stuff
+```
+nvim +CocInstall coc-tabnine
+nvim +CocInstall coc-json
+```
+
+Enable Coc extension autoupdate
+```
+nvim +CocCommand
+extensions.toggleAutoUpdate
+```
+
+Enable ignore_all_lsp in tabnine
+```
+nvim +CocCommand
+tabnine.openConfig
+
+"ignore_all_lsp" : true
 ```
 
 verify everything is good with a Go project : 
