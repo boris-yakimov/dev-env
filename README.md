@@ -94,18 +94,36 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 Add custom .zshrc vars
 ```
-# Custom
+### Custom config ###
+
+# ZSH 
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Automatic update of zsh without prompts
+DISABLE_UPDATE_PROMPT=true
+
+# Path
 export PATH=$PATH:/usr/local/go/bin
+
+# Go
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
+
+# Display
 #export DISPLAY=:0
+
+# Aliases
 export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
 alias browse='/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
-alias home='cd /mnt/c/Users/yakim/Desktop'
-#alias code='/mnt/c/Users/yakim/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe'
-alias notepad++='/mnt/c/Users/yakim/AppData/Local/Microsoft/WindowsApps/notepad++.exe'
+alias home='cd /mnt/c/Users/byakimov_ad/Desktop'
+#alias code='/mnt/c/Users/byakimov_ad/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe'
+alias notepad++='/mnt/c/Users/byakimov_ad/AppData/Local/Microsoft/WindowsApps/notepad++.exe'
+alias vim="nvim"
+alias vi="nvim"
+
+### End Custom config ###
 ```
 
 repalce user in .zshrc
