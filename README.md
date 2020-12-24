@@ -77,6 +77,14 @@ Install/Config :
 1. golang
 2. python + pip
 3. git
+    - use windows credential manager
+    ```
+    # Make sure its installed with Git on windows
+    ls -lah /mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe
+
+    # Configure WSL git to use it
+    git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"
+    ```
 4. docker - enable Docker WSL integration 
 5. terraform // hashicorp repo
 6. helm
