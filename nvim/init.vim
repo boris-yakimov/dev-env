@@ -94,6 +94,9 @@ set backspace=indent,eol,start
 "no point of this for now, we can copy/paste by disabling mouse VISUAL mode with - :set mouse:
 set clipboard+=unnamedplus
 
+" Configure NERDTree to show hidden files
+let NERDTreeShowHidden=1
+
 "'' Go Configuration''"
 if filereadable(expand("~/.config/nvim/plugged/vim-go/plugin/go.vim"))
   "Run goimports along with gofmt on each save
