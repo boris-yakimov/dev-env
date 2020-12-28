@@ -13,25 +13,19 @@
 
 ### ide
 1. visual studio
-/*:
     - Wakatime
     - Atom Material Theme
     - Remote WSL
     - Terraform
     - Golang
-*/
 
 2. atom
-/*:
     - Terraform
     - Wakatime
     - Golang
-*/
 
 3. notepad++
-/*:
     - Diff plugin
-*/
 
 ### terminal
 1. windows terminal
