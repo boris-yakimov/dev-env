@@ -168,7 +168,9 @@ We need to install these fonts :
 4. CascadiaMonoPL
 
 ### nvim 
-- good guide - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
+good guides
+    - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
+    - https://dev.to/jogendra/using-vim-for-go-development-5hc6
 
 1. vim-plug - https://github.com/junegunn/vim-plug
 2. NERDCommenter
@@ -198,10 +200,15 @@ cp nvim/init.vim ~/.config/nvim/init.vim
 cp 
 ```
 
-configure python provider: 
+configure python provider (optional): 
 ```
 pip3 install --upgrade pynvim
 pip3 install --upgrade neovim-remote
+```
+
+configure node.js provider (optional): 
+```
+npm install -g neovim
 ```
 
 Install plugins and Go binaries (requires GOBIN to be set properly in zsh and env var) - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
@@ -226,8 +233,9 @@ nvim +CocConfig
 
 Install Coc stuff
 ```
-nvim +CocInstall coc-tabnine
-nvim +CocInstall coc-json
+nvim 
+:CocInstall coc-tabnine
+:CocInstall coc-json
 ```
 
 Enable Coc extension autoupdate
@@ -249,7 +257,7 @@ verify everything is good with a Go project :
 :CocList diagnostics
 ```
 
-nvim clipboard failing in :healthcheck can be ignored,we can copy paste stuff by disabling mouse VISUAL mode in vim temporarily :
+nvim clipboard failing in :healthcheck can be ignored,we can copy paste stuff by temporarily disabling mouse VISUAL mode in vim temporarily :
 ```
 :set mouse=
 ```

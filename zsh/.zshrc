@@ -36,7 +36,6 @@ export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
 export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
 alias browse='/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
 alias home='cd /mnt/c/Users/byakimov_ad/Desktop'
-#alias code='/mnt/c/Users/byakimov_ad/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe'
 alias notepad++='/mnt/c/Users/byakimov_ad/AppData/Local/Microsoft/WindowsApps/notepad++.exe'
 alias vim="nvim"
 alias vi="nvim"
