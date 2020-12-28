@@ -12,23 +12,29 @@
 8. neovim
 
 ### ide
-visual studio
-	- Wakatime
-	- Atom Material Theme
-	- Remote WSL
-	- Terraform
-	- Golang
+1. visual studio
+/*:
+    - Wakatime
+    - Atom Material Theme
+    - Remote WSL
+    - Terraform
+    - Golang
+*/
 
-atom
-	- Terraform
-	- Wakatime
-	- Golang
+2. atom
+/*:
+    - Terraform
+    - Wakatime
+    - Golang
+*/
 
-notepad++
-	- Diff plugin
+3. notepad++
+/*:
+    - Diff plugin
+*/
 
 ### terminal
-windows terminal
+1. windows terminal
 	- windows-terminal/settings.json
 
 ### powershell
