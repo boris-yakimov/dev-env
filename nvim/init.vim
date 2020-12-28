@@ -50,6 +50,9 @@ Plug 'voldikss/vim-floaterm'
 " Lightline
 Plug 'itchyny/lightline.vim'
 
+" Wakatime
+Plug 'wakatime/vim-wakatime'
+
 call plug#end()
 
 "'' Configure Lightline Theme and such ''"
