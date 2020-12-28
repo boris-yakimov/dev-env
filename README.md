@@ -186,6 +186,8 @@ good guides
     sudo chmod +x /tmp/win32yank.exe
     sudo mv /tmp/win32yank.exe /usr/local/bin
     ```
+9. Wakatime - https://github.com/wakatime/vim-wakatime
+
 
 apt install nodejs
 apt install neovim
