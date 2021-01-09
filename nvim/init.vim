@@ -100,6 +100,12 @@ set clipboard+=unnamedplus
 " Configure NERDTree to show hidden files
 let NERDTreeShowHidden=1
 
+"Move lines up and down - shift + up / down arrows
+nnoremap <S-Up> :m-2<CR>
+nnoremap <S-Down> :m+<CR>
+inoremap <S-Up> <Esc>:m-2<CR>
+inoremap <S-Down> <Esc>:m+<CR>
+
 "'' Go Configuration''"
 if filereadable(expand("~/.config/nvim/plugged/vim-go/plugin/go.vim"))
   "Run goimports along with gofmt on each save
