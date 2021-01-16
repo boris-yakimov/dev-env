@@ -35,10 +35,13 @@ export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
 # Aliases
 export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
 alias browse='/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
-alias home='cd /mnt/c/Users/byakimov_ad/Desktop'
-alias notepad++='/mnt/c/Users/byakimov_ad/AppData/Local/Microsoft/WindowsApps/notepad++.exe'
+alias home='cd /mnt/c/Users/yakim/Desktop'
+alias notepad++='/mnt/c/Users/yakim/AppData/Local/Microsoft/WindowsApps/notepad++.exe'
 alias vim="nvim"
 alias vi="nvim"
+
+# Plugins
+plugins=(zsh-autosuggestions)
 
 ### End Custom config ###
 

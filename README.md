@@ -100,6 +100,12 @@ Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
+Autosuggestions plugin
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+add plugins=(zsh-autosuggestions) in ~/.zshrc
+```
+
 Add custom .zshrc vars
 ```
 ### Custom config ###
@@ -130,6 +136,9 @@ alias home='cd /mnt/c/Users/byakimov_ad/Desktop'
 alias notepad++='/mnt/c/Users/byakimov_ad/AppData/Local/Microsoft/WindowsApps/notepad++.exe'
 alias vim="nvim"
 alias vi="nvim"
+
+# Plugins
+plugins=(zsh-autosuggestions)
 
 ### End Custom config ###
 ```
