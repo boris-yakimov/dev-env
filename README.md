@@ -100,10 +100,16 @@ Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-Autosuggestions plugin
+Autosuggestions oh-my-zsh plugin
 ```
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-add plugins=(zsh-autosuggestions) in ~/.zshrc
+git clone https://github.com/zsh-users/zsh-autosuggestions
+mv zsh-autosuggestions/ ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/
+```
+
+Than load it in ~/.zshrc in the plugins section
+```
+plugins=(zsh-autosuggestions)
+source ~/.zshrc
 ```
 
 Add custom .zshrc vars
@@ -136,9 +142,6 @@ alias home='cd /mnt/c/Users/byakimov_ad/Desktop'
 alias notepad++='/mnt/c/Users/byakimov_ad/AppData/Local/Microsoft/WindowsApps/notepad++.exe'
 alias vim="nvim"
 alias vi="nvim"
-
-# Plugins
-plugins=(zsh-autosuggestions)
 
 ### End Custom config ###
 ```
@@ -176,7 +179,7 @@ We need to install these fonts :
 3. CascadiaMono
 4. CascadiaMonoPL
 
-### nvim 
+### neovim 
 good guides
     - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
     - https://dev.to/jogendra/using-vim-for-go-development-5hc6

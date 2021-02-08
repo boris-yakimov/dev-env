@@ -40,9 +40,6 @@ alias notepad++='/mnt/c/Users/yakim/AppData/Local/Microsoft/WindowsApps/notepad+
 alias vim="nvim"
 alias vi="nvim"
 
-# Plugins
-plugins=(zsh-autosuggestions)
-
 ### End Custom config ###
 
 # Set name of the theme to load --- if set to "random", it will
@@ -113,6 +110,7 @@ ZSH_DISABLE_COMPFIX=true
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
+plugins=(zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
