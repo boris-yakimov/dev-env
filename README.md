@@ -25,7 +25,8 @@
     - Golang
 
 3. notepad++
-    - Diff plugin
+    - PluginManager - https://github.com/bruderstein/nppPluginManager
+    - Diff plugini - https://github.com/pnedev/compare-plugin
 
 ### terminal
 1. windows terminal
