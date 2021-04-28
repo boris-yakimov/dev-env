@@ -88,7 +88,23 @@ Install/Config :
     ```
 4. docker - enable Docker WSL integration 
 5. terraform // hashicorp repo
-6. kubectl
+6. kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+
+    # for latest version : 
+    ```
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    ```
+    
+    # for specific verison : 
+    ```
+    curl -LO https://dl.k8s.io/release/v1.19.8/bin/linux/amd64/kubectl
+    ```
+
+    ```
+    sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+    ```
+
+
 7. helm
 8. ssh keys
 
