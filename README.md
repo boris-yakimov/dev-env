@@ -199,6 +199,9 @@ good guides
     sudo mv /tmp/win32yank.exe /usr/local/bin
     ```
 9. Wakatime - https://github.com/wakatime/vim-wakatime
+10. Terraform Plugin - https://github.com/hashivim/vim-terraform
+    Terraform Language Server - https://dev.to/braybaut/integrate-terraform-language-server-protocol-with-vim-38g
+                              - https://github.com/juliosueiras/vim-terraform-completion
 
 
 apt install nodejs
