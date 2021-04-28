@@ -88,8 +88,9 @@ Install/Config :
     ```
 4. docker - enable Docker WSL integration 
 5. terraform // hashicorp repo
-6. helm
-7. ssh keys
+6. kubectl
+7. helm
+8. ssh keys
 
 
 ### zsh
@@ -203,7 +204,6 @@ good guides
 10. Terraform Plugin - https://github.com/hashivim/vim-terraform
     Terraform Language Server - https://dev.to/braybaut/integrate-terraform-language-server-protocol-with-vim-38g
                               - https://github.com/juliosueiras/vim-terraform-completion
-
 
 apt install nodejs
 apt install neovim
