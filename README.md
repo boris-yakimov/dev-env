@@ -105,7 +105,7 @@ Install/Config :
     ```
 
 
-7. helm
+7. helm / helm diff - https://github.com/databus23/helm-diff
 8. ssh keys
 
 
