@@ -10,6 +10,8 @@
 6. docker
 7. windows power toys
 8. neovim
+9. terraform - os repo
+    - also - terraform -install-autocomplete
 
 ### ide
 1. visual studio
