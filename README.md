@@ -10,6 +10,8 @@
 6. docker
 7. windows power toys
 8. neovim
+9. terraform - os repo
+    - also - terraform -install-autocomplete
 
 ### ide
 1. visual studio
@@ -106,7 +108,7 @@ Install/Config :
     ```
 
 
-7. helm
+7. helm / helm diff - https://github.com/databus23/helm-diff
 8. ssh keys
 
 
