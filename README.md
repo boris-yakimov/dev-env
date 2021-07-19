@@ -23,6 +23,7 @@
     - Terraform
     - Wakatime
     - Golang
+    - HCL language support
 
 3. notepad++
     - PluginManager - https://github.com/bruderstein/nppPluginManager
