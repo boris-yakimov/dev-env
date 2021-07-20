@@ -92,7 +92,7 @@ Install/Config :
     git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"
     ```
 4. docker - enable Docker WSL integration 
-5. terraform // hashicorp repo
+5. terraform // hashicorp yum repo
 6. kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
     # for latest version : 
