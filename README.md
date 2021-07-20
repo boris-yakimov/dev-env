@@ -234,8 +234,23 @@ good guides
     ```
 9. Wakatime - https://github.com/wakatime/vim-wakatime
 10. Terraform Plugin - https://github.com/hashivim/vim-terraform
-    Terraform Language Server - https://dev.to/braybaut/integrate-terraform-language-server-protocol-with-vim-38g
-                              - https://github.com/juliosueiras/vim-terraform-completion
+    ```
+    # Allow vim-terraform to align settings automatically with Tabularize. - Default: 0
+    let g:terraform_align = 1
+    
+    # Allow vim-terraform to use a custom path for the terraform binary. - Default: terraform
+    "let g:terraform_binary_path = 'terraform'
+
+    # Allow vim-terraform to automatically format *.tf and *.tfvars files with terraform fmt. You can also do this manually with the `:TerraformFmt` command. - Default: 0
+    let g:terraform_fmt_on_save = 1
+
+    # Allow vim-terraform to automatically fold (hide until unfolded) sections of
+    "let g:terraform_fold_sections = 1
+    ```
+
+  Additional Terraform vim stuff : 
+  - Terraform Language Server - https://dev.to/braybaut/integrate-terraform-language-server-protocol-with-vim-38g
+  - https://github.com/juliosueiras/vim-terraform-completion
 
 apt install nodejs
 apt install neovim
