@@ -23,9 +23,11 @@
 
 2. atom
     - Terraform
+        - terraform-fmt
+        - language-terraform
+    - HCL language support
     - Wakatime
     - Golang
-    - HCL language support
 
 3. notepad++
     - PluginManager - https://github.com/bruderstein/nppPluginManager
