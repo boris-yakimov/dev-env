@@ -203,6 +203,17 @@ We need to install these fonts :
 4. CascadiaMonoPL
 
 ### neovim 
+convert between file formats
+```
+# Windows
+:setlocal fileformat=dos
+```
+
+```
+# Linux
+:setlocal fileformat=unix
+```
+
 good guides
     - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
     - https://dev.to/jogendra/using-vim-for-go-development-5hc6
