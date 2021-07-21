@@ -257,6 +257,11 @@ good guides
   - Terraform Language Server - https://dev.to/braybaut/integrate-terraform-language-server-protocol-with-vim-38g
   - https://github.com/juliosueiras/vim-terraform-completion
 
+11. Powershell plugin - https://vimawesome.com/plugin/windows-powershell-syntax-file
+    ```
+    Plug 'vim-scripts/Windows-PowerShell-Syntax-Plugin'
+    ```
+
 apt install nodejs
 apt install neovim
 
