@@ -214,6 +214,11 @@ convert between file formats
 :setlocal fileformat=unix
 ```
 
+set soft word wrapping
+```
+:set wrap linebreak
+```
+
 good guides
     - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
     - https://dev.to/jogendra/using-vim-for-go-development-5hc6

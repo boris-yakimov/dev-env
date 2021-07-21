@@ -52,11 +52,26 @@ Plug 'itchyny/lightline.vim'
 
 " Terraform
 Plug 'hashivim/vim-terraform'
+Plug 'vim-syntastic/syntastic'
+Plug 'juliosueiras/vim-terraform-completion'
+
+" Powershell
+Plug 'vim-scripts/Windows-PowerShell-Syntax-Plugin'
 
 " Wakatime
 Plug 'wakatime/vim-wakatime'
 
 call plug#end()
+
+" Syntastic Config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 "'' Configure Lightline Theme and such ''"
 "if filereadable(expand("~/.config/nvim/plugged/lightline.vim/plugin/lightline.vim"))
@@ -80,7 +95,9 @@ autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 set shiftwidth=4
 
 set expandtab
-set nowrap
+"set nowrap
+" Configure Soft Wrap
+set wrap linebreak
 set noshowmode
 
 filetype plugin indent on
