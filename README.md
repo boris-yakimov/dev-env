@@ -262,6 +262,12 @@ good guides
     Plug 'vim-scripts/Windows-PowerShell-Syntax-Plugin'
     ```
 
+12. Polyglot plugin - https://vimawesome.com/plugin/vim-polyglot
+    ```
+    " Multi-language syntax plugin
+    Plug 'sheerun/vim-polyglot'
+    ```
+
 apt install nodejs
 apt install neovim
 
