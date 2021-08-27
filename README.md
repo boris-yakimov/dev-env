@@ -230,6 +230,26 @@ good guides
 5. Theme - morhetz/gruvbox
 6. Golang/Python/Rust support
 7. Lightline
+    - Example lightline config with different themes that also shows Git branch
+    ```
+    "'' Configure Lightline status bar ''"
+    "let g:lightline = {'colorscheme' : 'horizon'}
+    "let g:lightline = {'colorscheme': 'wombat'}
+
+    " set lightline to include git-branch
+    let g:lightline = {
+          \ 'active': {
+          \   'left': [ [ 'mode', 'paste' ],
+          \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ,
+          \             [ 'venv', 'readonly'] ]
+          \ },
+          \ 'component_function': {
+          \   'gitbranch': 'fugitive#head',
+          \   'venv': 'virtualenv#statusline'
+          \ },
+          \ }
+    ```
+
 8. win32yank - clipboard - guide https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
     ```
     sudo curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
