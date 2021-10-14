@@ -44,8 +44,13 @@ Plug 'tpope/vim-fugitive'
 " Utilities
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'preservim/nerdcommenter'
 Plug 'voldikss/vim-floaterm'
+
+" NerdTree - file manager
+Plug 'preservim/nerdcommenter'
+
+" Ale - syntax highlighting
+Plug 'dense-analysis/ale'
 
 " Lightline
 Plug 'itchyny/lightline.vim'
@@ -63,6 +68,9 @@ Plug 'wakatime/vim-wakatime'
 
 " Multi-language syntax plugin
 Plug 'sheerun/vim-polyglot'
+
+" Python
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 

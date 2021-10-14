@@ -288,6 +288,16 @@ good guides
     Plug 'sheerun/vim-polyglot'
     ```
 
+13. Python autocomplete - https://github.com/davidhalter/jedi-vim
+    ```
+    sudo python -m pip install jedi
+    ```
+
+    ```
+    " Python autocomplete plugin
+    Plug 'davidhalter/jedi-vim'
+    ```
+
 apt install nodejs
 apt install neovim
 
