@@ -69,7 +69,7 @@ Plug 'wakatime/vim-wakatime'
 " Multi-language syntax plugin
 Plug 'sheerun/vim-polyglot'
 
-" Python
+" Python autocompletion
 Plug 'davidhalter/jedi-vim'
 
 call plug#end()
