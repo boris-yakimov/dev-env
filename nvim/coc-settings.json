@@ -4,6 +4,16 @@
             "command": "gopls",
             "rootPatterns": ["go.mod", "./.config/nvim/", ".git/", ".hg/"],
             "filetypes": ["go"]
+        },
+        "terraform": {
+            "command": "terraform-lsp",
+            "filetypes": [
+                "terraform",
+                "tf"
+            ],
+            "initializationOptions": {},
+            "settings": {}
         }
-    }
+    },
+    "coc.preferences.extensionUpdateCheck": "daily"
 }
