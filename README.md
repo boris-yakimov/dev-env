@@ -268,8 +268,23 @@ good guides
     Plug 'sheerun/vim-polyglot'
     ```
 
-apt install nodejs
-apt install neovim
+13. Install nodejs
+    ```
+    sudo apt update
+    sudo apt install nodejs
+    ```
+
+14. Install neovim - https://github.com/neovim/neovim/wiki/Installing-Neovim
+    ```
+    sudo apt update
+    sudo apt install neovim
+    ```
+    install neovim version >= 5
+    ```
+    sudo add-apt-repository ppa:neovim-ppa/stable
+    sudo apt-get update
+    sudo apt-get install neovim
+    ```
 
 Install yarn (Coc autocomplete needs it)
 https://classic.yarnpkg.com/en/docs/install#debian-stable
