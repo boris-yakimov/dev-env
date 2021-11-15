@@ -44,8 +44,13 @@ Plug 'tpope/vim-fugitive'
 " Utilities
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'preservim/nerdcommenter'
 Plug 'voldikss/vim-floaterm'
+
+" NerdTree - file manager
+Plug 'preservim/nerdcommenter'
+
+" Ale - syntax highlighting
+Plug 'dense-analysis/ale'
 
 " Lightline
 Plug 'itchyny/lightline.vim'
@@ -64,6 +69,9 @@ Plug 'wakatime/vim-wakatime'
 " Multi-language syntax plugin
 Plug 'sheerun/vim-polyglot'
 
+" Python autocompletion
+Plug 'davidhalter/jedi-vim'
+
 call plug#end()
 
 " Syntastic Config
@@ -76,10 +84,25 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-"'' Configure Lightline Theme and such ''"
-"if filereadable(expand("~/.config/nvim/plugged/lightline.vim/plugin/lightline.vim"))
-"  let g:lightline = {'colorscheme' : 'horizon'}
-"endif
+"'' Configure Lightline status bar ''"
+"let g:lightline = {'colorscheme' : 'horizon'}
+"let g:lightline = {'colorscheme': 'wombat'}
+
+" set lightline to include git-branch
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ,
+      \             [ 'venv', 'readonly'] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'venv': 'virtualenv#statusline'
+      \ },
+      \ }
+
+" Always show statusbar
+set laststatus=2
 
 """"'' /// START - Custom settings ''"""""
 " Change how vim represents characters on the screen
