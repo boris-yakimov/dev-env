@@ -202,6 +202,11 @@ We need to install these fonts :
 3. CascadiaMono
 4. CascadiaMonoPL
 
+We also need Nerd Fonts for rendeing icons in NERDTree, zsh, etc
+https://github.com/ryanoasis/nerd-fonts#option-2-release-archive-download
+Download whichever font we need from the latest archives 
+1. Caskaydia Cove Nerd Font - same as the microsoft cascadia fonts, but with added nerd font icons and stuff
+
 ### neovim 
 convert between file formats
 ```
@@ -226,7 +231,7 @@ good guides
 1. vim-plug - https://github.com/junegunn/vim-plug
 2. NERDCommenter
 3. Coc and Tabnine - autocomplete
-4. NERDTree
+4. NERDTree (main tool) or nvim.tree (not tested)
 5. Theme - morhetz/gruvbox
 6. Golang/Python/Rust support
 7. Lightline
