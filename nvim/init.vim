@@ -5,19 +5,19 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall
 endif
 
-"good guide for setup - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
-
 call plug#begin('~/.config/nvim/plugged')
 
 "File Search:
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-"File Browser:
+"File Browser: NerdTree
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'mkitt/tabline.vim'
-Plug 'ryanoasis/vim-devicons'
+Plug 'mkitt/tabline.vim'       
+Plug 'ryanoasis/vim-devicons' "icons for plugins
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight' "color for icons
+Plug 'her/synicons.vim' " fix because of - https://github.com/ryanoasis/vim-devicons/issues/330#issuecomment-634407559
 
 "Theme:
 Plug 'morhetz/gruvbox'
@@ -25,6 +25,7 @@ Plug 'morhetz/gruvbox'
 """ Language Support ''"
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'fatih/vim-go'
+"Plug 'fatih/vim-go', {  'tag': 'v1.22', 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
 
 "Autocomplete:
@@ -44,13 +45,8 @@ Plug 'tpope/vim-fugitive'
 " Utilities
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'voldikss/vim-floaterm'
-
-" NerdTree - file manager
 Plug 'preservim/nerdcommenter'
-
-" Ale - syntax highlighting
-Plug 'dense-analysis/ale'
+Plug 'voldikss/vim-floaterm'
 
 " Lightline
 Plug 'itchyny/lightline.vim'
@@ -69,9 +65,6 @@ Plug 'wakatime/vim-wakatime'
 " Multi-language syntax plugin
 Plug 'sheerun/vim-polyglot'
 
-" Python autocompletion
-Plug 'davidhalter/jedi-vim'
-
 call plug#end()
 
 " Syntastic Config
@@ -84,25 +77,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-"'' Configure Lightline status bar ''"
-"let g:lightline = {'colorscheme' : 'horizon'}
-"let g:lightline = {'colorscheme': 'wombat'}
-
-" set lightline to include git-branch
-let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ,
-      \             [ 'venv', 'readonly'] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
-      \   'venv': 'virtualenv#statusline'
-      \ },
-      \ }
-
-" Always show statusbar
-set laststatus=2
+"'' Configure Lightline Theme and such ''"
+"if filereadable(expand("~/.config/nvim/plugged/lightline.vim/plugin/lightline.vim"))
+"  let g:lightline = {'colorscheme' : 'horizon'}
+"endif
 
 """"'' /// START - Custom settings ''"""""
 " Change how vim represents characters on the screen
@@ -118,7 +96,7 @@ autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 " sw - when indenting with '>', use 4 spaces width
 " sts - control <tab> and <bs> keys to match tabstop
 "Control all other files
-set shiftwidth=4
+set shiftwidth=2
 
 set expandtab
 "set nowrap
@@ -142,9 +120,6 @@ set backspace=indent,eol,start
 "To ALWAYS use the clipboard for ALL operations (instead of interacting with the '+' and/or '*' registers explicitly):
 "no point of this for now, we can copy/paste by disabling mouse VISUAL mode with - :set mouse:
 set clipboard+=unnamedplus
-
-" Configure NERDTree to show hidden files
-let NERDTreeShowHidden=1
 
 """ Terraform config
 " Allow vim-terraform to align settings automatically with Tabularize.
@@ -344,8 +319,15 @@ map <C-p> :FZF<CR>
 "allow FZF to search hidden 'dot' files
 let $FZF_DEFAULT_COMMAND = "find -L"
 
-"FILE BROWSER:
+"FILE BROWSER: NERDTree
 "-------------
+
+" Configure NERDTree to show hidden files
+let NERDTreeShowHidden=1
+
+" Ignores
+let g:NERDTreeIgnore = ['^node_modulues$', '.git$']
+
 "allows NERDTree to open/close by typing 'n' then 't'
 map nt :NERDTreeTabsToggle<CR>
 "Start NERDtree when dir is selected (e.g. "vim .") and start NERDTreeTabs
@@ -362,6 +344,11 @@ let g:NERDTreeDirArrowExpandable = "\u00a0"
 let g:NERDTreeDirArrowCollapsible = "\u00a0"
 let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
 highlight! link NERDTreeFlags NERDTreeDir
+
+set termguicolors " this variable must be enabled for colors to be applied properly
+
+" a list of groups can be found at `:help nvim_tree_highlight`
+highlight NvimTreeFolderIcon guibg=blue
 
 "SHORTCUTS:
 "----------
