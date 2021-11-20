@@ -47,6 +47,11 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 ```
 
+Install neovim with scoop
+```
+scoop install neovim
+```
+
 Install posh-git and oh-my-posh
 ```
 # You could have the following to allow for scripts execution 
@@ -262,6 +267,28 @@ good guides
     sudo chmod +x /tmp/win32yank.exe
     sudo mv /tmp/win32yank.exe /usr/local/bin
     ```
+    in case of issues with clipbarod even with win32yank configured 
+    
+    If Neovim is installed on both Windows and within the WSL distribution, the win32yank.exe binary provided by the Neovim Windows installation can be symlinked to a directory included in our $PATH so it can be found by Neovim on WSL. Replace $NEOVIM_WIN_DIR with the path to our Neovim Windows installation, e.g. /mnt/c/Program Files/Neovim. The command can then be symlinked using:
+    ```
+    sudo ln -s "$NEOVIM_WIN_DIR/bin/win32yank.exe" "/usr/local/bin/win32yank.exe"
+    ```
+
+    make sure Neovim is also installed on Windows
+    ```
+    scoop install neovim
+
+    # Set symlink in WSL to win32yank that is part of Neovim - Windows path may be different here
+    sudo ln -s /mnt/c/Users/yakim/scoop/apps/neovim/current/bin/win32yank.exe /usr/local/bin/win32yank.exe
+    ```
+
+    In either case, don't forget to set Neovim's clipboard to unnamedplus using set clipboard=unnamedplus to make Neovim use the system's (i.e Windows') clipboard by default.
+
+    If Neovim keeps detecting xclip instead of win32yank; we can rename it (not sure if this may not cause other issues)
+    ```
+    mv /usr/bin/xclip /usr/bin/xclip-bkp
+    ```
+
 9. Wakatime - https://github.com/wakatime/vim-wakatime
 10. Terraform Plugin - https://github.com/hashivim/vim-terraform
     ```

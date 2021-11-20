@@ -118,7 +118,7 @@ set backspace=indent,eol,start
 "set relativenumber
 
 "To ALWAYS use the clipboard for ALL operations (instead of interacting with the '+' and/or '*' registers explicitly):
-"no point of this for now, we can copy/paste by disabling mouse VISUAL mode with - :set mouse:
+" send even vim yanks to the system clipboard
 set clipboard+=unnamedplus
 
 """ Terraform config
