@@ -104,7 +104,7 @@ Install/Config :
     ```
     curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
     ```
-    
+ 
     # for specific verison : 
     ```
     curl -LO https://dl.k8s.io/release/v1.19.8/bin/linux/amd64/kubectl
@@ -117,6 +117,19 @@ Install/Config :
 
 7. helm / helm diff - https://github.com/databus23/helm-diff
 8. ssh keys
+
+9. saml2aws - https://github.com/Versent/saml2aws#linux
+    ```
+    # Install saml2aws - if these steps fail just download the latest binary from Github
+    CURRENT_VERSION=$(curl -Ls https://api.github.com/repos/Versent/saml2aws/releases/latest | grep 'tag_name' | cut -d'v' -f2 | cut -d'"' -f1)
+    wget -c https://github.com/Versent/saml2aws/releases/download/v${CURRENT_VERSION}/saml2aws_${CURRENT_VERSION}_linux_amd64.tar.gz -O - | tar -xzv -C ~/.local/bin
+    chmod u+x ~/.local/bin/saml2aws
+    hash -r
+    saml2aws --version
+
+    # Configure autocomplete
+    eval "$(saml2aws --completion-script-zsh)"
+    ```
 
 
 ### zsh
