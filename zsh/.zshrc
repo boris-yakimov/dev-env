@@ -29,6 +29,9 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
 
+# Autocompletion for saml2aws
+eval "$(saml2aws --completion-script-zsh)"
+
 # Display
 #export DISPLAY=:0
 
