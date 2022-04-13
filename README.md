@@ -20,6 +20,7 @@
     - Remote WSL
     - Terraform
     - Golang
+    - Python
 
 2. atom
     - Terraform
