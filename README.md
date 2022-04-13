@@ -259,7 +259,7 @@ good guides
     - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
     - https://dev.to/jogendra/using-vim-for-go-development-5hc6
 
-Create nvim config directory and init.vim file from vim
+0. Create nvim config directory and init.vim file from vim
 ```
 # create a directory to hold the init.vim file
 :call mkdir(stdpath('config'), 'p')
