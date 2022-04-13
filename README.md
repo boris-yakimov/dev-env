@@ -89,9 +89,18 @@ wsl --list -v
 
 Install/Config : 
 
-1. golang
-2. python + pip
-3. git
+1. Install zsh 
+   ```
+   apt-get install
+   ```
+2. Install neovim
+   ```
+   apt-get install neovim
+   ```
+
+2 golang
+4. python + pip
+5. git
     - use windows credential manager
     ```
     # Make sure its installed with Git on windows
@@ -138,10 +147,7 @@ Install/Config :
     eval "$(saml2aws --completion-script-zsh)"
     ```
 
-
-### zsh
-apt-get install zsh
-
+### zsh configuration
 Install oh-my-zsh
 ```
 # When prompted to set zsh as your default shell say Yes
