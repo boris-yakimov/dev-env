@@ -39,6 +39,7 @@
 ### terminal
 1. windows terminal
 	- windows-terminal/settings.json
+	- may require fonts to be installed prior to configuration
 
 ### powershell
 
