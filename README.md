@@ -99,6 +99,9 @@ Install/Config :
 
     # Configure WSL git to use it
     git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"
+    
+    # The path may also be
+    git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
     ```
 4. docker - enable Docker WSL integration 
 5. terraform // hashicorp yum repo
