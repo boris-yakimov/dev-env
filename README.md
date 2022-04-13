@@ -21,6 +21,7 @@
     - Terraform
     - Golang
     - Python
+    - Tabnine
 
 2. atom
     - Terraform
@@ -29,6 +30,7 @@
     - HCL language support
     - Wakatime
     - Golang
+    - Tabnine
 
 3. notepad++
     - PluginManager - https://github.com/bruderstein/nppPluginManager
