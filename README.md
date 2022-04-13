@@ -93,14 +93,14 @@ Install/Config :
    ```
    apt-get install
    ```
-3. Install neovim
+2. Install neovim
    ```
    apt-get install neovim
    ```
 
-4 golang
-5. python + pip
-6. git
+3 golang  
+4. python + pip  
+5. git
     - use windows credential manager
     ```
     # Make sure its installed with Git on windows
@@ -112,9 +112,9 @@ Install/Config :
     # The path may also be
     git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
     ```
-7. docker - enable Docker WSL integration 
-8. terraform // hashicorp yum repo
-9. kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+6. docker - enable Docker WSL integration   
+7. terraform // hashicorp yum repo  
+8. kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
     # for latest version : 
     ```
@@ -131,10 +131,10 @@ Install/Config :
     ```
 
 
-10. helm / helm diff - https://github.com/databus23/helm-diff
-11. ssh keys
+9. helm / helm diff - https://github.com/databus23/helm-diff
+10. ssh keys
 
-12. saml2aws (needs to be done after ZSH) - https://github.com/Versent/saml2aws#linux
+11. saml2aws (needs to be done after ZSH) - https://github.com/Versent/saml2aws#linux
     ```
     # Install saml2aws - if these steps fail just download the latest binary from Github
     CURRENT_VERSION=$(curl -Ls https://api.github.com/repos/Versent/saml2aws/releases/latest | grep 'tag_name' | cut -d'v' -f2 | cut -d'"' -f1)
