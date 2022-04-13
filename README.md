@@ -449,7 +449,8 @@ verify everything is good with a Go project :
 :CocList diagnostics
 ```
 
-nvim clipboard failing in :healthcheck can be ignored,we can copy paste stuff by temporarily disabling mouse VISUAL mode in vim temporarily :
+nvim clipboard failing in :healthcheck can be temporarily ignored,we can copy paste stuff by temporarily disabling mouse VISUAL mode in vim temporarily :
+afterwards yank copy stuff needs to be fixed to work properly with windows clipboard
 ```
 :set mouse=
 ```
