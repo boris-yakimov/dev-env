@@ -125,7 +125,7 @@ Install/Config :
 7. helm / helm diff - https://github.com/databus23/helm-diff
 8. ssh keys
 
-9. saml2aws - https://github.com/Versent/saml2aws#linux
+9. saml2aws (needs to be done after ZSH) - https://github.com/Versent/saml2aws#linux
     ```
     # Install saml2aws - if these steps fail just download the latest binary from Github
     CURRENT_VERSION=$(curl -Ls https://api.github.com/repos/Versent/saml2aws/releases/latest | grep 'tag_name' | cut -d'v' -f2 | cut -d'"' -f1)
