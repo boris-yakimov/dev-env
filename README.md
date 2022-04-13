@@ -91,14 +91,14 @@ Install/Config :
 
 1. Install zsh 
    ```
-   apt-get install
+   apt install zsh
    ```
 2. Install neovim
    ```
-   apt-get install neovim
+   apt install neovim
    ```
 
-3 golang  
+3. golang  
 4. python + pip  
 5. git
     - use windows credential manager
