@@ -112,6 +112,13 @@ Install/Config :
     # The path may also be
     git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
     ```
+
+    If we intend to use Azure DevOps or Azure repos we also need to set the crential config bellow to avoid these errors - "fatal: Cannot determine the organization name for this 'dev.azure.com' remote URL. Ensure the `credential.useHttpPath` configuration value is set, or set the organization name as the user in the remote URL '{org}@dev.azure.com'."
+    ```
+    git config --global credential.https://dev.azure.com.useHttpPath true
+    ```
+
+
 6. docker - enable Docker WSL integration   
 7. terraform // hashicorp yum repo  
 8. kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
