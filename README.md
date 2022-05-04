@@ -178,7 +178,7 @@ Make sure the paths are correct and exist - vscode, chrome, notepad++, etc
 ```
 ### Custom config ###
 
-# ZSH 
+# ZSH
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Automatic update of zsh without prompts
@@ -193,15 +193,17 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
 
+# Autocompletion for saml2aws
+eval "$(saml2aws --completion-script-zsh)"
+
 # Display
 #export DISPLAY=:0
 
-# Aliases
-export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
-alias browse='/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
+# Aliases - make sure paths are correct and exist
+export BROWSER=/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
+alias browse='/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe'
 alias home='cd /mnt/c/Users/byakimov_ad/Desktop'
-#alias code='/mnt/c/Users/byakimov_ad/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe'
-alias notepad++='/mnt/c/Users/byakimov_ad/AppData/Local/Microsoft/WindowsApps/notepad++.exe'
+alias notepad='/mnt/c/Program\ Files/Notepad++/notepad++.exe'
 alias vim="nvim"
 alias vi="nvim"
 

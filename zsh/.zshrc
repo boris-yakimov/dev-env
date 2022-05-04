@@ -14,7 +14,7 @@ export ZSH="/root/.oh-my-zsh"
 
 ### Custom config ###
 
-# ZSH 
+# ZSH
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Automatic update of zsh without prompts
@@ -36,10 +36,10 @@ eval "$(saml2aws --completion-script-zsh)"
 #export DISPLAY=:0
 
 # Aliases - make sure paths are correct and exist
-export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
-alias browse='/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
-alias home='cd /mnt/c/Users/yakim/Desktop'
-alias notepad++='/mnt/c/Users/yakim/AppData/Local/Microsoft/WindowsApps/notepad++.exe'
+export BROWSER=/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
+alias browse='/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe'
+alias home='cd /mnt/c/Users/byakimov_ad/Desktop'
+alias notepad='/mnt/c/Program\ Files/Notepad++/notepad++.exe'
 alias vim="nvim"
 alias vi="nvim"
 
