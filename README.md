@@ -154,6 +154,8 @@ Install/Config :
     eval "$(saml2aws --completion-script-zsh)"
     ```
 
+12. k9s https://k9scli.io/topics/install/
+
 ### zsh configuration
 Install oh-my-zsh
 ```
