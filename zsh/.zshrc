@@ -35,7 +35,7 @@ eval "$(saml2aws --completion-script-zsh)"
 # Display
 #export DISPLAY=:0
 
-# Aliases
+# Aliases - make sure paths are correct and exist
 export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
 alias browse='/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
 alias home='cd /mnt/c/Users/yakim/Desktop'
