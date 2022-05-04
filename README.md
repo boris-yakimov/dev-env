@@ -174,6 +174,7 @@ source ~/.zshrc
 ```
 
 Add custom .zshrc vars
+Make sure the paths are correct and exist - vscode, chrome, notepad++, etc
 ```
 ### Custom config ###
 
