@@ -139,6 +139,10 @@ Install/Config :
 
 
 9. helm / helm diff - https://github.com/databus23/helm-diff
+    - helm autocompletion - To load completions for every new session, execute once:
+    ```
+    helm completion zsh > "${fpath[1]}/_helm"
+    ```
 10. ssh keys
 
 11. saml2aws (needs to be done after ZSH) - https://github.com/Versent/saml2aws#linux
