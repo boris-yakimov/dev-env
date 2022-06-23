@@ -10,8 +10,6 @@
 6. docker
 7. windows power toys
 8. neovim
-9. terraform - os repo
-    - also - terraform -install-autocomplete
 
 ### ide
 1. visual studio
@@ -121,6 +119,11 @@ Install/Config :
 
 6. docker - enable Docker WSL integration   
 7. terraform // hashicorp yum repo  
+    tfswitch - https://tfswitch.warrensbox.com/
+    enable tf autocomplete
+    ```
+    terraform -install-autocomplete
+    ```
 8. kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
     # for latest version : 
