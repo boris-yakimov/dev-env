@@ -20,10 +20,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Automatic update of zsh without prompts
 DISABLE_UPDATE_PROMPT=true
 
-# Path
-export PATH=$PATH:/usr/local/go/bin
+# tfswitch - terraform binaries
+export PATH=$PATH:$HOME/bin
 
 # Go
+export PATH=$PATH:/usr/local/go/bin
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
