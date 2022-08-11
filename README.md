@@ -8,7 +8,7 @@
 4. golang
 5. python + pip
 6. docker
-7. neovim
+7. neovim (setup bellow with chocolatey)
 
 ### ide
 1. visual studio
