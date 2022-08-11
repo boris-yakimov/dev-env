@@ -80,7 +80,7 @@ Set-Theme Paradox
 
 Set default WSL distro
 ```
-wsl --setdefault Ubuntu-20.04
+wsl --setdefault <os_name>
 wsl --list -v
 ```
 
