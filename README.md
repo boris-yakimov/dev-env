@@ -8,8 +8,7 @@
 4. golang
 5. python + pip
 6. docker
-7. windows power toys
-8. neovim
+7. neovim
 
 ### ide
 1. visual studio
