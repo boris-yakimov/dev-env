@@ -76,6 +76,7 @@ Import-Module oh-my-posh
 Set-Theme Paradox
 ```
 
+CONTINUE HERE :
 ## wsl 
 
 Set default WSL distro
