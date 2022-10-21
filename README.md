@@ -147,6 +147,8 @@ Install/Config :
     ```
 10. ssh keys
 
+CONTINUE HERE !
+
 11. saml2aws (needs to be done after ZSH) - https://github.com/Versent/saml2aws#linux
     ```
     # Install saml2aws - if these steps fail just download the latest binary from Github
