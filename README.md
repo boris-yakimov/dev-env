@@ -268,6 +268,8 @@ https://github.com/ryanoasis/nerd-fonts#option-2-release-archive-download
 Download whichever font we need from the latest archives (CascadiaCode.zip will contain caskaydia)
 1. Caskaydia Cove Nerd Font - same as the microsoft cascadia fonts, but with added nerd font icons and stuff
 
+# CONTINUE HERE
+
 ### neovim 
 convert between file formats
 ```
