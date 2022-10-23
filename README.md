@@ -78,11 +78,17 @@ Set-Theme Paradox
 
 ## wsl 
 
-Set default WSL distro
+Set default WSL distro - in powershell
 ```
 wsl --setdefault <os_name>
 wsl --list -v
 ```
+
+Change default Ubuntu user to root - in powershell
+```
+ubuntu config --default-user root
+```
+
 
 Install/Config : 
 
@@ -147,7 +153,6 @@ Install/Config :
     ```
 10. ssh keys
 
-CONTINUE HERE !
 
 11. saml2aws (needs to be done after ZSH) - https://github.com/Versent/saml2aws#linux
     ```
