@@ -76,7 +76,7 @@ Import-Module oh-my-posh
 Set-Theme Paradox
 ```
 
-## wsl 
+## wsl - https://learn.microsoft.com/en-us/windows/wsl/setup/environment
 
 Set default WSL distro - in powershell
 ```
