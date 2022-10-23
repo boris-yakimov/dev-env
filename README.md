@@ -76,9 +76,10 @@ Import-Module oh-my-posh
 Set-Theme Paradox
 ```
 
-## wsl - https://learn.microsoft.com/en-us/windows/wsl/setup/environment
-
+## wsl 
+https://learn.microsoft.com/en-us/windows/wsl/setup/environment
 Set default WSL distro - in powershell
+
 ```
 wsl --setdefault <os_name>
 wsl --list -v
@@ -144,12 +145,7 @@ Install/Config :
     ```
     curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
     ```
- 
-    # for specific verison : 
-    ```
-    curl -LO https://dl.k8s.io/release/v1.19.8/bin/linux/amd64/kubectl
-    ```
-
+    
     ```
     sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
     ```
