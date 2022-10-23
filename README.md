@@ -103,23 +103,32 @@ Install/Config :
 
 3. golang  
 4. python + pip  
-5. git
-    - use windows credential manager
-    ```
-    # Make sure its installed with Git on windows
-    ls -lah /mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe
+5. git - https://git-scm.com/download/linux
+   ```
+   # Latest stable git
+   add-apt-repository ppa:git-core/ppa
+   apt update; apt install git
+   ```
 
-    # Configure WSL git to use it
-    git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"
-    
-    # The path may also be
-    git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
-    ```
+   Setup - https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git
+   ```
+   git config --global user.name "Your Name"
+   git config --global user.email "youremail@domain.com"
+   ```
 
-    If we intend to use Azure DevOps or Azure repos we also need to set the crential config bellow to avoid these errors - "fatal: Cannot determine the organization name for this 'dev.azure.com' remote URL. Ensure the `credential.useHttpPath` configuration value is set, or set the organization name as the user in the remote URL '{org}@dev.azure.com'."
-    ```
-    git config --global credential.https://dev.azure.com.useHttpPath true
-    ```
+   Windows credential manager
+   ```
+   # Make sure its installed with Git on windows - after git 1.37 moved to :
+   ls -alh /mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager-core.exe
+
+   # Configure WSL git to use it
+   git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager-core.exe"
+   ```
+
+   If we intend to use Azure DevOps or Azure repos we also need to set the crential config bellow to avoid these errors - "fatal: Cannot determine the organization name for this 'dev.azure.com' remote URL. Ensure the `credential.useHttpPath` configuration value is set, or set the organization name as the user in the remote URL '{org}@dev.azure.com'."
+   ```
+   git config --global credential.https://dev.azure.com.useHttpPath true
+   ```
 
 
 6. docker - enable Docker WSL integration   
