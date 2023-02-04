@@ -14,7 +14,7 @@ export ZSH="/root/.oh-my-zsh"
 
 ### Custom config ###
 
-# ZSH
+# ZSH 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Automatic update of zsh without prompts
@@ -23,24 +23,27 @@ DISABLE_UPDATE_PROMPT=true
 # tfswitch - terraform binaries
 export PATH=$PATH:$HOME/bin
 
-# Go
+# Path
 export PATH=$PATH:/usr/local/go/bin
+
+# Go
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
+alias code='/mnt/c/Users/yakim/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe'
 
 # Autocompletion for saml2aws
-eval "$(saml2aws --completion-script-zsh)"
+eval "$(saml2aws --completion-script-zsh)" 
 
 # Display
 #export DISPLAY=:0
 
-# Aliases - make sure paths are correct and exist
-export BROWSER=/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
-alias browse='/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe'
-alias home='cd /mnt/c/Users/byakimov_ad/Desktop'
-alias notepad='/mnt/c/Program\ Files/Notepad++/notepad++.exe'
+# Aliases
+export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
+alias browse='/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
+alias home='cd /mnt/c/Users/yakim/Desktop'
+alias notepad++='/mnt/c/Users/yakim/AppData/Local/Microsoft/WindowsApps/notepad++.exe'
 alias vim="nvim"
 alias vi="nvim"
 
@@ -150,3 +153,9 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
