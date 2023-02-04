@@ -275,6 +275,15 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
 
+Configure fzf zsh history search - https://github.com/joshskidmore/zsh-fzf-history-search
+```
+# Install
+git clone https://github.com/joshskidmore/zsh-fzf-history-search ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-fzf-history-search
+
+# Than add in .zshrc file
+plugins=(… zsh-fzf-history-search)
+```
+
 
 ### neovim 
 convert between file formats
