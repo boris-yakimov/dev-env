@@ -10,7 +10,7 @@ fi
 
 
 # Path to your oh-my-zsh installation.
-export ZSH="/root/.oh-my-zsh"
+export ZSH="/home/boris/.oh-my-zsh"
 
 ### Custom config ###
 
@@ -41,9 +41,9 @@ eval "$(saml2aws --completion-script-zsh)"
 
 # Aliases
 export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
-alias browse='/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
+alias browse='/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe'
 alias home='cd /mnt/c/Users/yakim/Desktop'
-alias notepad++='/mnt/c/Users/yakim/AppData/Local/Microsoft/WindowsApps/notepad++.exe'
+alias notepad++='/mnt/c/Users/yakim/AppData/Local/Microsoft/WindowsApps/notepad.exe'
 alias vim="nvim"
 alias vi="nvim"
 
