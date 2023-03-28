@@ -324,7 +324,7 @@ make sure ~/.config/nvim/init.vim is created and has correct contents
 1. vim-plug - https://github.com/junegunn/vim-plug
    Install Plug; open neovim and run PlugInstall ; PlugStatus
 
-   Points 2 to 7 should already be done by the PlugInstall if the correct init.vim file was added and PlugInstall executed :
+   Most points bellow should already be done by the PlugInstall if the correct init.vim file was added and PlugInstall executed :
 2. NERDCommenter
 3. Coc and Tabnine - autocomplete
 4. NERDTree (main tool) or nvim.tree (not tested)
