@@ -306,15 +306,25 @@ good guides
     - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
     - https://dev.to/jogendra/using-vim-for-go-development-5hc6
 
+scroll through whole vim guide before starting !
+
 0. Create nvim config directory and init.vim file from vim
+From inside neovim : 
 ```
 # create a directory to hold the init.vim file
 :call mkdir(stdpath('config'), 'p')
 # then create an init.vim file
 :exe 'edit '.stdpath('config').'/init.vim'
 ```
+Or just create ~/.config/nvim/init.vim directory and file
+
+copy contents of init.vim from this repo
+make sure ~/.config/nvim/init.vim is created and has correct contents
 
 1. vim-plug - https://github.com/junegunn/vim-plug
+   Install Plug; open neovim and run PlugInstall ; PlugStatus
+
+   Points 2 to 7 should already be done by the PlugInstall if the correct init.vim file was added and PlugInstall executed :
 2. NERDCommenter
 3. Coc and Tabnine - autocomplete
 4. NERDTree (main tool) or nvim.tree (not tested)
@@ -341,6 +351,8 @@ good guides
           \ }
     ```
 
+Run :checkhealth in vim to see what is the status of all vim plugins
+
 8. win32yank - clipboard - guide https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
     ```
     sudo curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
@@ -348,7 +360,7 @@ good guides
     sudo chmod +x /tmp/win32yank.exe
     sudo mv /tmp/win32yank.exe /usr/local/bin
     ```
-    in case of issues with clipbarod even with win32yank configured 
+    in case of issues with clipbarod even with win32yank configured  - it should not show as xclip under :checkhealth
     
     If Neovim is installed on both Windows and within the WSL distribution, the win32yank.exe binary provided by the Neovim Windows installation can be symlinked to a directory included in our $PATH so it can be found by Neovim on WSL. Replace $NEOVIM_WIN_DIR with the path to our Neovim Windows installation, e.g. /mnt/c/Program Files/Neovim. The command can then be symlinked using:
     ```
