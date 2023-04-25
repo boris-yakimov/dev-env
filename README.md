@@ -175,6 +175,7 @@ Install/Config :
 12. k9s https://k9scli.io/topics/install/
 
 ### zsh configuration
+
 Install oh-my-zsh
 ```
 # When prompted to set zsh as your default shell say Yes
@@ -189,9 +190,23 @@ mv zsh-autosuggestions/ ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/
 
 Than load it in ~/.zshrc in the plugins section
 ```
+# Plugins should be a part of the same plugins=() block otherwise it takes only the last one if there is more than one
 plugins=(zsh-autosuggestions)
 source ~/.zshrc
 ```
+
+Syntax Highlight for zsh - https://github.com/zsh-users/zsh-syntax-highlighting
+```
+# Downlaod
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+Than load it in .zshrc along with other plugins
+```
+plugins=(zsh-fzf-history-search zsh-autosuggestions zsh-syntax-highlighting git)
+source ~/.zshrc
+```
+
 
 Add custom .zshrc vars
 Make sure the paths are correct and exist - vscode, chrome, notepad++, etc
