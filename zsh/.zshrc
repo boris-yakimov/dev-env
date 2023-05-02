@@ -120,6 +120,11 @@ ZSH_DISABLE_COMPFIX=true
 # Plugins should be in one block otherwise it takes the last plugins=() block and ignores the first ones 
 plugins=(zsh-fzf-history-search zsh-autosuggestions zsh-syntax-highlighting git)
 
+# ZSH Syntax Highlight - remove underlining
+(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path]=none
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
