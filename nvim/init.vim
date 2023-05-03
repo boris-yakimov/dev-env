@@ -54,7 +54,9 @@ Plug 'itchyny/lightline.vim'
 " Terraform
 Plug 'hashivim/vim-terraform'
 Plug 'vim-syntastic/syntastic'
-Plug 'juliosueiras/vim-terraform-completion'
+" Completion plugin seems to spawn lots of terraform validate and provider
+" processes and slows down any vim save and file switch
+" Plug 'juliosueiras/vim-terraform-completion'
 
 " Powershell
 Plug 'vim-scripts/Windows-PowerShell-Syntax-Plugin'
