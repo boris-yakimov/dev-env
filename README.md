@@ -415,7 +415,7 @@ Run :checkhealth in vim to see what is the status of all vim plugins
 
   Additional Terraform vim stuff : 
   - Terraform Language Server - https://dev.to/braybaut/integrate-terraform-language-server-protocol-with-vim-38g
-  - https://github.com/juliosueiras/vim-terraform-completion
+  - https://github.com/juliosueiras/vim-terraform-completion (github issue with slowness - https://github.com/juliosueiras/vim-terraform-completion/issues/68)
 
 11. Powershell plugin - https://vimawesome.com/plugin/windows-powershell-syntax-file
     ```
