@@ -79,7 +79,7 @@ wsl --setdefault <os_name>
 wsl --list -v
 ```
 
-Change default Ubuntu user to root - in powershell
+(Optional) Change default Ubuntu user to root - in powershell
 ```
 ubuntu config --default-user root
 ```
