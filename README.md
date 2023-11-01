@@ -107,6 +107,13 @@ git clone https://github.com/zsh-users/zsh-autosuggestions
 mv zsh-autosuggestions/ ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/
 ```
 
+Copy .zshrc file from repo
+```
+mkdir ~/repos
+git clone https://github.com/burizz/dev-env.git
+ cp ~/repos/dev-env/zsh/.zshrc ~/
+```
+
 Than load it in ~/.zshrc in the plugins section
 ```
 # Plugins should be a part of the same plugins=() block otherwise it takes only the last one if there is more than one
