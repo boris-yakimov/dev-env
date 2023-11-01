@@ -91,106 +91,8 @@ Install/Config :
    ```
    apt install zsh
    ```
-2. Install neovim - https://github.com/neovim/neovim/releases
-   ```
-   apt install neovim
-   
-   # or for newer versions
-   # PPA repo is not officially maintained by neovim team
-   sudo apt-get install software-properties-common
-   sudo add-apt-repository ppa:neovim-ppa/stable
-   sudo apt-get update
-   sudo apt-get install neovim
 
-   # for latest version using appimage (works on most linux systems
-   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-   chmod u+x nvim.appimage
-   ./nvim.appimage
-
-   # If the ./nvim.appimage command fails, try:
-   ./nvim.appimage --appimage-extract
-   ./squashfs-root/AppRun --version
-
-   # Optional: exposing nvim globally.
-   sudo mv squashfs-root /
-   sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
-   nvim
-   
-   # or install check install guide for other approaches - https://github.com/neovim/neovim/wiki/Installing-Neovim
-   ```
-
-3. golang  
-4. python + pip  
-5. git - https://git-scm.com/download/linux
-   ```
-   # Latest stable git
-   sudo add-apt-repository ppa:git-core/ppa
-   sudo apt update; sudo apt install git
-   ```
-
-   Setup - https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git
-   ```
-   git config --global user.name "Your Name"
-   git config --global user.email "youremail@domain.com"
-   ```
-
-   Git credential manager from Windows into WSL - https://github.com/MicrosoftDocs/wsl/blob/main/WSL/tutorials/wsl-git.md
-   ```
-   # If GIT installed is >= v2.39.0
-   git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
-
-   # Configure WSL git to use it
-   git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
-   ```
-
-   If we intend to use Azure DevOps or Azure repos we also need to set the crential config bellow to avoid these errors - "fatal: Cannot determine the organization name for this 'dev.azure.com' remote URL. Ensure the `credential.useHttpPath` configuration value is set, or set the organization name as the user in the remote URL '{org}@dev.azure.com'."
-   ```
-   git config --global credential.https://dev.azure.com.useHttpPath true
-   ```
-
-
-6. docker - enable Docker WSL integration   
-7. terraform // hashicorp yum repo  
-    tfswitch - https://tfswitch.warrensbox.com/
-    enable tf autocomplete
-    ```
-    terraform -install-autocomplete
-    ```
-8. kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
-
-    # for latest version : 
-    ```
-    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-    ```
-    
-    ```
-    sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-    ```
-
-
-9. helm / helm diff - https://github.com/databus23/helm-diff
-    - helm autocompletion - To load completions for every new session, execute once:
-    ```
-    helm completion zsh > "${fpath[1]}/_helm"
-    ```
-10. ssh keys
-
-
-11. saml2aws (needs to be done after ZSH) - https://github.com/Versent/saml2aws#linux
-    ```
-    # Install saml2aws - if these steps fail just download the latest binary from Github
-    CURRENT_VERSION=$(curl -Ls https://api.github.com/repos/Versent/saml2aws/releases/latest | grep 'tag_name' | cut -d'v' -f2 | cut -d'"' -f1)
-    wget -c https://github.com/Versent/saml2aws/releases/download/v${CURRENT_VERSION}/saml2aws_${CURRENT_VERSION}_linux_amd64.tar.gz -O - | tar -xzv -C ~/.local/bin
-    chmod u+x ~/.local/bin/saml2aws
-    hash -r
-    saml2aws --version
-
-    # Configure autocomplete
-    eval "$(saml2aws --completion-script-zsh)"
-    ```
-
-12. k9s https://k9scli.io/topics/install/
-
+1.1 Configure zsh
 ### zsh configuration
 
 Install oh-my-zsh
@@ -315,7 +217,107 @@ git clone https://github.com/joshskidmore/zsh-fzf-history-search ${ZSH_CUSTOM:=~
 # Than add in .zshrc file
 plugins=(… zsh-fzf-history-search)
 ```
+   
+2. Install neovim - https://github.com/neovim/neovim/releases
+   ```
+   apt install neovim
+   
+   # or for newer versions
+   # PPA repo is not officially maintained by neovim team
+   sudo apt-get install software-properties-common
+   sudo add-apt-repository ppa:neovim-ppa/stable
+   sudo apt-get update
+   sudo apt-get install neovim
 
+   # for latest version using appimage (works on most linux systems
+   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+   chmod u+x nvim.appimage
+   ./nvim.appimage
+
+   # If the ./nvim.appimage command fails, try:
+   ./nvim.appimage --appimage-extract
+   ./squashfs-root/AppRun --version
+
+   # Optional: exposing nvim globally.
+   sudo mv squashfs-root /
+   sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
+   nvim
+   
+   # or install check install guide for other approaches - https://github.com/neovim/neovim/wiki/Installing-Neovim
+   ```
+
+3. golang  
+4. python + pip  
+5. git - https://git-scm.com/download/linux
+   ```
+   # Latest stable git
+   sudo add-apt-repository ppa:git-core/ppa
+   sudo apt update; sudo apt install git
+   ```
+
+   Setup - https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git
+   ```
+   git config --global user.name "Your Name"
+   git config --global user.email "youremail@domain.com"
+   ```
+
+   Git credential manager from Windows into WSL - https://github.com/MicrosoftDocs/wsl/blob/main/WSL/tutorials/wsl-git.md
+   ```
+   # If GIT installed is >= v2.39.0
+   git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
+
+   # Configure WSL git to use it
+   git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
+   ```
+
+   If we intend to use Azure DevOps or Azure repos we also need to set the crential config bellow to avoid these errors - "fatal: Cannot determine the organization name for this 'dev.azure.com' remote URL. Ensure the `credential.useHttpPath` configuration value is set, or set the organization name as the user in the remote URL '{org}@dev.azure.com'."
+   ```
+   git config --global credential.https://dev.azure.com.useHttpPath true
+   ```
+
+
+6. docker - enable Docker WSL integration   
+7. terraform // hashicorp yum repo - https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+    tfswitch - https://tfswitch.warrensbox.com/Install/ ; https://github.com/warrensbox/terraform-switcher
+    enable tf autocomplete
+    ```
+    terraform -install-autocomplete
+    ```
+8. kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+
+    # for latest version : 
+    ```
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    ```
+    
+    ```
+    sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+    ```
+
+
+9. helm / helm diff - https://github.com/databus23/helm-diff
+    - helm autocompletion - To load completions for every new session, execute once:
+    ```
+    # zsh should already be setup
+    helm completion zsh > "${fpath[1]}/_helm"
+    ```
+10. ssh keys
+
+
+11. saml2aws (needs to be done after ZSH) - https://github.com/Versent/saml2aws#linux
+    ```
+    # Install saml2aws - if these steps fail just download the latest binary from Github
+    CURRENT_VERSION=$(curl -Ls https://api.github.com/repos/Versent/saml2aws/releases/latest | grep 'tag_name' | cut -d'v' -f2 | cut -d'"' -f1)
+    wget -c https://github.com/Versent/saml2aws/releases/download/v${CURRENT_VERSION}/saml2aws_${CURRENT_VERSION}_linux_amd64.tar.gz -O - | tar -xzv -C ~/.local/bin
+    chmod u+x ~/.local/bin/saml2aws
+    hash -r
+    saml2aws --version
+
+    # Configure autocomplete
+    eval "$(saml2aws --completion-script-zsh)"
+    ```
+
+12. k9s https://k9scli.io/topics/install/
 
 ### neovim 
 convert between file formats
