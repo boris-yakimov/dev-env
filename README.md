@@ -4,11 +4,10 @@
 
 1. git
 2. visual studio
-3. atom
-4. golang
-5. python + pip
-6. docker
-7. neovim (setup bellow with chocolatey)
+3. golang
+4. python + pip
+5. docker
+6. neovim (setup bellow with chocolatey)
 
 ### ide
 1. visual studio
