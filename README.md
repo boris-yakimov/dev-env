@@ -44,27 +44,30 @@ Install neovim with scoop
 scoop install neovim
 ```
 
-Install posh-git and oh-my-posh
+Install oh-my-posh
 ```
-# You could have the following to allow for scripts execution 
-# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-Install-Module posh-git -Scope CurrentUser
-Install-Module oh-my-posh -Scope CurrentUser
+# https://ohmyposh.dev/docs/installation/windows
+scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
+# You can find the themes in the folder indicated by the environment variable POSH_THEMES_PATH
 ```
 
-Enable prompt
+Configure shell and theme
 ```
-# Start the default settings (might not work so optional)
-Set-Prompt
+# install fonts - https://ohmyposh.dev/docs/installation/fonts
+# run as Admin or pass --user
+oh-my-posh font install
 
-# To enable the engine edit your PowerShell profile, run
+## configure prompt - https://ohmyposh.dev/docs/installation/prompt
+# get current shell
+oh-my-posh get shell
+
+# edit profile config (if customization required)
 notepad $PROFILE
+# add in file cmd to start oh-my-posh in every powershell profile
+oh-my-posh init pwsh | Invoke-Expression
 
-# and append the following lines to the profile file you just opened (or created in case the file was not there already):
-
-Import-Module posh-git
-Import-Module oh-my-posh
-Set-Theme Paradox
+# source latest profile config
+. $PROFILE
 ```
 
 ## wsl 
