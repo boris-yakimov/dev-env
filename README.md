@@ -177,10 +177,12 @@ sed -i s/yakim/<new user>/g ~/.zshrc
 source ~/.zshrc
 ```
 
-Install powerlevel10k theme/prompt for oh-my-zsh - https://github.com/romkatv/powerlevel10k
+Install powerlevel10k theme/prompt for oh-my-zsh
 ```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
+
+check Getting Started section to install required fonts from https://github.com/romkatv/powerlevel10k
 
 Change zsh theme : 
 ```
