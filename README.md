@@ -194,6 +194,21 @@ change default shell to zsh
 chsh -s $(which zsh)
 ```
 
+Install fzf - https://github.com/junegunn/fzf
+```
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+```
+
+Configure fzf zsh history search - https://github.com/joshskidmore/zsh-fzf-history-search
+```
+# Install
+git clone https://github.com/joshskidmore/zsh-fzf-history-search ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-fzf-history-search
+
+# Than add in .zshrc file
+plugins=(… zsh-fzf-history-search)
+```
+
 source should show the Powerlevel10k setup screen, if not run it manually : 
 ```
 p10kconfigure
@@ -212,23 +227,8 @@ We need to install these fonts :
 We also need Nerd Fonts for rendeing icons in NERDTree, zsh, etc
 https://github.com/ryanoasis/nerd-fonts#option-2-release-archive-download
 Download whichever font we need from the latest archives (CascadiaCode.zip will contain caskaydia)
-1. Caskaydia Cove Nerd Font - same as the microsoft cascadia fonts, but with added nerd font icons and stuff
+Option 1. Caskaydia Cove Nerd Font - same as the microsoft cascadia fonts, but with added nerd font icons and stuff
 
-
-Install fzf - https://github.com/junegunn/fzf
-```
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-```
-
-Configure fzf zsh history search - https://github.com/joshskidmore/zsh-fzf-history-search
-```
-# Install
-git clone https://github.com/joshskidmore/zsh-fzf-history-search ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-fzf-history-search
-
-# Than add in .zshrc file
-plugins=(… zsh-fzf-history-search)
-```
    
 2. Install neovim - https://github.com/neovim/neovim/releases
    ```
