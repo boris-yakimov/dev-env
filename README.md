@@ -94,6 +94,15 @@ Install/Config :
 2. Install neovim
    ```
    apt install neovim
+   
+   # or for newer versions
+   # PPA repo is not officially maintained by neovim team
+   sudo apt-get install software-properties-common
+   sudo add-apt-repository ppa:neovim-ppa/stable
+   sudo apt-get update
+   sudo apt-get install neovim
+
+   # for latest manual install check install guide - https://github.com/neovim/neovim/wiki/Installing-Neovim
    ```
 
 3. golang  
