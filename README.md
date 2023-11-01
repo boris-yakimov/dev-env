@@ -124,8 +124,8 @@ Install/Config :
 5. git - https://git-scm.com/download/linux
    ```
    # Latest stable git
-   add-apt-repository ppa:git-core/ppa
-   apt update; apt install git
+   sudo add-apt-repository ppa:git-core/ppa
+   sudo apt update; sudo apt install git
    ```
 
    Setup - https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git
@@ -134,13 +134,13 @@ Install/Config :
    git config --global user.email "youremail@domain.com"
    ```
 
-   Windows credential manager
+   Git credential manager from Windows into WSL - https://github.com/MicrosoftDocs/wsl/blob/main/WSL/tutorials/wsl-git.md
    ```
-   # Make sure its installed with Git on windows - after git 1.37 moved to :
-   ls -alh /mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager-core.exe
+   # If GIT installed is >= v2.39.0
+   git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
 
    # Configure WSL git to use it
-   git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager-core.exe"
+   git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
    ```
 
    If we intend to use Azure DevOps or Azure repos we also need to set the crential config bellow to avoid these errors - "fatal: Cannot determine the organization name for this 'dev.azure.com' remote URL. Ensure the `credential.useHttpPath` configuration value is set, or set the organization name as the user in the remote URL '{org}@dev.azure.com'."
