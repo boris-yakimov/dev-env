@@ -91,7 +91,7 @@ Install/Config :
    ```
    apt install zsh
    ```
-2. Install neovim
+2. Install neovim - https://github.com/neovim/neovim/releases
    ```
    apt install neovim
    
