@@ -21,7 +21,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 DISABLE_UPDATE_PROMPT=true
 
 # tfswitch - terraform binaries
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin:~/.local/bin
 
 # Path
 export PATH=$PATH:/usr/local/go/bin
