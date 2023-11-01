@@ -102,7 +102,21 @@ Install/Config :
    sudo apt-get update
    sudo apt-get install neovim
 
-   # for latest manual install check install guide - https://github.com/neovim/neovim/wiki/Installing-Neovim
+   # for latest version using appimage (works on most linux systems
+   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+   chmod u+x nvim.appimage
+   ./nvim.appimage
+
+   # If the ./nvim.appimage command fails, try:
+   ./nvim.appimage --appimage-extract
+   ./squashfs-root/AppRun --version
+
+   # Optional: exposing nvim globally.
+   sudo mv squashfs-root /
+   sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
+   nvim
+   
+   # or install check install guide for other approaches - https://github.com/neovim/neovim/wiki/Installing-Neovim
    ```
 
 3. golang  
