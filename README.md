@@ -189,6 +189,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 source ~/.zshrc
 ```
 
+change default shell to zsh
+```
+chsh -s $(which zsh)
+```
+
 source should show the Powerlevel10k setup screen, if not run it manually : 
 ```
 p10kconfigure
