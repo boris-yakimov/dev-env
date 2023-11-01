@@ -19,16 +19,7 @@
     - Python
     - Tabnine
 
-2. atom
-    - Terraform
-        - terraform-fmt
-        - language-terraform
-    - HCL language support
-    - Wakatime
-    - Golang
-    - Tabnine
-
-3. notepad++
+2. notepad++
     - PluginManager - https://github.com/bruderstein/nppPluginManager
     - Diff plugini - https://github.com/pnedev/compare-plugin
 
