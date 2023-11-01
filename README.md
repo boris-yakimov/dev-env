@@ -213,7 +213,7 @@ plugins=(… zsh-fzf-history-search)
 
 source should show the Powerlevel10k setup screen, if not run it manually : 
 ```
-p10kconfigure
+p10k configure
 ```
 
 If we dont see diamond in powerlevel10k rather we see unicode stuff like []; the windows terminal theme is lacking support or windows fonts for it are not installed :
