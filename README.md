@@ -8,6 +8,7 @@
 4. python + pip
 5. docker
 6. neovim (setup bellow with chocolatey)
+7. windows terminal
 
 ### ide
 1. visual studio
@@ -22,11 +23,6 @@
 2. notepad++
     - PluginManager - https://github.com/bruderstein/nppPluginManager
     - Diff plugini - https://github.com/pnedev/compare-plugin
-
-### terminal
-1. windows terminal
-	- windows-terminal/settings.json
-	- may require fonts to be installed prior to configuration
 
 ### powershell
 
@@ -51,7 +47,7 @@ scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/downl
 # You can find the themes in the folder indicated by the environment variable POSH_THEMES_PATH
 ```
 
-Configure shell and theme
+Configure shell and theme - after fonts are installed they have to be selected from windows terminal appearance config
 ```
 # install fonts - https://ohmyposh.dev/docs/installation/fonts
 # run as Admin or pass --user
@@ -219,6 +215,8 @@ p10k configure
 If we dont see diamond in powerlevel10k rather we see unicode stuff like []; the windows terminal theme is lacking support or windows fonts for it are not installed :
 https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup
 https://docs.microsoft.com/en-us/windows/terminal/cascadia-code
+
+! Check those may alraedy be installed from the powershell setup steps - they may appear alraedy as options in the windows terminal appearance section
 
 We need to install these fonts :
 1. CascadiaCode
