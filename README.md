@@ -479,7 +479,19 @@ Run :checkhealth in vim to see what is the status of all vim plugins
     sudo apt install nodejs
     ```
 
-15. Python autocomplete - https://github.com/davidhalter/jedi-vim
+    this will likely install an older version if you need a newer version - https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-22-04
+    ```
+    cd ~
+    curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
+    sudo bash nodesource_setup.sh
+    sudo apt install nodejs
+    node -v
+
+    Output
+    v18.7.0
+    ```
+
+16. Python autocomplete - https://github.com/davidhalter/jedi-vim
     ```
     sudo python -m pip install jedi
     ```
