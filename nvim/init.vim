@@ -34,6 +34,8 @@ Plug 'ncm2/ncm2-go'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+" tabnine - https://github.com/codota/tabnine-nvim
+Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
 
 "Snippets:
 Plug 'ncm2/ncm2-ultisnips'
@@ -131,7 +133,6 @@ let g:terraform_align=1
 " Allow vim-terraform to automatically format *.tf and *.tfvars files with terraform fmt. You can also do this manually with the :TerraformFmt command.
 let g:terraform_fmt_on_save=1
 
-
 "Move lines up and down - shift + up / down arrows
 nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+<CR>
@@ -199,6 +200,19 @@ if filereadable(expand("~/.config/nvim/plugged/vim-go/plugin/go.vim"))
   autocmd FileType go nmap <leader>t  <Plug>(go-test)
 endif
 
+
+" Tabnine config
+lua <<EOF
+require('tabnine').setup({
+  disable_auto_comment=true,
+  accept_keymap="<Tab>",
+  dismiss_keymap = "<C-]>",
+  debounce_ms = 800,
+  suggestion_color = {gui = "#808080", cterm = 244},
+  exclude_filetypes = {"TelescopePrompt", "NvimTree"},
+  log_file_path = nil, -- absolute path to Tabnine log file
+})
+EOF
 
 """"'' /// END - Custom settings ''"""""
 

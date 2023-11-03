@@ -523,15 +523,17 @@ verify everything is good with :
 nvim +checkhealth
 ```
 
+CoC - NodeJS extension host for vim & neovim, load extensions like VSCode and host language servers - https://github.com/neoclide/coc.nvim
+CoC Langauage servers - https://github.com/neoclide/coc.nvim/wiki/Language-servers
+
 Verify Coc configuration
 ```
 nvim +CocConfig
 ```
 
-Install Coc stuff
+Install JSON language extension for coc.nvim
 ```
 nvim 
-:CocInstall coc-tabnine
 :CocInstall coc-json
 ```
 
@@ -539,14 +541,6 @@ Enable Coc extension autoupdate
 ```
 nvim +CocCommand
 extensions.toggleAutoUpdate
-```
-
-Enable ignore_all_lsp in tabnine
-```
-nvim +CocCommand
-tabnine.openConfig
-
-"ignore_all_lsp" : true
 ```
 
 verify everything is good with a Go project : 
