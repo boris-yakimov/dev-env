@@ -9,6 +9,7 @@
 5. docker
 6. neovim (setup bellow with chocolatey)
 7. windows terminal
+8. notepad++
 
 ### ide
 1. visual studio
