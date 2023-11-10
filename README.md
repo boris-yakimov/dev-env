@@ -83,7 +83,16 @@ ubuntu config --default-user root
 
 Install/Config : 
 
-1. Install zsh 
+0. Configurte no password sudo for main user
+   ```
+   # Open sudo config
+   sudo visudo
+
+   # Add
+   <user> ALL=(ALL) NOPASSWD: ALL
+   ```
+
+2. Install zsh 
    ```
    apt install zsh
    ```
