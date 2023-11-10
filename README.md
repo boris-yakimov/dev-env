@@ -225,6 +225,7 @@ If we dont see diamond in powerlevel10k rather we see unicode stuff like []; the
 https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup
 https://docs.microsoft.com/en-us/windows/terminal/cascadia-code
 
+!! IT IS NOW MUCH EASIER TO INSTALL FONTS FROM POWERSHELL - using oh-my-posh font install
 ! Check those may alraedy be installed from the powershell setup steps - they may appear alraedy as options in the windows terminal appearance section
 
 We need to install these fonts :
