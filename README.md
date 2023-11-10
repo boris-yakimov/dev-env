@@ -12,7 +12,13 @@
 8. notepad++
 
 ### ide
-1. visual studio
+1. neovim (installed in both win and linux - linux configuration at the end of the guide)
+
+2. notepad++
+    - PluginManager - https://github.com/bruderstein/nppPluginManager
+    - Diff plugini - https://github.com/pnedev/compare-plugin
+  
+3. visual studio
     - Wakatime
     - Atom Material Theme
     - Remote WSL
@@ -21,13 +27,8 @@
     - Python
     - Tabnine
 
-2. notepad++
-    - PluginManager - https://github.com/bruderstein/nppPluginManager
-    - Diff plugini - https://github.com/pnedev/compare-plugin
-  
-3. neovim (installed in both win and linux - linux configuration at the end of the guide)
 
-### powershell
+### powershell setup
 
 Install chocolatey and scoop
 ```
@@ -69,7 +70,8 @@ oh-my-posh init pwsh | Invoke-Expression
 . $PROFILE
 ```
 
-## wsl 
+
+### wsl setup
 https://learn.microsoft.com/en-us/windows/wsl/setup/environment
 Set default WSL distro - in powershell
 
@@ -84,7 +86,7 @@ ubuntu config --default-user root
 ```
 
 
-Install/Config : 
+### linux configuration : 
 
 0. Configurte no password sudo for main user
    ```
@@ -100,7 +102,9 @@ Install/Config :
    apt install zsh
    ```
 
-1.1 Configure zsh
+2.1 Configure zsh
+
+
 ### zsh configuration
 
 Install oh-my-zsh
@@ -140,7 +144,6 @@ Than load it in .zshrc along with other plugins
 plugins=(zsh-fzf-history-search zsh-autosuggestions zsh-syntax-highlighting git)
 source ~/.zshrc
 ```
-
 
 Add custom .zshrc vars
 Make sure the paths are correct and exist - vscode, chrome, notepad++, etc
@@ -243,7 +246,7 @@ Download whichever font we need from the latest archives (CascadiaCode.zip will 
 Option 1. Caskaydia Cove Nerd Font - same as the microsoft cascadia fonts, but with added nerd font icons and stuff
 
    
-2. Install neovim - https://github.com/neovim/neovim/releases
+3. Install neovim - https://github.com/neovim/neovim/releases
    ```
    apt install neovim
    
@@ -271,9 +274,9 @@ Option 1. Caskaydia Cove Nerd Font - same as the microsoft cascadia fonts, but w
    # or install check install guide for other approaches - https://github.com/neovim/neovim/wiki/Installing-Neovim
    ```
 
-3. golang  
-4. python + pip  
-5. git - https://git-scm.com/download/linux
+4. golang  
+5. python + pip  
+6. git - https://git-scm.com/download/linux
    ```
    # Latest stable git
    sudo add-apt-repository ppa:git-core/ppa
@@ -300,15 +303,14 @@ Option 1. Caskaydia Cove Nerd Font - same as the microsoft cascadia fonts, but w
    git config --global credential.https://dev.azure.com.useHttpPath true
    ```
 
-
-6. docker - enable Docker WSL integration   
-7. terraform // hashicorp yum repo - https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+7. docker - enable Docker WSL integration   
+8. terraform // hashicorp yum repo - https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
     tfswitch - https://tfswitch.warrensbox.com/Install/ ; https://github.com/warrensbox/terraform-switcher
     enable tf autocomplete
     ```
     terraform -install-autocomplete
     ```
-8. kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+9. kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
     # for latest version : 
     ```
@@ -320,16 +322,16 @@ Option 1. Caskaydia Cove Nerd Font - same as the microsoft cascadia fonts, but w
     ```
 
 
-9. helm / helm diff - https://github.com/databus23/helm-diff
+10. helm / helm diff - https://github.com/databus23/helm-diff
     - helm autocompletion - To load completions for every new session, execute once:
     ```
     # zsh should already be setup
     helm completion zsh > "${fpath[1]}/_helm"
     ```
-10. ssh keys
+11. ssh keys
 
 
-11. saml2aws (needs to be done after ZSH) - https://github.com/Versent/saml2aws#linux
+12. saml2aws (needs to be done after ZSH) - https://github.com/Versent/saml2aws#linux
     ```
     # Install saml2aws - if these steps fail just download the latest binary from Github
     CURRENT_VERSION=$(curl -Ls https://api.github.com/repos/Versent/saml2aws/releases/latest | grep 'tag_name' | cut -d'v' -f2 | cut -d'"' -f1)
@@ -342,30 +344,11 @@ Option 1. Caskaydia Cove Nerd Font - same as the microsoft cascadia fonts, but w
     eval "$(saml2aws --completion-script-zsh)"
     ```
 
-12. k9s https://k9scli.io/topics/install/
+13. k9s https://k9scli.io/topics/install/
 
-### neovim 
-convert between file formats
-```
-# Windows
-:setlocal fileformat=dos
-```
+14. Configure neovim
 
-```
-# Linux
-:setlocal fileformat=unix
-```
-
-set soft word wrapping
-```
-:set wrap linebreak
-```
-
-good guides
-    - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
-    - https://dev.to/jogendra/using-vim-for-go-development-5hc6
-
-scroll through whole vim guide before starting !
+### neovim configuration
 
 0. Create nvim config directory and init.vim file from vim
 From inside neovim : 
@@ -512,7 +495,7 @@ Run :checkhealth in vim to see what is the status of all vim plugins
     Plug 'davidhalter/jedi-vim'
     ```
 
-Install yarn (Coc autocomplete needs it)
+17. Install yarn (Coc autocomplete needs it)
 https://classic.yarnpkg.com/en/docs/install#debian-stable
 
 Copy custom configs
@@ -522,18 +505,18 @@ cp nvim/init.vim ~/.config/nvim/init.vim
 cp 
 ```
 
-configure python provider (optional): 
+18. configure python provider (optional): 
 ```
 pip3 install --upgrade pynvim
 pip3 install --upgrade neovim-remote
 ```
 
-configure node.js provider (optional): 
+19. configure node.js provider (optional): 
 ```
 npm install -g neovim
 ```
 
-Install plugins and Go binaries (requires GOBIN to be set properly in zsh and env var) - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
+20. Install plugins and Go binaries (requires GOBIN to be set properly in zsh and env var) - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
 ```
 nvim +PlugInstall
 nvim +GoInstallBinaries
@@ -548,7 +531,7 @@ verify everything is good with :
 nvim +checkhealth
 ```
 
-CoC - NodeJS extension host for vim & neovim, load extensions like VSCode and host language servers - https://github.com/neoclide/coc.nvim
+21. CoC configuration - CoC is a NodeJS extension host for vim & neovim, load extensions like VSCode and host language servers - https://github.com/neoclide/coc.nvim
 CoC Langauage servers - https://github.com/neoclide/coc.nvim/wiki/Language-servers
 
 Verify Coc configuration
@@ -573,8 +556,25 @@ verify everything is good with a Go project :
 :CocList diagnostics
 ```
 
+### other optional/informational
 nvim clipboard failing in :healthcheck can be temporarily ignored,we can copy paste stuff by temporarily disabling mouse VISUAL mode in vim temporarily :
 afterwards yank copy stuff needs to be fixed to work properly with windows clipboard
 ```
 :set mouse=
+```
+
+convert between file formats
+```
+# Windows
+:setlocal fileformat=dos
+```
+
+```
+# Linux
+:setlocal fileformat=unix
+```
+
+set soft word wrapping
+```
+:set wrap linebreak
 ```
