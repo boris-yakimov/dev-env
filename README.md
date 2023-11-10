@@ -24,6 +24,8 @@
 2. notepad++
     - PluginManager - https://github.com/bruderstein/nppPluginManager
     - Diff plugini - https://github.com/pnedev/compare-plugin
+  
+3. neovim (installed in both win and linux - linux configuration at the end of the guide)
 
 ### powershell
 
