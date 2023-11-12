@@ -25,7 +25,7 @@
     - Terraform
     - Golang
     - Python
-    - Tabnine
+    - Tabnine or Github Copilot
 
 
 ### powershell setup
@@ -368,7 +368,7 @@ make sure ~/.config/nvim/init.vim is created and has correct contents
 
    Most points bellow should already be done by the PlugInstall if the correct init.vim file was added and PlugInstall executed :
 2. NERDCommenter
-3. Coc and Tabnine - autocomplete (MOVED as a neovim plugin instead)
+3. Coc and Tabnine - autocomplete (MOVED as a neovim plugin instead - also Github CoPilot setup as an alternative)
 4. NERDTree (main tool) or nvim.tree (not tested)
 5. Theme - morhetz/gruvbox
 6. Golang/Python/Rust support
@@ -533,6 +533,14 @@ nvim +checkhealth
 
 21. CoC configuration - CoC is a NodeJS extension host for vim & neovim, load extensions like VSCode and host language servers - https://github.com/neoclide/coc.nvim
 CoC Langauage servers - https://github.com/neoclide/coc.nvim/wiki/Language-servers
+
+22. Github CoPilot - https://github.com/github/copilot.vim
+Should already be in vim init
+```
+Plug 'github/copilot.vim'
+# than run from nvim
+:Copilot setup
+```
 
 Verify Coc configuration
 ```
