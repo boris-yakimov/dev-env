@@ -34,8 +34,12 @@ Plug 'ncm2/ncm2-go'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-" tabnine - https://github.com/codota/tabnine-nvim
+
+" Tabnine - https://github.com/codota/tabnine-nvim
 Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
+
+" Github CoPilot
+" Plug 'github/copilot.vim'
 
 "Snippets:
 Plug 'ncm2/ncm2-ultisnips'
