@@ -141,7 +141,8 @@ nnoremap <S-Down> :m+<CR>
 inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
 
-let mapleader=";"
+" Set leader to \ - same as default but good for overview
+let mapleader = "\\"
 
 "'' Go Configuration''"
 if filereadable(expand("~/.config/nvim/plugged/vim-go/plugin/go.vim"))
