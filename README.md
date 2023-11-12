@@ -538,7 +538,9 @@ CoC Langauage servers - https://github.com/neoclide/coc.nvim/wiki/Language-serve
 Should already be in vim init
 ```
 Plug 'github/copilot.vim'
+
 # than run from nvim
+:PlugInstall
 :Copilot setup
 ```
 
