@@ -25,7 +25,7 @@
     - Terraform
     - Golang
     - Python
-    - Tabnine or Github Copilot
+    - Tabnine or Github Copilot (paid)
 
 
 ### powershell setup
