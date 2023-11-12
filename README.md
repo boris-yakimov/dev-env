@@ -368,11 +368,12 @@ make sure ~/.config/nvim/init.vim is created and has correct contents
 
    Most points bellow should already be done by the PlugInstall if the correct init.vim file was added and PlugInstall executed :
 2. NERDCommenter
-3. Coc and Tabnine - autocomplete (MOVED as a neovim plugin instead - also Github CoPilot setup as an alternative)
-4. NERDTree (main tool) or nvim.tree (not tested)
-5. Theme - morhetz/gruvbox
-6. Golang/Python/Rust support
-7. Lightline
+3. CoC - CoC is a NodeJS extension host for vim & neovim, load extensions like VSCode and host language servers -
+4. Tabnine/Github CoPilot (paid)
+5. NERDTree (main tool) or nvim.tree (not tested)
+6. Theme - morhetz/gruvbox
+7. Golang/Python/Rust support
+8. Lightline
     - Example lightline config with different themes that also shows Git branch
     ```
     "'' Configure Lightline status bar ''"
@@ -531,7 +532,7 @@ verify everything is good with :
 nvim +checkhealth
 ```
 
-21. CoC configuration - CoC is a NodeJS extension host for vim & neovim, load extensions like VSCode and host language servers - https://github.com/neoclide/coc.nvim
+21. CoC configuration - https://github.com/neoclide/coc.nvim
 CoC Langauage servers - https://github.com/neoclide/coc.nvim/wiki/Language-servers
 
 22. Github CoPilot - https://github.com/github/copilot.vim
