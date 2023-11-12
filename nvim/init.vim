@@ -7,10 +7,6 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
-"File Search:
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-
 "File Browser: NerdTree
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -48,9 +44,11 @@ Plug 'SirVer/ultisnips'
 "Git:
 Plug 'tpope/vim-fugitive'
 
-" Utilities
+" Filesearch
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" Utilities
 Plug 'preservim/nerdcommenter'
 Plug 'voldikss/vim-floaterm'
 
@@ -143,6 +141,8 @@ nnoremap <S-Down> :m+<CR>
 inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
 
+let mapleader=";"
+
 "'' Go Configuration''"
 if filereadable(expand("~/.config/nvim/plugged/vim-go/plugin/go.vim"))
   "Run goimports along with gofmt on each save
@@ -217,6 +217,13 @@ require('tabnine').setup({
   log_file_path = nil, -- absolute path to Tabnine log file
 })
 EOF
+
+"File Search: fuzzy finder remap
+"------------
+"allows FZF to open by pressing CTRL-F
+map <C-f> :FZF<CR>
+"allow FZF to search hidden 'dot' files
+let $FZF_DEFAULT_COMMAND = "find -L"
 
 """"'' /// END - Custom settings ''"""""
 
@@ -331,13 +338,6 @@ inoremap <expr> <up> pumvisible() ? "\<C-E>" : "\<up>"
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-"FILE SEARCH:
-"------------
-"allows FZF to open by pressing CTRL-F
-map <C-p> :FZF<CR>
-"allow FZF to search hidden 'dot' files
-let $FZF_DEFAULT_COMMAND = "find -L"
 
 "FILE BROWSER: NERDTree
 "-------------
