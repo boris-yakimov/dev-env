@@ -368,7 +368,7 @@ make sure ~/.config/nvim/init.vim is created and has correct contents
 
    Most points bellow should already be done by the PlugInstall if the correct init.vim file was added and PlugInstall executed :
 2. NERDCommenter
-3. Coc and Tabnine - autocomplete
+3. Coc and Tabnine - autocomplete (MOVED as a neovim plugin instead)
 4. NERDTree (main tool) or nvim.tree (not tested)
 5. Theme - morhetz/gruvbox
 6. Golang/Python/Rust support
