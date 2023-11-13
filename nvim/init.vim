@@ -135,14 +135,14 @@ let g:terraform_align=1
 " Allow vim-terraform to automatically format *.tf and *.tfvars files with terraform fmt. You can also do this manually with the :TerraformFmt command.
 let g:terraform_fmt_on_save=1
 
+" Set leader to \ - same as default but good for overview
+let mapleader = "\\"
+
 "Move lines up and down - shift + up / down arrows
 nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+<CR>
 inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
-
-" Set leader to \ - same as default but good for overview
-let mapleader = "\\"
 
 "'' Go Configuration''"
 if filereadable(expand("~/.config/nvim/plugged/vim-go/plugin/go.vim"))
@@ -222,7 +222,7 @@ EOF
 "File Search: fuzzy finder remap
 "------------
 "allows FZF to open by pressing CTRL-F
-map <C-f> :FZF<CR>
+map <leader>f :FZF<CR>
 "allow FZF to search hidden 'dot' files
 let $FZF_DEFAULT_COMMAND = "find -L"
 
@@ -274,9 +274,9 @@ nnoremap <silent> U :call <SID>show_documentation()<CR>
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
-" Remap for format selected region
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" Remap for format selected region - temp disable to use <leader>f for fzf
+" vmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 " Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions
