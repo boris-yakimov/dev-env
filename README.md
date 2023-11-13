@@ -590,8 +590,8 @@ set soft word wrapping
 :set wrap linebreak
 ```
 
-errors like - "ncm2_go@yarp typeerror: expected str, byes or os.PathLike object, not nonetype" are related to the ncm package used in nvim config
-last time it was solved by installing a gocode depdency - no idea what this is for
+errors inside nvim on go project like - "ncm2_go@yarp typeerror: expected str, byes or os.PathLike object, not nonetype" are related to the ncm package used in nvim config
+last time it was solved by installing a gocode depdency - no idea what this is for but it solved - https://github.com/ncm2/ncm2-go/tree/master
 ```
 go get -u github.com/mdempsky/gocode
 ```
