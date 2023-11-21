@@ -33,8 +33,10 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
 alias code='/mnt/c/Users/yakim/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe'
 
-# Autocompletion for saml2aws
-eval "$(saml2aws --completion-script-zsh)" 
+# Autocompletion for saml2aws, helm, kubectl 
+eval "$(saml2aws --completion-script-zsh)"
+eval "$(kubectl completion zsh)"
+eval "$(helm completion zsh)"
 
 # Display
 #export DISPLAY=:0
