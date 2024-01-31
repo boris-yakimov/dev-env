@@ -250,13 +250,16 @@ potential tmux setup in zsh - to be explored further if I want to use this along
 
 ##  tmux config
 # dev env
-TMUX_DEV_ENV_SESSION="dev-env"
+TMUX_DEV_ENV_SESSION="dotfiles"
 tmux has-session -t $TMUX_DEV_ENV_SESSION&> /dev/null
 if [ $? != 0 ] 
  then
-    tmux new-session -s $TMUX_DEV_ENV_SESSION -n "dev-env" -d -c "cd ~/repos/dev-env/"
+    tmux new-session -s $TMUX_DEV_ENV_SESSION -n "dotfiles" -d -c "cd ~/repos/dev-env/"
     tmux send-keys -t $TMUX_DEV_ENV_SESSION "~/repos/dev-env" C-m 
 fi
+
+alias dotfiles="tmux a -t dotfiles"
+
 ```
    
 3. Install neovim - https://github.com/neovim/neovim/releases
