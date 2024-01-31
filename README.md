@@ -357,6 +357,9 @@ fi
     eval "$(saml2aws --completion-script-zsh)"
     ```
 
+    to persistently store password we need to configure pass (the unix password manager) as backend for saml2aws as passwords are not stored permanently in WSL2 and wincred is not supported   
+    steps to set this up - https://github.com/Versent/saml2aws?tab=readme-ov-file#option-2-configure-pass-to-be-the-default-keyring
+
 13. k9s https://k9scli.io/topics/install/
 
 14. Configure neovim
