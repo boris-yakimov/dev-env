@@ -289,10 +289,12 @@ alias dotfiles="tmux a -t dotfiles"
    
    # or install check install guide for other approaches - https://github.com/neovim/neovim/wiki/Installing-Neovim
    ```
+   on next install check options for color scheme Kanagawa- https://github.com/rebelot/kanagawa.nvim?tab=readme-ov-file
+   on next install redo neovim configs into lua and fix lsps
 
-4. golang  
-5. python + pip  
-6. git - https://git-scm.com/download/linux
+5. golang  
+6. python + pip  
+7. git - https://git-scm.com/download/linux
    ```
    # Latest stable git
    sudo add-apt-repository ppa:git-core/ppa
@@ -319,14 +321,14 @@ alias dotfiles="tmux a -t dotfiles"
    git config --global credential.https://dev.azure.com.useHttpPath true
    ```
 
-7. docker - enable Docker WSL integration   
-8. terraform // hashicorp yum repo - https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+8. docker - enable Docker WSL integration   
+9. terraform // hashicorp yum repo - https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
     tfswitch - https://tfswitch.warrensbox.com/Install/ ; https://github.com/warrensbox/terraform-switcher
     enable tf autocomplete
     ```
     terraform -install-autocomplete
     ```
-9. kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+10. kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
     # for latest version : 
     ```
@@ -338,16 +340,16 @@ alias dotfiles="tmux a -t dotfiles"
     ```
 
 
-10. helm / helm diff - https://github.com/databus23/helm-diff
+11. helm / helm diff - https://github.com/databus23/helm-diff
     - helm autocompletion - To load completions for every new session, execute once:
     ```
     # zsh should already be setup
     helm completion zsh > "${fpath[1]}/_helm"
     ```
-11. ssh keys
+12. ssh keys
 
 
-12. saml2aws (needs to be done after ZSH) - https://github.com/Versent/saml2aws#linux
+13. saml2aws (needs to be done after ZSH) - https://github.com/Versent/saml2aws#linux
     ```
     # Install saml2aws - if these steps fail just download the latest binary from Github
     CURRENT_VERSION=$(curl -Ls https://api.github.com/repos/Versent/saml2aws/releases/latest | grep 'tag_name' | cut -d'v' -f2 | cut -d'"' -f1)
@@ -363,9 +365,9 @@ alias dotfiles="tmux a -t dotfiles"
     to persistently store password we need to configure pass (the unix password manager) as backend for saml2aws as passwords are not stored permanently in WSL2 and wincred is not supported   
     steps to set this up - https://github.com/Versent/saml2aws?tab=readme-ov-file#option-2-configure-pass-to-be-the-default-keyring
 
-13. k9s https://k9scli.io/topics/install/
+14. k9s https://k9scli.io/topics/install/
 
-14. Configure neovim
+15. Configure neovim
 
 ### neovim configuration
 
