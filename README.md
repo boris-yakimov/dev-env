@@ -89,18 +89,18 @@ ubuntu config --default-user root
 ### linux configuration : 
 
 0. Configurte no password sudo for main user
-   ```
-   # Open sudo config
-   sudo visudo
+```
+# Open sudo config
+sudo visudo
 
-   # Add
-   <user> ALL=(ALL) NOPASSWD: ALL
-   ```
+# Add
+<user> ALL=(ALL) NOPASSWD: ALL
+```
 
 2. Install zsh 
-   ```
-   apt install zsh
-   ```
+```
+sudo apt install zsh
+```
 
 2.1 Configure zsh
 
@@ -121,9 +121,9 @@ mv zsh-autosuggestions/ ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/
 
 Copy .zshrc file from repo
 ```
-mkdir ~/repos
+mkdir ~/repos && cd ~/repos
 git clone https://github.com/burizz/dev-env.git
- cp ~/repos/dev-env/zsh/.zshrc ~/
+cp ~/repos/dev-env/zsh/.zshrc ~/
 ```
 
 Than load it in ~/.zshrc in the plugins section
@@ -226,7 +226,13 @@ source should show the Powerlevel10k setup screen, if not run it manually :
 ```
 p10k configure
 ```
+AUTOAMTED WAY TO INSTALL NERD FONTS : 
+```
+# in powershell
+oh-my-posh font install
+```
 
+MANUAL WAY TO INSTALL NERD FONTS : 
 If we dont see diamond in powerlevel10k rather we see unicode stuff like []; the windows terminal theme is lacking support or windows fonts for it are not installed :
 https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup
 https://docs.microsoft.com/en-us/windows/terminal/cascadia-code
@@ -322,8 +328,9 @@ alias dotfiles="tmux a -t dotfiles"
    ```
 
 8. docker - enable Docker WSL integration   
-9. terraform // hashicorp yum repo - https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
-    tfswitch - https://tfswitch.warrensbox.com/Install/ ; https://github.com/warrensbox/terraform-switcher
+9. terraform // hashicorp yum repo - https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli  
+    tfswitch - https://tfswitch.warrensbox.com/Install/ ; https://github.com/warrensbox/terraform-switcher  
+
     enable tf autocomplete
     ```
     terraform -install-autocomplete
