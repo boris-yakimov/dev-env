@@ -322,11 +322,10 @@ alias dotfiles="tmux a -t dotfiles"
    git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
    ```
 
-   # TODO: check why it was better to use Windows' credential manager in some cases - what did we need to shared credentials with ? 
-   alternatively we can just setup a local git credential store in WSL
-   ```
-   git config --global credential.helper store
-   ```
+   TODO: This needs to be tested
+   git credential helper without installing git on windows - https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/wsl.md#configuring-wsl-without-git-for-windows
+   there is an option to download git credential manager for windows without having to install git altogether - https://github.com/git-ecosystem/git-credential-manager
+
 
    If we intend to use Azure DevOps or Azure repos we also need to set the crential config bellow to avoid these errors - "fatal: Cannot determine the organization name for this 'dev.azure.com' remote URL. Ensure the `credential.useHttpPath` configuration value is set, or set the organization name as the user in the remote URL '{org}@dev.azure.com'."
    ```
