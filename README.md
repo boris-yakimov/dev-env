@@ -313,7 +313,7 @@ alias dotfiles="tmux a -t dotfiles"
    git config --global user.email "youremail@domain.com"
    ```
 
-   Git credential manager from Windows into WSL - https://github.com/MicrosoftDocs/wsl/blob/main/WSL/tutorials/wsl-git.md
+   Git credential manager from Windows Git into WSL - https://github.com/MicrosoftDocs/wsl/blob/main/WSL/tutorials/wsl-git.md
    ```
    # If GIT installed is >= v2.39.0
    git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
@@ -322,9 +322,41 @@ alias dotfiles="tmux a -t dotfiles"
    git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
    ```
 
-   TODO: This needs to be tested
-   git credential helper without installing git on windows - https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/wsl.md#configuring-wsl-without-git-for-windows
-   there is an option to download git credential manager for windows without having to install git altogether - https://github.com/git-ecosystem/git-credential-manager
+   Alernatively Git credential manager can be setup without WindowS Git - https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/wsl.md#configuring-wsl-without-git-for-windows  
+
+   example setup : 
+   download latest credential manager from - https://github.com/git-ecosystem/git-credential-manager  
+   either run the .exe to install it or copy the zip and extract it
+   than configure git in WSL : 
+   ```
+   git config --global credential.helper "/mnt/c/Program\ Files\ \(x86\)/Git\ Credential\ Manager/git-credential-manager.exe"
+
+   # For Azure DevOps support only
+   git config --global credential.https://dev.azure.com.useHttpPath true
+   ```
+
+   In Windows you need to update the WSLENV environment variable to include the value GIT_EXEC_PATH/wp. From an Administrator powershell run the following:
+
+   ```
+   SETX WSLENV %WSLENV%:GIT_EXEC_PATH/wp
+   ```
+   After updating the WSLENV environment variable, restart your WSL installation.
+   keep in mind the calling the credential manager directly to test if works will fail with this alternative strategy but it will work when called from Git itself, example error : 
+   ```
+    ~ ❯ /mnt/c/Program\ Files\ \(x86\)/Git\ Credential\ Manager/git-credential-manager.exe --version
+
+    Unhandled Exception: System.Exception: Failed to locate 'git.exe' executable on the path.
+       at GitCredentialManager.EnvironmentExtensions.LocateExecutable(IEnvironment environment, String program)
+       at GitCredentialManager.CommandContext.GetGitPath(IEnvironment environment, IFileSystem fileSystem, ITrace trace)
+       at GitCredentialManager.CommandContext..ctor()
+       at GitCredentialManager.Program.AppMain(Object o)
+       at System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+       at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+       at System.Threading.ThreadHelper.ThreadStart(Object obj)
+   ```
+
 
 
    If we intend to use Azure DevOps or Azure repos we also need to set the crential config bellow to avoid these errors - "fatal: Cannot determine the organization name for this 'dev.azure.com' remote URL. Ensure the `credential.useHttpPath` configuration value is set, or set the organization name as the user in the remote URL '{org}@dev.azure.com'."
