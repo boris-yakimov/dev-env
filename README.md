@@ -431,11 +431,13 @@ make sure ~/.config/nvim/init.vim is created and has correct contents
 Run :checkhealth in vim to see what is the status of all vim plugins
 
 8. win32yank - clipboard - guide https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
+
+    check what is the latest version of win32yank
     ```
-    sudo curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+    sudo curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip
     sudo unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
     sudo chmod +x /tmp/win32yank.exe
-    sudo mv /tmp/win32yank.exe /usr/local/bin
+    sudo mv /tmp/win32yank.exe /usr/local/bin/
     ```
     in case of issues with clipbarod even with win32yank configured  - it should not show as xclip under :checkhealth
     
