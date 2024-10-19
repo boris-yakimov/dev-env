@@ -295,7 +295,9 @@ nvim
 
 # or install check install guide for other approaches - https://github.com/neovim/neovim/wiki/Installing-Neovim
 ```
-on next install check options for color scheme Kanagawa- https://github.com/rebelot/kanagawa.nvim?tab=readme-ov-file
+
+TODO: !
+on next install check options for color scheme Kanagawa- https://github.com/rebelot/kanagawa.nvim?tab=readme-ov-file  
 on next install redo neovim configs into lua and fix lsps
 
 5. golang  
