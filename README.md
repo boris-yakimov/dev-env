@@ -251,23 +251,65 @@ https://github.com/ryanoasis/nerd-fonts#option-2-release-archive-download
 Download whichever font we need from the latest archives (CascadiaCode.zip will contain caskaydia)
 Option 1. Caskaydia Cove Nerd Font - same as the microsoft cascadia fonts, but with added nerd font icons and stuff
 
-```
-potential tmux setup in zsh - to be explored further if I want to use this along with the windows terminal multiplexing
+tmux config - already in .zshrc but here for reference
 
-##  tmux config
+copy the tmux.conf
+```
+cp ~/repos/dev-env/.tmux.conf ~/.tmux.conf
+cat ~/.tmux.conf
+```
+
+config in .zshrc
+```
 # dev env
-TMUX_DEV_ENV_SESSION="dotfiles"
+TMUX_DEV_ENV_SESSION="dev"
 tmux has-session -t $TMUX_DEV_ENV_SESSION&> /dev/null
 if [ $? != 0 ] 
  then
-    tmux new-session -s $TMUX_DEV_ENV_SESSION -n "dotfiles" -d -c "cd ~/repos/dev-env/"
-    tmux send-keys -t $TMUX_DEV_ENV_SESSION "~/repos/dev-env" C-m 
+    tmux new-session -s $TMUX_DEV_ENV_SESSION -n "dev" -d
+    tmux send-keys -t $TMUX_DEV_ENV_SESSION "~/repos/dev-env/" C-m 
 fi
 
-alias dotfiles="tmux a -t dotfiles"
+# landing zones project
+alias dev="tmux a -t dev"
 
+TMUX_LZ_SESSION="lz"
+tmux has-session -t $TMUX_LZ_SESSION&> /dev/null
+if [ $? != 0 ] 
+ then
+    tmux new-session -s $TMUX_LZ_SESSION -n "lz_nvim" -d "cd ~/repos/itgix/itgix-aws-landing-zones/ && nvim ./"
+ 
+    # stat new window in session and switch to dir
+    tmux new-window -d -n "lz_tf_exec" -t $TMUX_LZ_SESSION:1
+    tmux send-keys -t $TMUX_LZ_SESSION:1 "~/repos/itgix/itgix-aws-landing-zones/landing-zone-deployment" C-m
+
+    tmux new-window -d -n "lz_tf_modules_nvim" -t $TMUX_LZ_SESSION:2 "cd ~/repos/itgix/itgix-aws-landing-zones/terraform-modules/ && nvim ./"
+
+    tmux new-window -d -n "lz_tf_modules_dir" -t $TMUX_LZ_SESSION:3
+    tmux send-keys -t $TMUX_LZ_SESSION:3 "~/repos/itgix/itgix-aws-landing-zones/terraform-modules/" C-m
+fi
+
+alias lz="tmux a -t lz"
+
+# vw projects
+TMUX_VW_SESSION="vw"
+tmux has-session -t $TMUX_VW_SESSION&> /dev/null
+if [ $? != 0 ] 
+ then
+    # TODO window for the tunnels with ncat split window
+    tmux new-session -s $TMUX_VW_SESSION -n "vw_nvim" -d
+    tmux send-keys -t $TMUX_VW_SESSION "~/repos/vwfs/" C-m
+
+    tmux new-window -d -n "vw_tf" -t $TMUX_VW_SESSION:1
+    tmux send-keys -t $TMUX_VW_SESSION:1 "~/repos/vwfs/" C-m
+
+    tmux new-window -d -n "vw_login" -t $TMUX_VW_SESSION:2
+    tmux split-window -h -t $TMUX_VW_SESSION:2
+fi
+
+alias vw="tmux a -t vw"
 ```
-   
+
 3. Install neovim - https://github.com/neovim/neovim/releases
 ```
 apt install neovim
