@@ -33,11 +33,6 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
 alias code='/mnt/c/Users/yakim/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe'
 
-# Autocompletion for saml2aws, helm, kubectl 
-eval "$(saml2aws --completion-script-zsh)"
-eval "$(kubectl completion zsh)"
-eval "$(helm completion zsh)"
-
 # Display
 #export DISPLAY=:0
 
@@ -48,6 +43,67 @@ alias home='cd /mnt/c/Users/yakim/Desktop'
 alias notepad++='/mnt/c/Users/yakim/AppData/Local/Microsoft/WindowsApps/notepad.exe'
 alias vim="nvim"
 alias vi="nvim"
+
+# Autocompletion for saml2aws, helm, kubectl 
+eval "$(saml2aws --completion-script-zsh)"
+eval "$(kubectl completion zsh)"
+eval "$(helm completion zsh)"
+
+# configure unix pass - https://www.passwordstore.org/ as backend for saml2aws to persist password - needed for WSL since there is no default keychain to store it and wincred doesn't work
+#export SAML2AWS_KEYRING_BACKEND=pass
+#export GPG_TTY="$( tty )"
+
+# set tmux to use full color mode by default
+alias tmux="TERM=screen-256color-bce tmux"
+
+##  tmux config
+# dev env
+TMUX_DEV_ENV_SESSION="dev"
+tmux has-session -t $TMUX_DEV_ENV_SESSION&> /dev/null
+if [ $? != 0 ] 
+ then
+    tmux new-session -s $TMUX_DEV_ENV_SESSION -n "dev" -d
+    tmux send-keys -t $TMUX_DEV_ENV_SESSION "~/repos/dev-env/" C-m 
+fi
+
+# landing zones project
+alias dev="tmux a -t dev"
+
+TMUX_LZ_SESSION="lz"
+tmux has-session -t $TMUX_LZ_SESSION&> /dev/null
+if [ $? != 0 ] 
+ then
+    tmux new-session -s $TMUX_LZ_SESSION -n "nvim" -d "cd ~/repos/itgix/itgix-aws-landing-zones/ && nvim ./"
+ 
+    # stat new window in session and switch to dir
+    tmux new-window -d -n "tf_exec" -t $TMUX_LZ_SESSION:1
+    tmux send-keys -t $TMUX_LZ_SESSION:1 "~/repos/itgix/itgix-aws-landing-zones/landing-zone-deployment" C-m
+
+    tmux new-window -d -n "tf_modules_nvim" -t $TMUX_LZ_SESSION:2 "cd ~/repos/itgix/itgix-aws-landing-zones/terraform-modules/ && nvim ./"
+
+    tmux new-window -d -n "tf_modules_dir" -t $TMUX_LZ_SESSION:3
+    tmux send-keys -t $TMUX_LZ_SESSION:3 "~/repos/itgix/itgix-aws-landing-zones/terraform-modules/" C-m
+fi
+
+alias lz="tmux a -t lz"
+
+# vw projects
+TMUX_VW_SESSION="vw"
+tmux has-session -t $TMUX_VW_SESSION&> /dev/null
+if [ $? != 0 ] 
+ then
+    # TODO window for the tunnels with ncat split window
+    tmux new-session -s $TMUX_VW_SESSION -n "nvim" -d
+    tmux send-keys -t $TMUX_VW_SESSION "~/repos/vwfs/" C-m
+
+    tmux new-window -d -n "tf" -t $TMUX_VW_SESSION:1
+    tmux send-keys -t $TMUX_VW_SESSION:1 "~/repos/vwfs/" C-m
+
+    tmux new-window -d -n "vw_login" -t $TMUX_VW_SESSION:2
+    tmux split-window -h -t $TMUX_VW_SESSION:2
+fi
+
+alias vw="tmux a -t vw"
 
 ### End Custom config ###
 
