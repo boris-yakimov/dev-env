@@ -64,6 +64,14 @@ if [ $? != 0 ]
  then
     tmux new-session -s $TMUX_DEV_ENV_SESSION -n "dev" -d
     tmux send-keys -t $TMUX_DEV_ENV_SESSION "~/repos/dev-env/" C-m 
+    
+    # stat new window in session and open readme
+    tmux new-window -d -n "readme" -t $TMUX_DEV_ENV_SESSION:1
+    tmux send-keys -t $TMUX_DEV_ENV_SESSION:1 "cd ~/repos/dev-env/" C-m
+    tmux send-keys -t $TMUX_DEV_ENV_SESSION:1 "nvim ./" C-m
+   
+    # when started focus on first nvim window
+    tmux select-window -t $TMUX_DEV_ENV_SESSION:0
 fi
 
 # landing zones project
@@ -83,6 +91,9 @@ if [ $? != 0 ]
 
     tmux new-window -d -n "tf_modules_dir" -t $TMUX_LZ_SESSION:3
     tmux send-keys -t $TMUX_LZ_SESSION:3 "~/repos/itgix/itgix-aws-landing-zones/terraform-modules/" C-m
+
+    # when started focus on first nvim window
+    tmux select-window -t $TMUX_LZ_SESSION:0
 fi
 
 alias lz="tmux a -t lz"
@@ -101,6 +112,9 @@ if [ $? != 0 ]
 
     tmux new-window -d -n "vw_login" -t $TMUX_VW_SESSION:2
     tmux split-window -h -t $TMUX_VW_SESSION:2
+
+    # when started focus on login window
+    tmux select-window -t $TMUX_VW_SESSION:2
 fi
 
 alias vw="tmux a -t vw"
