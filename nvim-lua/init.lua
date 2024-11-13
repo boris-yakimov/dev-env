@@ -1,10 +1,10 @@
 -- Indentation
-vim.cmd("set shiftwidth=2")
+vim.cmd("set shiftwidth=4")
 vim.cmd("set expandtab")
 
--- TODO: check what these 2 do exactly
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
+-- TODO: check what these two do exactly
+vim.cmd("set tabstop=4")
+vim.cmd("set softtabstop=4")
 
 -- TODO: test how it looks with python and go with 4 spaces
 --vim.cmd("autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4")
