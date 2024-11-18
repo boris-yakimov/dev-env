@@ -1,3 +1,6 @@
+TODO: finsh lua refactoring for nvim
+TODO: tmux todos
+
 # dev-env
 
 ## win
