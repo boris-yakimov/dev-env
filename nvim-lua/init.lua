@@ -24,7 +24,7 @@ vim.cmd("set softtabstop=4")
 
 -- TODO: To ALWAYS use the clipboard for ALL operations (instead of interacting with the '+' and/or '*' registers explicitly):
 --" send even vim yanks to the system clipboard
---set clipboard+=unnamedplus
+-- set clipboard+=unnamedplus
 
 
 -- In a global plugin <Leader> should be used and in a filetype plugin <LocalLeader>. "mapleader" and "maplocalleader" can be equal.
