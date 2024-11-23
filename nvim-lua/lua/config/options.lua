@@ -25,10 +25,7 @@ opt.cursorline = true -- enable highlighting of the current line
 opt.linebreak = true -- wrap lines at convenient points
 opt.backspace = { "indent", "eol", "start" } -- allow backspace to delete indentation and inserted text
 
--- TODO: To ALWAYS use the clipboard for ALL operations (instead of interacting with the '+' and/or '*' registers explicitly):
---" send even vim yanks to the system clipboard
--- set clipboard+=unnamedplus
---  TODO: how do we fix this for the WSL win32 clipboard
+-- use the clipboard for ALL operations (instead of interacting with the '+' and/or '*' registers explicitly)
+-- also sends vim yanks to the system clipboard
+-- TODO: need to figure out why win32yank seems to be very slow sometimes on WSL
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
-
--- TODO: do I need devicons - https://github.com/nvim-tree/nvim-web-devicons
