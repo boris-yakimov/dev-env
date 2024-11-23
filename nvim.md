@@ -16,9 +16,11 @@ prep dir for custom lua configs
 mkdir -p ~/.config/nvim/lua/config/
 ```
 
-copy init.lua and other lua confgs
+copy all lua configs
 ```
-cp -r nvim-lua/* ~/.config/nvim/
+# first cleanup than copy
+rm -rf ~/.config/nvim/
+mkdir -p ~/.config/nvim && cp -r nvim-lua/* ~/.config/nvim/
 ```
 
 open nvim and run lazy to update plugins
