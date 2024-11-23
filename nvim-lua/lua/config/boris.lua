@@ -1,4 +1,5 @@
--- Bootstrap lazy.nvim
+-- Package manager
+-- Bootstrap lazy.nvim - https://lazy.folke.io/installation
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -26,15 +27,13 @@ require("lazy").setup({
 		lazy = false, -- load plugins at start (if true will load them only when they are needed)
 		version = false, -- always use the latest git commit for stability
 	},
-	-- TODO: can I just remove this since colorscheme is configured separetely under plugins
-	-- install = { colorscheme = { "catppuccin" } },
+	install = { colorscheme = { "catppuccin" } },
 	checker = {
 		enabled = true, -- check for plugin updates periodically
 		notify = false, -- notify on update
 	}, -- automatically check for plugin updates
 	performance = {
 		rtp = {
-			-- TODO: review properly what this does
 			-- disable some rtp plugins
 			disabled_plugins = {
 				"gzip",
@@ -49,9 +48,3 @@ require("lazy").setup({
 		},
 	},
 })
-
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
-vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
