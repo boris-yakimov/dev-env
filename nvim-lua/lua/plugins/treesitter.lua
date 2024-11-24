@@ -5,7 +5,7 @@ return {
 		opts.ensure_installed = vim.list_extend(opts.ensure_installed or {}, {
 			"python",
 			"go",
-			"hcl",
+			"hcl", -- TODO: check if need both hcl and terraform
 			"terraform",
 		})
 	end,

@@ -1,9 +1,9 @@
-TODO: finsh lua refactoring for nvim
-TODO: tmux todos
+TODO: finsh lua refactoring for nvim  
+TODO: tmux todos  
 
 # dev-env
 
-## win
+### win
 
 1. git
 2. visual studio
@@ -15,7 +15,7 @@ TODO: tmux todos
 8. notepad++
 
 ### ide
-1. neovim (installed in both win and linux - linux configuration at the end of the guide)
+1. neovim (installed in both win and linux - config is at the end of the guide)
 
 2. notepad++
     - PluginManager - https://github.com/bruderstein/nppPluginManager
@@ -28,8 +28,6 @@ TODO: tmux todos
     - Terraform
     - Golang
     - Python
-    - Tabnine or Github Copilot (paid)
-
 
 ### powershell setup
 
@@ -229,13 +227,13 @@ source should show the Powerlevel10k setup screen, if not run it manually :
 ```
 p10k configure
 ```
-AUTOAMTED WAY TO INSTALL NERD FONTS : 
+AUTOAMTED WAY TO INSTALL NERD FONTS (recommended) : 
 ```
 # in powershell
 oh-my-posh font install
 ```
 
-MANUAL WAY TO INSTALL NERD FONTS : 
+MANUAL WAY TO INSTALL NERD FONTS (only if automated way doesn't work) : 
 If we dont see diamond in powerlevel10k rather we see unicode stuff like []; the windows terminal theme is lacking support or windows fonts for it are not installed :
 https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup
 https://docs.microsoft.com/en-us/windows/terminal/cascadia-code
@@ -411,7 +409,7 @@ If we intend to use Azure DevOps or Azure repos we also need to set the crential
 git config --global credential.https://dev.azure.com.useHttpPath true
 ```
 
-8. docker - enable Docker WSL integration   
+8. docker - enable Docker WSL integration  
 9. terraform // hashicorp yum repo - https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli  
     tfswitch - https://tfswitch.warrensbox.com/Install/ ; https://github.com/warrensbox/terraform-switcher  
 
@@ -457,248 +455,4 @@ steps to set this up - https://github.com/Versent/saml2aws?tab=readme-ov-file#op
 
 14. k9s https://k9scli.io/topics/install/
 
-15. Configure neovim
-
-### neovim configuration
-
-0. Create nvim config directory and init.vim file from vim
-From inside neovim : 
-```
-# create a directory to hold the init.vim file
-:call mkdir(stdpath('config'), 'p')
-# then create an init.vim file
-:exe 'edit '.stdpath('config').'/init.vim'
-```
-Or just create ~/.config/nvim/init.vim directory and file
-
-copy contents of init.vim from this repo
-make sure ~/.config/nvim/init.vim is created and has correct contents
-
-1. vim-plug - https://github.com/junegunn/vim-plug
-   Install Plug; open neovim and run PlugInstall ; PlugStatus
-
-   Most points bellow should already be done by the PlugInstall if the correct init.vim file was added and PlugInstall executed :
-2. NERDCommenter
-3. CoC - CoC is a NodeJS extension host for vim & neovim, load extensions like VSCode and host language servers -
-4. Tabnine/Github CoPilot (paid)
-5. NERDTree (main tool) or nvim.tree (not tested)
-6. Theme - morhetz/gruvbox
-7. Golang/Python/Rust support
-8. Lightline
-- Example lightline config with different themes that also shows Git branch
-```
-"'' Configure Lightline status bar ''"
-"let g:lightline = {'colorscheme' : 'horizon'}
-"let g:lightline = {'colorscheme': 'wombat'}
-
-" set lightline to include git-branch
-let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ,
-      \             [ 'venv', 'readonly'] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
-      \   'venv': 'virtualenv#statusline'
-      \ },
-      \ }
-```
-
-Run :checkhealth in vim to see what is the status of all vim plugins
-
-8. win32yank - clipboard - guide https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
-
-check what is the latest version of win32yank
-```
-sudo curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip
-sudo unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
-sudo chmod +x /tmp/win32yank.exe
-sudo mv /tmp/win32yank.exe /usr/local/bin/
-```
-in case of issues with clipbarod even with win32yank configured  - it should not show as xclip under :checkhealth
-
-If Neovim is installed on both Windows and within the WSL distribution, the win32yank.exe binary provided by the Neovim Windows installation can be symlinked to a directory included in our $PATH so it can be found by Neovim on WSL. Replace $NEOVIM_WIN_DIR with the path to our Neovim Windows installation, e.g. /mnt/c/Program Files/Neovim. The command can then be symlinked using:
-```
-sudo ln -s "$NEOVIM_WIN_DIR/bin/win32yank.exe" "/usr/local/bin/win32yank.exe"
-```
-
-make sure Neovim is also installed on Windows
-```
-scoop install neovim
-
-# Set symlink in WSL to win32yank that is part of Neovim - Windows path may be different here
-sudo ln -s /mnt/c/Users/yakim/scoop/apps/neovim/current/bin/win32yank.exe /usr/local/bin/win32yank.exe
-```
-
-In either case, don't forget to set Neovim's clipboard to unnamedplus using set clipboard=unnamedplus to make Neovim use the system's (i.e Windows') clipboard by default.
-
-If Neovim keeps detecting xclip instead of win32yank; we can rename it (not sure if this may not cause other issues)
-```
-mv /usr/bin/xclip /usr/bin/xclip-bkp
-```
-
-9. Wakatime - https://github.com/wakatime/vim-wakatime
-10. Terraform Plugin - https://github.com/hashivim/vim-terraform
-```
-# Allow vim-terraform to align settings automatically with Tabularize. - Default: 0
-let g:terraform_align = 1
-
-# Allow vim-terraform to use a custom path for the terraform binary. - Default: terraform
-"let g:terraform_binary_path = 'terraform'
-
-# Allow vim-terraform to automatically format *.tf and *.tfvars files with terraform fmt. You can also do this manually with the `:TerraformFmt` command. - Default: 0
-let g:terraform_fmt_on_save = 1
-
-# Allow vim-terraform to automatically fold (hide until unfolded) sections of
-"let g:terraform_fold_sections = 1
-```
-
-Additional Terraform vim stuff : 
-- Terraform Language Server - https://dev.to/braybaut/integrate-terraform-language-server-protocol-with-vim-38g
-- https://github.com/juliosueiras/vim-terraform-completion (github issue with slowness - https://github.com/juliosueiras/vim-terraform-completion/issues/68)
-
-11. Powershell plugin - https://vimawesome.com/plugin/windows-powershell-syntax-file
-```
-Plug 'vim-scripts/Windows-PowerShell-Syntax-Plugin'
-```
-
-12. Polyglot plugin - https://vimawesome.com/plugin/vim-polyglot
-```
-" Multi-language syntax plugin
-Plug 'sheerun/vim-polyglot'
-```
-
-13. Install neovim - https://github.com/neovim/neovim/wiki/Installing-Neovim
-```
-sudo apt update
-sudo apt install neovim
-```
-install neovim version >= 5
-```
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt-get update
-sudo apt-get install neovim
-```
-
-14. Install nodejs
-```
-sudo apt update
-sudo apt install nodejs
-```
-
-this will likely install an older version if you need a newer version - https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-22-04
-```
-cd ~
-curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
-sudo bash nodesource_setup.sh
-sudo apt install nodejs
-node -v
-
-Output
-v18.7.0
-```
-
-16. Python autocomplete - https://github.com/davidhalter/jedi-vim
-```
-sudo python -m pip install jedi
-```
-
-```
-" Python autocomplete plugin
-Plug 'davidhalter/jedi-vim'
-```
-
-17. Install yarn (Coc autocomplete needs it)
-https://classic.yarnpkg.com/en/docs/install#debian-stable
-
-Copy custom configs
-```
-mkdir -p ~/.config/nvim/
-cp nvim/init.vim ~/.config/nvim/init.vim
-cp 
-```
-
-18. configure python provider (optional): 
-```
-pip3 install --upgrade pynvim
-pip3 install --upgrade neovim-remote
-```
-
-19. configure node.js provider (optional): 
-```
-npm install -g neovim
-```
-
-20. Install plugins and Go binaries (requires GOBIN to be set properly in zsh and env var) - https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
-```
-nvim +PlugInstall
-nvim +GoInstallBinaries
-```
-verify tools are in $GOBIN
-```
-ls -la $GOBIN
-```
-
-verify everything is good with : 
-```
-nvim +checkhealth
-```
-
-21. CoC configuration - https://github.com/neoclide/coc.nvim
-CoC Langauage servers - https://github.com/neoclide/coc.nvim/wiki/Language-servers
-
-22. Github CoPilot - https://github.com/github/copilot.vim
-Should already be in vim init
-```
-Plug 'github/copilot.vim'
-
-# than run from nvim
-:PlugInstall
-:Copilot setup
-```
-
-Verify Coc configuration
-```
-nvim +CocConfig
-```
-
-Install JSON language extension for coc.nvim
-```
-nvim 
-:CocInstall coc-json
-```
-
-Enable Coc extension autoupdate
-```
-nvim +CocCommand
-extensions.toggleAutoUpdate
-```
-
-verify everything is good with a Go project : 
-```
-:CocList diagnostics
-```
-
-### other optional/informational
-nvim clipboard failing in :healthcheck can be temporarily ignored,we can copy paste stuff by temporarily disabling mouse VISUAL mode in vim temporarily :
-afterwards yank copy stuff needs to be fixed to work properly with windows clipboard
-```
-:set mouse=
-```
-
-convert between file formats
-```
-# Windows
-:setlocal fileformat=dos
-```
-
-```
-# Linux
-:setlocal fileformat=unix
-```
-
-set soft word wrapping
-```
-:set wrap linebreak
-```
+15. Configure neovim - TODO: add link to the neovim.md
