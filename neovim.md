@@ -1,8 +1,9 @@
 ## required tools
 nvim => v0.10
+go => v1.23
+lua => 5.3
 npm => ? (for ruff)
 python => v3.12 (for pyright)
-go => v1.23
 
 nvim install 
 ```
@@ -52,6 +53,36 @@ rm -rf ~/.config/nvim/
 mkdir -p ~/.config/nvim && cp -r nvim-lua/* ~/.config/nvim/
 ```
 
+6. Install npm package for neovim
+```
+npm install -g neovim
+```
+
+7. Install lua and liblua-dev needed for luarocks
+```
+sudo apt install lua5.3 liblua5.3-0-dev
+```
+
+8. Install luarocks - https://luarocks.org/#quick-start
+```
+$ wget https://luarocks.org/releases/luarocks-3.11.1.tar.gz
+$ tar zxpf luarocks-3.11.1.tar.gz
+$ cd luarocks-3.11.1
+$ ./configure && make && sudo make install
+$ sudo luarocks install luasocket
+$ lua
+Lua 5.3.5 Copyright (C) 1994-2018 Lua.org, PUC-Rio
+```
+
+9. Install lazygit - https://github.com/jesseduffield/lazygit
+```
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit -D -t /usr/local/bin/
+```
+
+
 ### run, update and verify : 
 
 open nvim and run lazy to update plugins
@@ -71,8 +102,7 @@ verify that LSPs are working
 :LspInfo
 ```
 
-
-## TODO: verify these with the lua setup on the next install 
+## TODO: verify these with the lua setup on the next install
 win32yank - clipboard - guide https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
 
 check what is the latest version of win32yank

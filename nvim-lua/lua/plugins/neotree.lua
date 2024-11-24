@@ -8,8 +8,7 @@ return {
 		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 	keys = {
-		-- default was :
-		-- { "<leader>n", ":Neotree toggle<CR>", desc = "Toggle Neo-tree" },
-		{ "nt", ":Neotree toggle<CR>", desc = "Toggle Neo-tree" },
+		{ "<leader>n", ":Neotree toggle<CR>", desc = "Toggle Neo-tree" },
+		-- { "nt", ":Neotree toggle<CR>", desc = "Toggle Neo-tree" },
 	},
 }
