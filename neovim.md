@@ -40,6 +40,11 @@ npm -v
 node -v
 ```
 
+5. ruff - for python lsp https://github.com/astral-sh/ruff
+```
+curl -LsSf https://astral.sh/ruff/install.sh | sh
+```
+
 ### copy all lua configs : 
 ```
 # first cleanup than copy
@@ -59,6 +64,13 @@ verify healthcheck of plugins
 :checkhealth telescope
 :checkhealth
 ```
+
+verify that LSPs are working
+```
+# open any file type that we use an lsp for - .go, .tf, .py, lua, etc
+:LspInfo
+```
+
 
 ## TODO: verify these with the lua setup on the next install 
 win32yank - clipboard - guide https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
