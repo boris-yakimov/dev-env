@@ -1,3 +1,5 @@
+TODO: some time on kanagawa theme
+
 ## required tools
 nvim => v0.10
 go => v1.23
