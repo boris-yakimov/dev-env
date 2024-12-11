@@ -1,11 +1,11 @@
 TODO: some time on kanagawa theme
 
 ## required tools
-nvim => v0.10
-go => v1.23
-lua => 5.3
-npm => ? (for ruff)
-python => v3.12 (for pyright)
+nvim => v0.10  
+go => v1.23  
+lua => 5.3  
+npm => ? (for ruff)  
+python => v3.12 (for pyright)  
 
 nvim install 
 ```
