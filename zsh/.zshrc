@@ -66,12 +66,12 @@ if [ $? != 0 ]
     tmux send-keys -t $TMUX_DEV_ENV_SESSION "~/repos/dev-env/" C-m 
     
     # stat new window in session and open readme
-    tmux new-window -d -n "readme" -t $TMUX_DEV_ENV_SESSION:1
-    tmux send-keys -t $TMUX_DEV_ENV_SESSION:1 "cd ~/repos/dev-env/" C-m
-    tmux send-keys -t $TMUX_DEV_ENV_SESSION:1 "nvim ./" C-m
+    tmux new-window -d -n "readme" -t $TMUX_DEV_ENV_SESSION:2
+    tmux send-keys -t $TMUX_DEV_ENV_SESSION:2 "cd ~/repos/dev-env/" C-m
+    tmux send-keys -t $TMUX_DEV_ENV_SESSION:2 "nvim ./" C-m
    
     # when started focus on first nvim window
-    tmux select-window -t $TMUX_DEV_ENV_SESSION:0
+    tmux select-window -t $TMUX_DEV_ENV_SESSION:1
 fi
 
 # landing zones project
@@ -84,16 +84,16 @@ if [ $? != 0 ]
     tmux new-session -s $TMUX_LZ_SESSION -n "nvim" -d "cd ~/repos/itgix/itgix-aws-landing-zones/ && nvim ./"
  
     # stat new window in session and switch to dir
-    tmux new-window -d -n "tf_exec" -t $TMUX_LZ_SESSION:1
-    tmux send-keys -t $TMUX_LZ_SESSION:1 "~/repos/itgix/itgix-aws-landing-zones/landing-zone-deployment" C-m
+    tmux new-window -d -n "tf_exec" -t $TMUX_LZ_SESSION:2
+    tmux send-keys -t $TMUX_LZ_SESSION:2 "~/repos/itgix/itgix-aws-landing-zones/landing-zone-deployment" C-m
 
-    tmux new-window -d -n "tf_modules_nvim" -t $TMUX_LZ_SESSION:2 "cd ~/repos/itgix/itgix-aws-landing-zones/terraform-modules/ && nvim ./"
+    tmux new-window -d -n "tf_modules_nvim" -t $TMUX_LZ_SESSION:3 "cd ~/repos/itgix/itgix-aws-landing-zones/terraform-modules/ && nvim ./"
 
-    tmux new-window -d -n "tf_modules_dir" -t $TMUX_LZ_SESSION:3
-    tmux send-keys -t $TMUX_LZ_SESSION:3 "~/repos/itgix/itgix-aws-landing-zones/terraform-modules/" C-m
+    tmux new-window -d -n "tf_modules_dir" -t $TMUX_LZ_SESSION:4
+    tmux send-keys -t $TMUX_LZ_SESSION:4 "~/repos/itgix/itgix-aws-landing-zones/terraform-modules/" C-m
 
     # when started focus on first nvim window
-    tmux select-window -t $TMUX_LZ_SESSION:0
+    tmux select-window -t $TMUX_LZ_SESSION:1
 fi
 
 alias lz="tmux a -t lz"
@@ -107,14 +107,14 @@ if [ $? != 0 ]
     tmux new-session -s $TMUX_VW_SESSION -n "nvim" -d
     tmux send-keys -t $TMUX_VW_SESSION "~/repos/vwfs/" C-m
 
-    tmux new-window -d -n "tf" -t $TMUX_VW_SESSION:1
-    tmux send-keys -t $TMUX_VW_SESSION:1 "~/repos/vwfs/" C-m
+    tmux new-window -d -n "tf" -t $TMUX_VW_SESSION:2
+    tmux send-keys -t $TMUX_VW_SESSION:2 "~/repos/vwfs/" C-m
 
-    tmux new-window -d -n "vw_login" -t $TMUX_VW_SESSION:2
-    tmux split-window -h -t $TMUX_VW_SESSION:2
+    tmux new-window -d -n "vw_login" -t $TMUX_VW_SESSION:3
+    tmux split-window -h -t $TMUX_VW_SESSION:3
 
     # when started focus on login window
-    tmux select-window -t $TMUX_VW_SESSION:2
+    tmux select-window -t $TMUX_VW_SESSION:3
 fi
 
 alias vw="tmux a -t vw"
