@@ -5,39 +5,37 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-
-# Path to your oh-my-zsh installation.
+# path to oh-my-zsh installation
 export ZSH="/home/boris/.oh-my-zsh"
 
 ### Custom config ###
 
-# ZSH 
+# theme 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Automatic update of zsh without prompts
+# automatic update of zsh without prompts
 DISABLE_UPDATE_PROMPT=true
 
 # tfswitch - terraform binaries
 export PATH=$PATH:$HOME/bin:~/.local/bin
 
-# Path
-export PATH=$PATH:/usr/local/go/bin
+# snap path (if snap is used to install stuff)
+export PATH=$PATH:/snap/bin
 
-# Go
+# Go - TODO: check if I still need to set those with the newer versions of go
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
-alias code='/mnt/c/Users/yakim/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe'
+export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN:/usr/local/go/bin
 
-# Display
+# display
 #export DISPLAY=:0
 
-# Aliases
+# TODO: check what this was for
 export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
+
+# aliases
+alias code='/mnt/c/Users/yakim/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe'
 alias browse='/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe'
 alias home='cd /mnt/c/Users/yakim/Desktop'
 alias notepad++='/mnt/c/Users/yakim/AppData/Local/Microsoft/WindowsApps/notepad.exe'
