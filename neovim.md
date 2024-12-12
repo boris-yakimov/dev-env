@@ -4,14 +4,19 @@ TODO: some time on kanagawa theme
 nvim => v0.10  
 go => v1.23  
 lua => 5.3  
-npm => ? (for ruff)  
+npm => 9.2 (for ruff)  
 python => v3.12 (for pyright)  
 
-nvim install 
+nvim install - https://github.com/neovim/neovim/releases
 ```
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install neovim
+
+# or from snap
+sudo snap install --beta nvim --classic
+
+# or app image or tar alternatives; steps are in the notes of each release - https://github.com/neovim/neovim/releases
 ```
 
 ### dependencies : 
@@ -62,17 +67,18 @@ npm install -g neovim
 
 7. Install lua and liblua-dev needed for luarocks
 ```
-sudo apt install lua5.3 liblua5.3-0-dev
+sudo apt install lua5.3 liblua5.3-dev
 ```
 
 8. Install luarocks - https://luarocks.org/#quick-start
 ```
-$ wget https://luarocks.org/releases/luarocks-3.11.1.tar.gz
-$ tar zxpf luarocks-3.11.1.tar.gz
-$ cd luarocks-3.11.1
-$ ./configure && make && sudo make install
-$ sudo luarocks install luasocket
-$ lua
+wget https://luarocks.org/releases/luarocks-3.11.1.tar.gz
+tar zxpf luarocks-3.11.1.tar.gz
+cd luarocks-3.11.1
+./configure && make && sudo make install
+sudo luarocks install luasocket
+lua
+
 Lua 5.3.5 Copyright (C) 1994-2018 Lua.org, PUC-Rio
 ```
 
