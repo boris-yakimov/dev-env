@@ -23,11 +23,11 @@ sudo snap install --beta nvim --classic
 
 1. ripgrep - https://github.com/BurntSushi/ripgrep
 ```
-apt install ripgrep
+sudo apt install ripgrep
 ```
 2. fd - https://github.com/sharkdp/fd
 ```
-apt install fd-find
+sudo apt install fd-find
 ```
 
 3. Cascadia Code Nerd Font - make sure it is also set on the terminal as default
