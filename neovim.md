@@ -53,16 +53,9 @@ node -v
 curl -LsSf https://astral.sh/ruff/install.sh | sh
 ```
 
-### copy all lua configs : 
-```
-# first cleanup than copy
-rm -rf ~/.config/nvim/
-mkdir -p ~/.config/nvim && cp -r nvim-lua/* ~/.config/nvim/
-```
-
 6. Install npm package for neovim
 ```
-npm install -g neovim
+sudo npm install -g neovim
 ```
 
 7. Install lua and liblua-dev needed for luarocks
@@ -90,6 +83,13 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit -D -t /usr/local/bin/
 ```
 
+
+### copy all lua configs : 
+```
+# first cleanup than copy
+rm -rf ~/.config/nvim/
+mkdir -p ~/.config/nvim && cp -r nvim-lua/* ~/.config/nvim/
+```
 
 ### run, update and verify : 
 
