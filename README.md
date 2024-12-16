@@ -48,7 +48,7 @@ scoop install neovim
 Install oh-my-posh
 ```
 # https://ohmyposh.dev/docs/installation/windows
-scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
+Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))
 # You can find the themes in the folder indicated by the environment variable POSH_THEMES_PATH
 ```
 
