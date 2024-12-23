@@ -82,7 +82,10 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/downl
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit -D -t /usr/local/bin/
 ```
-
+10. Python, pip, and neovim python package
+```
+sudo apt install python3 python3-pip python3-neovim
+```
 
 ### copy all lua configs : 
 ```
@@ -111,6 +114,15 @@ verify that LSPs are working
 ```
 
 ## TODO: verify these with the lua setup on the next install
+## for Ubuntu
+```
+# for wayland
+sudo apt install wl-clipboard
+
+# for xorg
+sudo apt install xclip
+```
+##  for WSL
 win32yank - clipboard - guide https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
 
 check what is the latest version of win32yank
