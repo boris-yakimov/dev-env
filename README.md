@@ -256,7 +256,7 @@ tmux config - already in .zshrc but here for reference
 
 copy the tmux.conf
 ```
-cp ~/repos/dev-env/.tmux.conf ~/.tmux.conf
+cp ~/repos/dev-env/tmux/.tmux.conf ~/.tmux.conf
 cat ~/.tmux.conf
 ```
 
