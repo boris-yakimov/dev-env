@@ -6,6 +6,7 @@ go => v1.23
 lua => 5.3  
 npm => 9.2 (for ruff)  
 python => v3.12 (for pyright)  
+unzip  
 
 nvim install - https://github.com/neovim/neovim/releases
 ```
@@ -41,7 +42,7 @@ mkdir -p ~/.config/nvim/lua/config/
 4. Install nodejs and npm (for python lsp)
 ```
 sudo apt update
-sudo apt install -y nodejs npm
+sudo apt install -y nodejs npm unzip
 
 # verify
 npm -v
