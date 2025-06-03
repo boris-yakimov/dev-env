@@ -343,9 +343,21 @@ TODO: !
 on next install check options for color scheme Kanagawa- https://github.com/rebelot/kanagawa.nvim?tab=readme-ov-file  
 on next install redo neovim configs into lua and fix lsps
 
-5. golang  
-6. python + pip  
-7. git - https://git-scm.com/download/linux
+5. install golang - https://go.dev/doc/install
+```
+# download a version of go
+wget https://go.dev/dl/go1.24.3.linux-amd64.tar.gz
+
+# make sure no previous installations exist and install the downloaded version
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.24.3.linux-amd64.tar.gz
+
+# verify installation
+~ ❯ go version                                                                                                                                                                                                                                                              04:15:15 PM
+go version go1.24.3 linux/amd64
+```
+   
+7. python + pip  
+8. git - https://git-scm.com/download/linux
 ```
 # Latest stable git
 sudo add-apt-repository ppa:git-core/ppa
