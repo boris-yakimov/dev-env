@@ -227,6 +227,9 @@ source should show the Powerlevel10k setup screen, if not run it manually :
 ```
 p10k configure
 ```
+
+Need CascadiaCode fonts for this theme. Nerdfont variant of CascadiaCode should be applied on Windows terminal also in order for it to take effect in the WSL shell.
+
 AUTOAMTED WAY TO INSTALL NERD FONTS (recommended) : 
 ```
 # in powershell
