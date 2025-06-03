@@ -128,7 +128,6 @@ verify that LSPs are working
 :LspInfo
 ```
 
-## TODO: verify these with the lua setup on the next install
 ## for Ubuntu
 ```
 # for wayland
