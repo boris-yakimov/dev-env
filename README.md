@@ -455,4 +455,4 @@ steps to set this up - https://github.com/Versent/saml2aws?tab=readme-ov-file#op
 
 14. k9s https://k9scli.io/topics/install/
 
-15. Configure neovim - TODO: add link to the neovim.md
+15. Configure neovim - https://github.com/boris-yakimov/dev-env/blob/main/neovim.md
