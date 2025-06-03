@@ -20,19 +20,6 @@ sudo snap install --beta nvim --classic
 # or app image or tar alternatives; steps are in the notes of each release - https://github.com/neovim/neovim/releases
 ```
 
-install golang - https://go.dev/doc/install
-```
-# download a version of go
-wget https://go.dev/dl/go1.24.3.linux-amd64.tar.gz
-
-# make sure no previous installations exist and install the downloaded version
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.24.3.linux-amd64.tar.gz
-
-# verify installation
-~ ❯ go version                                                                                                                                                                                                                                                              04:15:15 PM
-go version go1.24.3 linux/amd64
-```
-
 ### dependencies : 
 
 1. ripgrep - https://github.com/BurntSushi/ripgrep
