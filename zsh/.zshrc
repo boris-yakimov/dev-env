@@ -72,9 +72,9 @@ if [ $? != 0 ]
     tmux select-window -t $TMUX_DEV_ENV_SESSION:1
 fi
 
-# landing zones project
 alias dev="tmux a -t dev"
 
+# landing zones project
 TMUX_LZ_SESSION="lz"
 tmux has-session -t $TMUX_LZ_SESSION&> /dev/null
 if [ $? != 0 ] 
