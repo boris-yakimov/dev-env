@@ -92,6 +92,7 @@ sudo apt install python3 python3-pip python3-neovim
 ```
 # first cleanup than copy
 rm -rf ~/.config/nvim/
+cd ~/repos/dev-env 
 mkdir -p ~/.config/nvim && cp -r nvim-lua/* ~/.config/nvim/
 ```
 
