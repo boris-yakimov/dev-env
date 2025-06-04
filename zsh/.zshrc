@@ -31,8 +31,10 @@ export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN:/usr/local/go/bin
 # display
 #export DISPLAY=:0
 
-# TODO: check what this was for
-export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
+# used by stuff like xdg-open - for when a browser window needs to pop-up for example when logging in to aws sso which requires a browser prompt to confirm authentication
+# export BROWSER=/mnt/c/Program Files/Google/Chrome/Application/chrome.exe
+# workaround with a symlink to avoid issue with windows whitespace when BROWSER var is used by xdg
+export BROWSER=/usr/local/bin/chrome
 
 # aliases
 alias code='/mnt/c/Users/yakim/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe'
