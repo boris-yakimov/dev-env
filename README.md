@@ -470,4 +470,9 @@ steps to set this up - https://github.com/Versent/saml2aws?tab=readme-ov-file#op
 
 14. k9s https://k9scli.io/topics/install/
 15. aws cli - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+```
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+```
 16. Configure neovim - https://github.com/boris-yakimov/dev-env/blob/main/neovim.md
