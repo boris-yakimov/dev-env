@@ -469,5 +469,5 @@ to persistently store password we need to configure pass (the unix password mana
 steps to set this up - https://github.com/Versent/saml2aws?tab=readme-ov-file#option-2-configure-pass-to-be-the-default-keyring
 
 14. k9s https://k9scli.io/topics/install/
-
-15. Configure neovim - https://github.com/boris-yakimov/dev-env/blob/main/neovim.md
+15. aws cli - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+16. Configure neovim - https://github.com/boris-yakimov/dev-env/blob/main/neovim.md
