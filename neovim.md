@@ -51,6 +51,8 @@ node -v
 
 5. ruff - for python lsp https://github.com/astral-sh/ruff
 ```
+# python virtualenv is required by ruff
+sudo apt install -y python3-venv
 curl -LsSf https://astral.sh/ruff/install.sh | sh
 ```
 
