@@ -1,5 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
+	enabled = true,
 	opts = function(_, opts)
 		opts.sections = vim.tbl_extend("force", opts.sections or {}, {
 			lualine_c = { -- middle section

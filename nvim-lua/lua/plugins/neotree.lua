@@ -1,6 +1,6 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-	enabled = false, -- switched to the default exporer that comes with lazyvim for while
+	enabled = true, -- switched to the default exporer that comes with lazyvim for while
 	branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
