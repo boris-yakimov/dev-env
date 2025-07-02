@@ -16,3 +16,13 @@ vim.keymap.set(
 -- move line up or down - shift + up or down
 vim.keymap.set("n", "<S-Up>", ":m .-2<CR>==", { noremap = true, silent = true })
 vim.keymap.set("n", "<S-Down>", ":m .+1<CR>==", { noremap = true, silent = true })
+
+return {
+	-- Disable snacks.nvim Notification History keymap (<leader>n) - we use the same mapping for neotree
+	{
+		"rcarriga/nvim-notify",
+		keys = {
+			{ "<leader>n", false },
+		},
+	},
+}
