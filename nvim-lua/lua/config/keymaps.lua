@@ -17,12 +17,13 @@ vim.keymap.set(
 vim.keymap.set("n", "<S-Up>", ":m .-2<CR>==", { noremap = true, silent = true })
 vim.keymap.set("n", "<S-Down>", ":m .+1<CR>==", { noremap = true, silent = true })
 
-return {
-	-- Disable snacks.nvim Notification History keymap (<leader>n) - we use the same mapping for neotree
-	{
-		"rcarriga/nvim-notify",
-		keys = {
-			{ "<leader>n", false },
-		},
-	},
-}
+-- option to disable <leader>n from what already occupies it if i decide to go back to neotree
+-- return {
+-- 	-- Disable snacks.nvim Notification History keymap (<leader>n) - we use the same mapping for neotree
+-- 	{
+-- 		"rcarriga/nvim-notify",
+-- 		keys = {
+-- 			{ "<leader>n", false },
+-- 		},
+-- 	},
+-- }
