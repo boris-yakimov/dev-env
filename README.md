@@ -371,6 +371,9 @@ Setup - https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git
 ```
 git config --global user.name "Your Name"
 git config --global user.email "youremail@domain.com"
+
+# configure default editor for git to nvim
+git config --global core.editor "nvim"
 ```
 
 Git credential manager from Windows Git into WSL - https://github.com/MicrosoftDocs/wsl/blob/main/WSL/tutorials/wsl-git.md
