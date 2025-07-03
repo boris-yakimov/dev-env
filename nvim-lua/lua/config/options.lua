@@ -22,8 +22,9 @@ opt.number = true -- enable absolute line numbers
 -- some additional options
 opt.confirm = true -- confirm to save changes before exiting modified buffer
 opt.cursorline = true -- enable highlighting of the current line
-opt.linebreak = true -- wrap lines at convenient points
 opt.backspace = { "indent", "eol", "start" } -- allow backspace to delete indentation and inserted text
+opt.wrap = true -- long lines wrap onto the next screen line instead of scrolling horizontally
+opt.linebreak = true -- requires wrap = true; wrap at word boundaries (spaces, tabs, etc.), not mid-word
 
 -- use the clipboard for ALL operations (instead of interacting with the '+' and/or '*' registers explicitly)
 -- also sends vim yanks to the system clipboard
