@@ -8,17 +8,8 @@ npm => 9.2 (for ruff)
 python => v3.12 (for pyright)  
 unzip  
 
-nvim install - https://github.com/neovim/neovim/releases
-```
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt-get update
-sudo apt-get install neovim
-
-# or from snap
-sudo snap install --beta nvim --classic
-
-# or app image or tar alternatives; steps are in the notes of each release - https://github.com/neovim/neovim/releases
-```
+nvim install
+steps are in main README
 
 ### dependencies : 
 
