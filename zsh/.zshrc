@@ -30,6 +30,12 @@ export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN:/usr/local/go/bin
 
 # display
 #export DISPLAY=:0
+#
+# default editor
+export EDITOR=nvim
+
+# map ctrl+x , ctrl+e to fc - edit shell command in neovim
+bindkey -s '^X^E' 'fc\n'
 
 # used by stuff like xdg-open - for when a browser window needs to pop-up for example when logging in to aws sso which requires a browser prompt to confirm authentication
 # export BROWSER=/mnt/c/Program Files/Google/Chrome/Application/chrome.exe
