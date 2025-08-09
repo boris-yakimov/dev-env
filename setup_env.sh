@@ -22,6 +22,7 @@ sudo apt update; sudo apt install git -y
 #git config --global user.name "Your Name"
 #git config --global user.email "Your Mail"
 git config --global core.editor "nvim"
+git config --global credential.helper store
 
 # tools
 sudo apt install -y curl tmux python3 python3-pip python3-venv
