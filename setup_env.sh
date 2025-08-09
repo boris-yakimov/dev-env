@@ -19,8 +19,8 @@ sudo add-apt-repository ppa:git-core/ppa
 sudo apt update; sudo apt install git -y
 
 # TODO: how do I handle this
-git config --global user.name "Your Name"
-git config --global user.email "Your Mail"
+#git config --global user.name "Your Name"
+#git config --global user.email "Your Mail"
 git config --global core.editor "nvim"
 
 # tools
