@@ -21,6 +21,12 @@ vim.keymap.set("n", "<S-Down>", ":m .+1<CR>==", { noremap = true, silent = true 
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
 
+-- go to reference
+vim.keymap.set("n", "gr", vim.lsp.buf.references, { noremap = true, silent = true })
+
+-- rename what is under cursor and all places where it can also be found
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { noremap = true, silent = true })
+
 -- option to disable <leader>n from what already occupies it if i decide to go back to neotree
 -- return {
 -- 	-- Disable snacks.nvim Notification History keymap (<leader>n) - we use the same mapping for neotree

@@ -1,5 +1,3 @@
--- TODO: figure out why these are not loading
--- TODO: it seems that mason is actually picking up all the binaries for languages we have installed already, do some tests if enabling an lsp explicitly and letting it pick up a language automatically, actually makes a difference
 return {
 	"williamboman/mason-lspconfig.nvim",
 	enabled = true,
@@ -11,6 +9,7 @@ return {
 			"pyright", -- recommended python lsp
 			"ruff", -- adds formatting and linting for python since pyright doesn't provide them
 			"clangd", -- c/c++ lsp
+			"lua-language-server", -- lua LSP
 		})
 	end,
 }
