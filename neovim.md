@@ -1,7 +1,7 @@
 TODO: some time on kanagawa theme
 
 ## required tools
-nvim => v0.10  
+nvim => v0.11.2  
 go => v1.23  
 lua => 5.3  
 npm => 9.2 (for ruff)  

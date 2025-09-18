@@ -30,3 +30,17 @@ opt.linebreak = true -- requires wrap = true; wrap at word boundaries (spaces, t
 -- also sends vim yanks to the system clipboard
 -- TODO: need to figure out why win32yank seems to be very slow sometimes on WSL
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
+
+-- Force Neovim to use win32yank.exe
+vim.g.clipboard = {
+	name = "win32yank",
+	copy = {
+		["+"] = "win32yank.exe -i --crlf",
+		["*"] = "win32yank.exe -i --crlf",
+	},
+	paste = {
+		["+"] = "win32yank.exe -o --lf",
+		["*"] = "win32yank.exe -o --lf",
+	},
+	cache_enabled = true,
+}
