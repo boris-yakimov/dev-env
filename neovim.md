@@ -1,4 +1,7 @@
-TODO: some time on kanagawa theme
+Themes
+  - Gruvbox - https://github.com/ellisonleao/gruvbox.nvim (initial theme used before lua)
+  - Tokyonight - https://github.com/folke/tokyonight.nvim (currently in use)
+  - Kanagawa - https://github.com/rebelot/kanagawa.nvim (to be tested in the future)
 
 ## required tools
 nvim => v0.11.2  
