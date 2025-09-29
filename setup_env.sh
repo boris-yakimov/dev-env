@@ -100,6 +100,12 @@ nvim --version
 # neovim tools
 sudo apt install -y ripgrep fd-find
 
+# ruff for python lsp
+curl -LsSf https://astral.sh/ruff/install.sh | sh
+
+# install npm package for neovim
+sudo npm install -g neovim
+
 # neovim setup
 mkdir -p ~/.config/nvim/lua/config/
 
@@ -133,6 +139,67 @@ mkdir -p ~/.config/nvim && cp -r nvim-lua/* ~/.config/nvim/
 # for wayland
 sudo apt install -y wl-clipboard
 # for xorg
-# sudo apt install -y xclip
+sudo apt install -y xclip
 
-nvim :Lazy
+ nvim :Lazy
+
+# additional tools
+
+# docker
+sudo apt install -y docker.io
+
+# terraform
+sudo apt update && sudo apt install -y gnupg software-properties-common
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install -y terraform
+terraform -install-autocomplete
+
+# kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+# helm
+curl https://get.helm.sh/helm-v3.15.4-linux-amd64.tar.gz -o helm.tar.gz
+tar -zxvf helm.tar.gz
+sudo mv linux-amd64/helm /usr/local/bin/helm
+rm -rf linux-amd64 helm.tar.gz
+helm completion zsh > "${fpath[1]}/_helm"
+
+# saml2aws
+CURRENT_VERSION=$(curl -Ls https://api.github.com/repos/Versent/saml2aws/releases/latest | grep 'tag_name' | cut -d'v' -f2 | cut -d'"' -f1)
+wget -c https://github.com/Versent/saml2aws/releases/download/v${CURRENT_VERSION}/saml2aws_${CURRENT_VERSION}_linux_amd64.tar.gz -O - | tar -xzv -C ~/.local/bin
+chmod u+x ~/.local/bin/saml2aws
+hash -r
+saml2aws --version
+
+# k9s
+wget https://github.com/derailed/k9s/releases/latest/download/k9s_Linux_amd64.tar.gz
+tar -xzf k9s_Linux_amd64.tar.gz
+sudo install k9s /usr/local/bin/
+rm k9s_Linux_amd64.tar.gz
+
+# aws cli
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+rm -rf aws awscliv2.zip
+
+# Neovim LSPs and tools (installed system-wide to match Mason installs)
+# gopls
+go install golang.org/x/tools/gopls@latest
+
+# terraformls
+go install github.com/hashicorp/terraform-ls@latest
+
+# pyright
+sudo npm install -g pyright
+
+# clangd
+sudo apt install -y clangd
+
+# lua_ls
+sudo luarocks install --server=https://luarocks.org/dev lua-lsp
+
+# tflint
+go install github.com/terraform-linters/tflint@latest
