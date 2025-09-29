@@ -2,6 +2,9 @@ Themes
   - Gruvbox - https://github.com/ellisonleao/gruvbox.nvim (initial theme used before lua)
   - Tokyonight - https://github.com/folke/tokyonight.nvim (currently in use)
   - Kanagawa - https://github.com/rebelot/kanagawa.nvim (to be tested in the future)
+  - Moonfly - https://github.com/bluz71/vim-moonfly-colors
+  - OneNord - https://github.com/rmehri01/onenord.nvim
+  - Vague - https://github.com/vague2k/vague.nvim
 
 ## required tools
 nvim => v0.11.2  
