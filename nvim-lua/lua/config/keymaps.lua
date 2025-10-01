@@ -17,9 +17,15 @@ vim.keymap.set(
 vim.keymap.set("n", "<S-Up>", ":m .-2<CR>==", { noremap = true, silent = true })
 vim.keymap.set("n", "<S-Down>", ":m .+1<CR>==", { noremap = true, silent = true })
 
--- go to next or previous error from lsp
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
+-- go to next error from lsp
+vim.keymap.set("n", "]d", function()
+	vim.diagnostic.jump({ count = 1 })
+end, { desc = "Go to next diagnostic" })
+
+-- go to previous error from lsp
+vim.keymap.set("n", "[d", function()
+	vim.diagnostic.jump({ count = -1 })
+end, { desc = "Go to previous diagnostic" })
 
 -- go to reference
 vim.keymap.set("n", "gr", vim.lsp.buf.references, { noremap = true, silent = true })
