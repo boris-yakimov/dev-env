@@ -16,7 +16,7 @@ opt.softtabstop = 2 -- number of spaces for soft tab (when pressing Tab in inser
 opt.expandtab = true -- use spaces instead of tabs
 
 -- line numbers
-opt.relativenumber = false -- disable relative line numbers
+opt.relativenumber = true -- (false) disable relative line numbers
 opt.number = true -- enable absolute line numbers
 
 -- some additional options
