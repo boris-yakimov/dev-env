@@ -5,6 +5,7 @@ Tools install
 # shell / terminal
 zsh
 ghostty
+kitty (should already be installed by hyperland)
 
 # editor
 neovim
@@ -54,3 +55,7 @@ $menu = wofi --show drun
 # install it in arch
 sudo pacman -S wofi
 ```
+
+
+
+# TODO: go through the wsl readme for the steps around zsh configuration, shell tools, neovim configuration, terminal theme, etc
