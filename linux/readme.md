@@ -48,7 +48,17 @@ npm # needed for pyright in neovim
 # UI
 wofi
 waybar
-# fonts
+```
+
+fonts
+```
+# for general use
+sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-dejavu ttf-liberation
+
+# for coding and terminals
+sudo pacman -S adobe-source-code-pro-fonts ttf-hack
+
+# TODO: check if need those on the next install - the first 2 install commands should be enough for everything
 otf-font-awesome
 ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-mono
@@ -164,7 +174,7 @@ $menu = wofi --show drun
 sudo pacman -S wofi
 ```
 
-status bar - Waybar - https://github.com/Alexays/Waybar
+status bar - Waybar - https://github.com/Alexays/Waybar ; https://github.com/Alexays/Waybar/wiki/Configuration
 ```
 # install waybar and required fonts for the bar icons
 sudo pacman -S waybar
@@ -176,6 +186,3 @@ mkdir ~/.config/waybar
 # copy waybar config and style files
 cp hyprland/waybar/style.css hyprland/waybar/config ~/.config/waybar/
 ```
-
-"format": "  {:%Y-%m-%d}    {:%H:%M}"
-
