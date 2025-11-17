@@ -5,7 +5,7 @@ Audio - Pipewire (there were issues with Pulse)
 
 ## Tools
 
-either during archinstall or after
+either install them during archinstall or after with pacman
 ```
 # shell / terminal
 zsh
@@ -28,8 +28,10 @@ unzip
 
 # work
 aws-cli-v2
-k8s
 terraform
+kubectl
+k8s
+helm
 
 # programming languages
 go
@@ -40,6 +42,8 @@ python
 clang
 gopls
 python-pip
+nodejs # needed for npm
+npm # needed for pyright in neovim
 
 # UI
 wofi
@@ -76,6 +80,13 @@ verify that LSPs are working
 :LspInfo
 ```
 
+## TMUX
+copy the tmux.conf
+```
+cp ~/repos/boris/dev-env/linux/tmux/.tmux.conf ~/.tmux.conf
+cat ~/.tmux.conf
+```
+
 ## ZSH
 install oh-my-zsh
 ```
@@ -104,13 +115,33 @@ Install powerlevel10k theme/prompt for oh-my-zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k   
 ```
 
-# TODO: Continue here didn't work last time
-change default shell to zsh
+
+Install fzf - https://github.com/junegunn/fzf
 ```
-chsh -s $(which zsh)
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 ```
 
-## Hyprland 
+
+Configure fzf zsh history search - https://github.com/joshskidmore/zsh-fzf-history-search
+```
+git clone https://github.com/joshskidmore/zsh-fzf-history-search ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-fzf-history-search
+```
+
+change default shell to zsh
+```
+
+# check if shell is already zsh
+echo $SHELL
+
+# if it is not, change it
+chsh -s $(which zsh)
+
+# also check the shell under current user
+grep "^$(whoami):" /etc/passwd
+```
+
+## Hyprland
 
 default config - /home/boris/.config/hypr/hyprland.conf 
 
