@@ -48,6 +48,11 @@ npm # needed for pyright in neovim
 # UI
 wofi
 waybar
+
+# hyprland
+hyprshot # screenshots
+swaync   # desktop notifications
+hyprlock # lock screen
 ```
 
 fonts
@@ -186,3 +191,8 @@ mkdir ~/.config/waybar
 # copy waybar config and style files
 cp hyprland/waybar/style.css hyprland/waybar/config ~/.config/waybar/
 ```
+
+
+# TODO: hyprlock
+# TODO: hypridle 
+# TODO: https://wiki.hypr.land/Hypr-Ecosystem/
