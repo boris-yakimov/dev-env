@@ -50,9 +50,11 @@ wofi
 waybar
 
 # hyprland
-hyprshot # screenshots
-swaync   # desktop notifications
-hyprlock # lock screen
+hyprshot  # screenshots
+swaync    # desktop notifications
+hyprlock  # lock screen
+hypridle  # idle management
+hyprpaper # wallpaper management
 ```
 
 fonts
@@ -158,7 +160,7 @@ grep "^$(whoami):" /etc/passwd
 
 ## Hyprland
 
-default config - /home/boris/.config/hypr/hyprland.conf 
+default config - ~/.config/hypr/hyprland.conf 
 
 get list of monitors (take note of ID)
 ```
@@ -190,9 +192,19 @@ mkdir ~/.config/waybar
 
 # copy waybar config and style files
 cp hyprland/waybar/style.css hyprland/waybar/config ~/.config/waybar/
+
+# copy hyprlock config
+cp hyprland/hyprlock.conf ~/.config/hyprland/hyprlock.conf
+
+# copy hypr idle config
+cp hyprland/hypridle.conf ~/.config/hyprland/hypridle.conf
+
+# copy hypr paper config and images
+mkdir ~/.config/images/
+TODO: where do we store and keep all wallpaper images
+cp hyprland/hyprpaper.conf ~/.config/hyprland/hyprpaper.conf
 ```
 
 
-# TODO: hyprlock
-# TODO: hypridle 
+
 # TODO: https://wiki.hypr.land/Hypr-Ecosystem/
