@@ -8,6 +8,8 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
+        "hyprland/submap",
+        // "sway/scratchpad",
         "custom/media"
     ],
     "modules-center": [
@@ -41,8 +43,8 @@
             "1": "",
             "2": "",
             "3": "",
-            "4": "",
-            "5": "",
+            "4": "",
+            "5": "",
             "urgent": "",
             "focused": "",
             "default": ""
@@ -57,16 +59,16 @@
             "unlocked": ""
         }
     },
-    "hyprland/mode": {
+    "hyprland/submap": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "hyprland/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
+    // "sway/scratchpad": {
+    //     "format": "{icon} {count}",
+    //     "show-empty": false,
+    //     "format-icons": ["", ""],
+    //     "tooltip": true,
+    //     "tooltip-format": "{app}: {title}"
+    // },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
@@ -109,7 +111,7 @@
         // }
     },
     "clock": {
-        "timezone": "Europe/Sofia",
+        // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },

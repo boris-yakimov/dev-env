@@ -161,6 +161,7 @@ grep "^$(whoami):" /etc/passwd
 ## Hyprland
 
 default config - ~/.config/hypr/hyprland.conf 
+must haves - https://wiki.hypr.land/Useful-Utilities/Must-have/
 
 get list of monitors (take note of ID)
 ```
@@ -172,16 +173,17 @@ configure monitor resolution and scaling
 monitor=DP-1,preferred,auto,1.5 
 ```
 
-program launcher - Wofi - https://github.com/SimplyCEO/wofi 
+program launcher - Wofi - https://github.com/SimplyCEO/wofi ; https://cloudninja.pw/docs/wofi.html
 ```
-# in the hyprland conf
-$menu = wofi --show drun  
-
 # install it in arch
 sudo pacman -S wofi
+
+# copy the style and script files of wofi
+cp hyprland/wofi/style.css hyprland/wofi/wofi-menu.sh ~/.config/wofi/
+
 ```
 
-status bar - Waybar - https://github.com/Alexays/Waybar ; https://github.com/Alexays/Waybar/wiki/Configuration
+status bar - Waybar - https://github.com/Alexays/Waybar ; https://github.com/Alexays/Waybar/wiki/Configuration ; examples - https://github.com/Alexays/Waybar/wiki/Examples
 ```
 # install waybar and required fonts for the bar icons
 sudo pacman -S waybar
@@ -191,7 +193,9 @@ sudo pacman -S ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono otf-font-aweso
 mkdir ~/.config/waybar
 
 # copy waybar config and style files
-cp hyprland/waybar/style.css hyprland/waybar/config ~/.config/waybar/
+rm -f ~/.config/waybar/*
+cp hyprland/waybar/style.css ~/.config/waybar/
+cp hyprland/waybar/config.jsonc ~/.config/waybar/
 
 # copy hyprlock config
 cp hyprland/hyprlock.conf ~/.config/hyprland/hyprlock.conf
@@ -207,4 +211,9 @@ cp hyprland/hyprpaper.conf ~/.config/hyprland/hyprpaper.conf
 
 
 
+# TODO: theme for dolphin
+# TODO: theme for the program launcher - Wofi
+# TODO: can we order what shows in the program launcher - Wofi
 # TODO: https://wiki.hypr.land/Hypr-Ecosystem/
+# TODO: hyprlock background
+# TODO: a better calendar option
