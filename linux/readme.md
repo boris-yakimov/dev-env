@@ -48,6 +48,7 @@ npm # needed for pyright in neovim
 # UI
 wofi
 waybar
+kvantum # theme for dolphin file manager 
 
 # hyprland
 hyprshot  # screenshots
@@ -196,24 +197,34 @@ mkdir ~/.config/waybar
 rm -f ~/.config/waybar/*
 cp hyprland/waybar/style.css ~/.config/waybar/
 cp hyprland/waybar/config.jsonc ~/.config/waybar/
+```
 
+Hyprlock
+```
 # copy hyprlock config
 cp hyprland/hyprlock.conf ~/.config/hyprland/hyprlock.conf
+```
 
+Hypridle
+```
 # copy hypr idle config
 cp hyprland/hypridle.conf ~/.config/hyprland/hypridle.conf
+```
 
+Hyprpaper
+```
 # copy hypr paper config and images
 mkdir ~/.config/images/
-TODO: where do we store and keep all wallpaper images
+# copy images from drive to ~/.config/images folder
 cp hyprland/hyprpaper.conf ~/.config/hyprland/hyprpaper.conf
 ```
 
+Dolphin file manager
+```
+# update theme
+kvantummanager
+# choose KVRoughGlass
+```
 
 
-# TODO: theme for dolphin
-# TODO: theme for the program launcher - Wofi
-# TODO: can we order what shows in the program launcher - Wofi
 # TODO: https://wiki.hypr.land/Hypr-Ecosystem/
-# TODO: hyprlock background
-# TODO: a better calendar option
