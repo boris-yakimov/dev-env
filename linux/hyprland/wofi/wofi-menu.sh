@@ -6,6 +6,7 @@ Chrome
 Terminal
 Firefox
 Dolphin
+Steam
 EOF
 )
 
@@ -21,5 +22,8 @@ Firefox)
   ;;
 Dolphin)
   exec dolphin
+  ;;
+Steam)
+  exec steam
   ;;
 esac

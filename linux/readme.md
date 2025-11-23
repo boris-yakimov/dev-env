@@ -5,6 +5,11 @@ Audio - Pipewire (there were issues with Pulse)
 
 ## Tools
 
+update OS repo mirrors and packages
+```
+sudo pacman -Syu
+```
+
 either install them during archinstall or after with pacman
 ```
 # shell / terminal
@@ -58,15 +63,23 @@ hypridle  # idle management
 hyprpaper # wallpaper management
 ```
 
-fonts
+## Fonts
+option 1 - full nerd fonts package (over 1.3GB of fonts)
+```
+sudo pacman -S nerd-fonts
+```
+
+option 2 - select group of fonts that we actually use
 ```
 # for general use
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-dejavu ttf-liberation
 
 # for coding and terminals
 sudo pacman -S adobe-source-code-pro-fonts ttf-hack
+```
 
 # TODO: check if need those on the next install - the first 2 install commands should be enough for everything
+```
 otf-font-awesome
 ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-mono
@@ -227,4 +240,76 @@ kvantummanager
 ```
 
 
+
+## Steam
+add multilib repo to pacman
+```
+sudo vim /etc/pacman.conf
+
+# uncomment the multilib section
+[multilib]
+Include = /etc/pacman.d/mirrorlist 
+```
+
+make sure everything is up to date
+```
+sudo pacman -Syu
+```
+
+install steam
+```
+sudo pacman -S steam
+```
+
+Ensure the appropriate 32-bit OpenGL or Vulkan drivers are also installed for your graphics card (e.g., lib32-nvidia-utils for NVIDIA, or lib32-mesa for AMD/Intel). The steam package installation should prompt you to select the necessary dependencies. 
+
+install Vulkan-Tools
+```
+sudo pacman -Syu vulkan-tools
+```
+
+check info
+```
+vulkan-info
+```
+
+check GPU detected by Linux
+```
+lspci | grep VGA
+```
+
+check GPU driver
+```
+vulkaninfo | grep -i driver
+```
+
+install 32bit libraries (needed for the Steam Proton compatibility layer)
+
+For Intel/AMD (Mesa):
+```
+sudo pacman -S lib32-mesa
+```
+
+For NVIDIA:
+```
+sudo pacman -S lib32-nvidia-utils
+```
+
+Enable Proton in Steam
+Steam -> Settings -> Compatibility -> Select a Proton version (usually latest stable)
+Make sure "Enable Steam Play for all other titles." is enabled
+
+Install a custom Proton version (Proton GE) 
+For potentially better compatibility with certain games, you can use a community-maintained version like Proton GE (GloriousEggroll). A convenient way to manage this is with the protonup-qt tool, available in the Arch User Repository (AUR).
+```
+yay -S protonup-qt
+```
+
+Open protonup-qt after installation to easily download and install different custom Proton versions. These versions will then appear in the Steam compatibility dropdown menu for you to select on a per-game basis.
+```
+protonup-qt
+```
+
+# TODO: fix steam blurriness
 # TODO: https://wiki.hypr.land/Hypr-Ecosystem/
+# TODO: bug where wofi (program launcher) menu is case sensitive should support searching by any char
