@@ -310,9 +310,22 @@ Open protonup-qt after installation to easily download and install different cus
 protonup-qt
 ```
 
+
+## Heroic Games Launcher (Epic, Amazon, GoG, etc)
+install flatpak
+```
+sudo pacman -S flatpak
+```
+
+install heroic
+```
+flatpak install flathub com.heroicgameslauncher.hgl
+```
+
+```
+```
+
 # TODO: fix steam blurriness
 # TODO: https://wiki.hypr.land/Hypr-Ecosystem/
-# TODO: bug where wofi (program launcher) menu is case sensitive should support searching by any char
 # TODO: boxes for VMs
 # TODO: review and test Localsend
-# TODO: heroic games launcher
