@@ -63,6 +63,15 @@ hypridle  # idle management
 hyprpaper # wallpaper management
 ```
 
+## Package management
+install flatpak
+```
+sudo pacman -S flatpak
+```
+
+install AUR (yay)
+TODO:
+
 ## Fonts
 option 1 - full nerd fonts package (over 1.3GB of fonts)
 ```
@@ -311,21 +320,31 @@ protonup-qt
 ```
 
 
-## Heroic Games Launcher (Epic, Amazon, GoG, etc)
-install flatpak
-```
-sudo pacman -S flatpak
-```
-
+## Heroic Games Launcher (Epic, GoG, Amazon Games)
 install heroic
 ```
 flatpak install flathub com.heroicgameslauncher.hgl
 ```
 
+run heroic
 ```
+flatpak run com.heroicgameslauncher.hgl
 ```
 
-# TODO: fix steam blurriness
+
+## Localsend
+https://localsend.org/
+
+install
+```
+flatpak install flathub org.localsend.localsend_app
+```
+
+run
+```
+flatpak run org.localsend.localsend_app
+```
+
 # TODO: https://wiki.hypr.land/Hypr-Ecosystem/
 # TODO: boxes for VMs
-# TODO: review and test Localsend
+# fix bootloader
