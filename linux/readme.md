@@ -313,3 +313,6 @@ protonup-qt
 # TODO: fix steam blurriness
 # TODO: https://wiki.hypr.land/Hypr-Ecosystem/
 # TODO: bug where wofi (program launcher) menu is case sensitive should support searching by any char
+# TODO: boxes for VMs
+# TODO: review and test Localsend
+# TODO: heroic games launcher
