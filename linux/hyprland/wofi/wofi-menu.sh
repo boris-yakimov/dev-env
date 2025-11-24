@@ -8,6 +8,7 @@ Firefox
 Dolphin
 Steam
 Heroic Games Launcher
+Localsend
 EOF
 )
 
@@ -29,5 +30,8 @@ Steam)
   ;;
 Heroic\ Games\ Launcher)
   exec flatpak run com.heroicgameslauncher.hgl
+  ;;
+Localsend)
+  exec flatpak run org.localsend.localsend_app
   ;;
 esac

@@ -3,6 +3,108 @@
 btrfs - recommended layout
 Audio - Pipewire (there were issues with Pulse)
 
+make sure EFI starts the linux bootloader first and windows
+```
+sudo efibootmgr -v
+# example: make Boot0001 first, Boot0002 second
+sudo efibootmgr -o 0001,0002
+```
+
+check if windows is in the bootloader options
+```
+ls /boot/loader/entries/
+total 20K
+drwxr-xr-x 2 root root 4.0K Nov 24 20:55 .
+drwxr-xr-x 4 root root 4.0K Nov 24 20:52 ..
+-rwxr-xr-x 1 root root  253 Nov 15 20:17 arch.conf
+-rwxr-xr-x 1 root root  271 Nov 15 20:17 arch-fallback.conf
+-rwxr-xr-x 1 root root   51 Nov 24 20:49 windows.conf
+```
+if those files exist with weird names we can safely rename them
+
+Each .conf file corresponds to a boot option.
+If there’s a windows.conf or similar file pointing to the Windows EFI (EFI/Microsoft/Boot/bootmgfw.efi), Windows will appear in systemd-boot.
+```
+cat /boot/loader/entries/windows.conf
+
+# It should have a line like:
+efi /EFI/Microsoft/Boot/bootmgfw.efi
+```
+
+If there is no windows.conf file we have to create it
+```
+sudo mkdir -p /boot/loader/entries
+cd /boot/loader/entries
+sudo vim windows.conf
+# title is what will appear in the boot menu
+title Windows
+efi /EFI/Microsoft/Boot/bootmgfw.efi
+```
+
+Make sure the Windows EFI exists
+```
+ls -la /boot/EFI/Microsoft/Boot/bootmgfw.efi
+ls: cannot access '/boot/EFI/Microsoft/Boot/bootmgfw.efi': No such file or directory
+```
+
+If it doesn't we need to create it 
+```
+lsblk -f                                    
+
+NAME        FSTYPE FSVER LABEL UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+zram0       swap   1     zram0 9cb50b87-c362-493c-9b8e-d008b833c4c5                [SWAP]
+nvme1n1                                                                            
+├─nvme1n1p1 vfat   FAT32       4CC6-5E6B                                           
+├─nvme1n1p2                                                                        
+├─nvme1n1p3 ntfs               76CECFF8CECFAEA5                                    
+└─nvme1n1p4 ntfs               685A8D965A8D6224                                    
+nvme0n1                                                                            
+├─nvme0n1p1 vfat   FAT32       32FF-1C38                             950.7M     7% /boot
+└─nvme0n1p2 btrfs              190d1344-5168-4633-b370-f996e61d0e03  425.9G     8% /var/log
+                                                                                   /var/cache/pacman/pkg
+                                                                                   /home
+                                                                                   /
+```
+in this nvme1n1 is Windows SSD and nvme0n1 is the Linux SSD (nvme0/1n1p1 of each is the EFI partition: VFAT - FAT32)
+```
+# mount the windows EFI partition
+sudo mkdir -p /mnt/windows-efi
+sudo mount /dev/nvme1n1p1 /mnt/windows-efi
+# check contents
+ls -lah /mnt/windows-efi/EFI
+total 4.0K
+drwxr-xr-x 4 root root 1.0K Nov 19 20:06 .
+drwxr-xr-x 4 root root 1.0K Jan  1  1970 ..
+drwxr-xr-x 2 root root 1.0K Feb 19  2023 Boot
+drwxr-xr-x 4 root root 1.0K Nov 19 20:06 Microsoft
+
+# copy Windows EFS folder to Linux EFI
+sudo cp -r /mnt/windows-efi/EFI/Microsoft /boot/EFI/
+
+# now the EFI we were looking for above should be present
+ls -lah /boot/EFI/Microsoft/Boot/bootmgfw.efi
+-rwxr-xr-x 1 root root 2.8M Nov 24 21:06 /boot/EFI/Microsoft/Boot/bootmgfw.efi
+
+# check again the windows.conf file
+cat /boot/loader/entries/windows.conf
+title Windows
+efi /EFI/Microsoft/Boot/bootmgfw.efi
+```
+
+check the bootloader conf (should have the linux bootloader as default, and we will add windows to it as an option)
+```
+sudo vim /boot/loader/loader.conf
+
+default arch
+timeout 3
+```
+
+cleanup
+```
+sudo umount /mnt/windows-efi
+sudo rmdir /mnt/windows-efi
+```
+
 ## Tools
 
 update OS repo mirrors and packages
@@ -347,4 +449,3 @@ flatpak run org.localsend.localsend_app
 
 # TODO: https://wiki.hypr.land/Hypr-Ecosystem/
 # TODO: boxes for VMs
-# fix bootloader
