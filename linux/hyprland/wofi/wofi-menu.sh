@@ -56,6 +56,6 @@ RocketChat)
   exec rocketchat-desktop
   ;;
 Slack)
-  exec slack-desktop
+  exec slack
   ;;
 esac
