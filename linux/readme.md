@@ -350,7 +350,15 @@ kvantummanager
 # choose KVRoughGlass
 ```
 
+Remove initial sddm login screen and go directly to hyprlock
+```
+mkdir /etc/sddm.conf./
+sudo vim /etc/sddm.conf.d/boris.conf
 
+[Autologin]
+User=boris
+Session=hyprland.desktop
+```
 
 ## Steam
 add multilib repo to pacman
