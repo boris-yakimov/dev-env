@@ -9,6 +9,7 @@ Dolphin
 Steam
 Heroic Games Launcher
 Localsend
+Discord
 EOF
 )
 
@@ -33,5 +34,8 @@ Heroic\ Games\ Launcher)
   ;;
 Localsend)
   exec flatpak run org.localsend.localsend_app
+  ;;
+Discord)
+  exec flatpak run com.discordapp.Discord
   ;;
 esac

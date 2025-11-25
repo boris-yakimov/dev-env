@@ -284,9 +284,15 @@ grep "^$(whoami):" /etc/passwd
 ```
 
 ## Hyprland
+if using an NVIDIA GPU follow this first - https://wiki.hypr.land/Nvidia/
+
+some preconfigured setups - https://wiki.hypr.land/Getting-Started/Preconfigured-setups/
+other example configs - https://wiki.hypr.land/Configuring/Example-configurations/
 
 default config - ~/.config/hypr/hyprland.conf 
+configuration - https://wiki.hypr.land/Configuring/
 must haves - https://wiki.hypr.land/Useful-Utilities/Must-have/
+hyprland ecosystem - https://wiki.hypr.land/Hypr-Ecosystem/
 
 get list of monitors (take note of ID)
 ```
@@ -429,6 +435,23 @@ Open protonup-qt after installation to easily download and install different cus
 protonup-qt
 ```
 
+Add input language in hyprland
+configuration is already present in the hyprland.conf however we need to make sure that we add the correct keyboard to the bind command because it will be different on each device
+```
+# find line 
+bindl = LALT, LSHIFT, exec, hyprctl switchxkblayout logitech-g512-rgb-mechanical-gaming-keyboard next
+
+# replace the keyboard name at the end with the correct one taken from 
+hyprctl devices
+# the correct one has its main field set to yes, example :
+logitech-g512-rgb-mechanical-gaming-keyboard
+  rules: r "", m "", l "us,bg", v ",phonetic", o "grp:alt_shift_toggle"
+  active layout index: 0
+  active keymap: English (US)
+  capsLock: no
+  numLock: no
+  main: yes
+```
 
 ## Heroic Games Launcher (Epic, GoG, Amazon Games)
 install heroic
@@ -453,6 +476,17 @@ flatpak install flathub org.localsend.localsend_app
 run
 ```
 flatpak run org.localsend.localsend_app
+```
+
+## Discord
+install
+```
+flatpak install com.discordapp.Discord
+```
+
+run
+```
+flatpak run com.discordapp.Discord
 ```
 
 # TODO: https://wiki.hypr.land/Hypr-Ecosystem/
