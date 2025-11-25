@@ -171,8 +171,13 @@ install flatpak
 sudo pacman -S flatpak
 ```
 
-install AUR (yay)
-TODO:
+install yay (AUR - Arch User Repository)
+# TODO: add steps on next install
+
+```
+# upgrade AUR packages
+yay -Sua # or just running without yay also works (which actually also runs pacman -Syu and than searches for AUR package updates)
+```
 
 ## Fonts
 option 1 - full nerd fonts package (over 1.3GB of fonts)
@@ -427,6 +432,7 @@ Make sure "Enable Steam Play for all other titles." is enabled
 Install a custom Proton version (Proton GE) 
 For potentially better compatibility with certain games, you can use a community-maintained version like Proton GE (GloriousEggroll). A convenient way to manage this is with the protonup-qt tool, available in the Arch User Repository (AUR).
 ```
+# install
 yay -S protonup-qt
 ```
 
@@ -489,5 +495,26 @@ run
 flatpak run com.discordapp.Discord
 ```
 
-# TODO: https://wiki.hypr.land/Hypr-Ecosystem/
+## Zoom
+```
+# install
+yay -S zoom
+```
+
+## Rocket chat
+```
+yay -S rocketchat-desktop
+```
+
+## Slack
+```
+yay -S slack-desktop
+```
+
+
+# TODO: many desktop apps are blurry - rocket, steam, discord, zoom, heroic (and many are fine, dolphin, browser, terminals) - must be something with the 4k screen
 # TODO: boxes for VMs
+  - can run a win vm for some of the work stuff that may not start on linux
+  - can I keep the Win key on the work laptop and run it inside a VM
+  - or in cases where we need restrictive VPN
+# TODO: on next install do some tests with hyprlauncher instead of wofi

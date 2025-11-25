@@ -10,6 +10,11 @@ Steam
 Heroic Games Launcher
 Localsend
 Discord
+Ghostty
+Kitty
+Zoom
+RocketChat
+Slack
 EOF
 )
 
@@ -37,5 +42,20 @@ Localsend)
   ;;
 Discord)
   exec flatpak run com.discordapp.Discord
+  ;;
+Ghostty)
+  exec ghostty
+  ;;
+Kitty)
+  exec kitty
+  ;;
+Zoom)
+  exec zoom
+  ;;
+RocketChat)
+  exec rocketchat-desktop
+  ;;
+Slack)
+  exec slack-desktop
   ;;
 esac
