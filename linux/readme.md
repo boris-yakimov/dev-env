@@ -164,6 +164,11 @@ swaync    # desktop notifications
 hyprlock  # lock screen
 hypridle  # idle management
 hyprpaper # wallpaper management
+
+# audio configuration
+sudo pacman -S pipewire wireplumber pipewire-pulse pipewire-alsa pavucontrol
+systemctl --user enable --now pipewire pipewire-pulse wireplumber
+systemctl --user restart pipewire pipewire-pulse wireplumber
 ```
 
 ## Package management
