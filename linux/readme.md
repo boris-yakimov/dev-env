@@ -1,9 +1,27 @@
 ## Arch
 
-btrfs - recommended layout
-Audio - Pipewire (there were issues with Pulse)
+### Arch Install
+Disk Config -> btrfs - recommended layout (unless sharing a disk with existing windows, in that case we have to shrink the existing volume, use the free space to create a new partition, create a sub-volume in btrfs for the root partition at /, make sure EFI boots from /boot (do not format the FAT32 EFI partition))  
 
-make sure EFI starts the linux bootloader first and windows
+BootLoader - systemd-boot
+
+Hostname
+
+Authentication - root pass, create user, set sudo  
+
+Profile -> Desktop -> Hyprland - polkit, GPU drivers (opensource), greeter (sddm)
+
+Applications - bluetooth -> enable; audio -> pipewire
+
+Network Config -> Network Manager
+
+Timezone
+
+NTP
+
+### EFI / bootloader configs
+
+make sure EFI starts the linux bootloader first and than windows
 ```
 sudo efibootmgr -v
 # example: make Boot0001 first, Boot0002 second
@@ -65,6 +83,7 @@ nvme0n1
                                                                                    /home
                                                                                    /
 ```
+
 in this nvme1n1 is Windows SSD and nvme0n1 is the Linux SSD (nvme0/1n1p1 of each is the EFI partition: VFAT - FAT32)
 ```
 # mount the windows EFI partition
