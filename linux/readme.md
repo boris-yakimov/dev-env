@@ -118,6 +118,7 @@ either install them during archinstall or after with pacman
 zsh
 ghostty
 kitty (should already be installed by hyperland)
+tmux
 
 # editor
 neovim
@@ -172,7 +173,12 @@ sudo pacman -S flatpak
 ```
 
 install yay (AUR - Arch User Repository)
-# TODO: add steps on next install
+```
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay/
+makepkg -si
+```
 
 ```
 # upgrade AUR packages
@@ -306,7 +312,41 @@ hyprctl monitors all
 
 configure monitor resolution and scaling
 ```
+vim ~/repos/boris/dev-env/linux/hyprland/hyprland.conf
+# home - oled 4k display
 monitor=DP-1,preferred,auto,1.5 
+# work - laptop and 2k monitor
+monitor=eDP-1,1920x1200@60,auto,1.33
+monitor=HDMI-A-1,2560x1440@59,auto,1.07
+
+
+
+# can also use the default auto option
+monitor=,preferred,auto,auto
+```
+
+Add input language in hyprland
+configuration is already present in the hyprland.conf however we need to make sure that we add the correct keyboard to the bind command because it will be different on each device
+```
+vim ~/repos/boris/dev-env/linux/hyprland/hyprland.conf
+# find line 
+bindl = LALT, LSHIFT, exec, hyprctl switchxkblayout logitech-g512-rgb-mechanical-gaming-keyboard next
+
+# replace the keyboard name at the end with the correct one taken from 
+hyprctl devices
+# the correct one has its main field set to yes, example :
+logitech-g512-rgb-mechanical-gaming-keyboard
+  rules: r "", m "", l "us,bg", v ",phonetic", o "grp:alt_shift_toggle"
+  active layout index: 0
+  active keymap: English (US)
+  capsLock: no
+  numLock: no
+  main: yes
+
+```
+copy the hyprland conf
+```
+cp ~/repos/boris/dev-env/linux/hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
 ```
 
 program launcher - Wofi - https://github.com/SimplyCEO/wofi ; https://cloudninja.pw/docs/wofi.html
@@ -315,7 +355,8 @@ program launcher - Wofi - https://github.com/SimplyCEO/wofi ; https://cloudninja
 sudo pacman -S wofi
 
 # copy the style and script files of wofi
-cp hyprland/wofi/style.css hyprland/wofi/wofi-menu.sh ~/.config/wofi/
+mkdir -p ~/.config/wofi/
+cp ~/repos/boris/dev-env/linux/hyprland/wofi/style.css ~/repos/boris/dev-env/linux/hyprland/wofi/wofi-menu.sh ~/.config/wofi/
 
 ```
 
@@ -330,20 +371,21 @@ mkdir ~/.config/waybar
 
 # copy waybar config and style files
 rm -f ~/.config/waybar/*
-cp hyprland/waybar/style.css ~/.config/waybar/
-cp hyprland/waybar/config.jsonc ~/.config/waybar/
+cp ~/repos/boris/dev-env/linux/hyprland/waybar/style.css ~/.config/waybar/
+cp ~/repos/boris/dev-env/linux/hyprland/waybar/config.jsonc ~/.config/waybar/
 ```
 
 Hyprlock
 ```
 # copy hyprlock config
-cp hyprland/hyprlock.conf ~/.config/hyprland/hyprlock.conf
+mkdir -p ~/.config/hyprland/
+cp ~/repos/boris/dev-env/linux/hyprland/hyprlock.conf ~/.config/hypr/hyprlock.conf
 ```
 
 Hypridle
 ```
 # copy hypr idle config
-cp hyprland/hypridle.conf ~/.config/hyprland/hypridle.conf
+cp ~/repos/boris/dev-env/linux/hyprland/hypridle.conf ~/.config/hypr/hypridle.conf
 ```
 
 Hyprpaper
@@ -351,7 +393,7 @@ Hyprpaper
 # copy hypr paper config and images
 mkdir ~/.config/images/
 # copy images from drive to ~/.config/images folder
-cp hyprland/hyprpaper.conf ~/.config/hyprland/hyprpaper.conf
+cp ~/repos/boris/dev-env/linux/hyprland/hyprpaper.conf ~/.config/hypr/hyprpaper.conf
 ```
 
 Dolphin file manager
@@ -363,7 +405,7 @@ kvantummanager
 
 Remove initial sddm login screen and go directly to hyprlock
 ```
-mkdir /etc/sddm.conf./
+sudo mkdir /etc/sddm.conf./
 sudo vim /etc/sddm.conf.d/boris.conf
 
 [Autologin]
@@ -441,23 +483,6 @@ Open protonup-qt after installation to easily download and install different cus
 protonup-qt
 ```
 
-Add input language in hyprland
-configuration is already present in the hyprland.conf however we need to make sure that we add the correct keyboard to the bind command because it will be different on each device
-```
-# find line 
-bindl = LALT, LSHIFT, exec, hyprctl switchxkblayout logitech-g512-rgb-mechanical-gaming-keyboard next
-
-# replace the keyboard name at the end with the correct one taken from 
-hyprctl devices
-# the correct one has its main field set to yes, example :
-logitech-g512-rgb-mechanical-gaming-keyboard
-  rules: r "", m "", l "us,bg", v ",phonetic", o "grp:alt_shift_toggle"
-  active layout index: 0
-  active keymap: English (US)
-  capsLock: no
-  numLock: no
-  main: yes
-```
 
 ## Heroic Games Launcher (Epic, GoG, Amazon Games)
 install heroic
@@ -503,7 +528,7 @@ yay -S zoom
 
 ## Rocket chat
 ```
-yay -S rocketchat-desktop
+yay -S rocketchat-client-bin
 ```
 
 ## Slack
