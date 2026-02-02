@@ -1,23 +1,26 @@
 ## Arch
 
 ### Arch Install
-Disk Config -> btrfs - recommended layout (unless sharing a disk with existing windows, in that case we have to shrink the existing volume, use the free space to create a new partition, create a sub-volume in btrfs for the root partition at /, make sure EFI boots from /boot (do not format the FAT32 EFI partition))  
 
-BootLoader - systemd-boot
+```
+# Disk Config -> btrfs - recommended layout (unless sharing a disk with existing windows, in that case we have to shrink the existing volume, use the free space to create a new partition, create a sub-volume in btrfs for the root partition at /, make sure EFI boots from /boot (do not format the FAT32 EFI partition))  
 
-Hostname
+# BootLoader - systemd-boot
 
-Authentication - root pass, create user, set sudo  
+# Hostname
 
-Profile -> Desktop -> Hyprland - polkit, GPU drivers (opensource), greeter (sddm)
+# Authentication - root pass, create user, set sudo  
 
-Applications - bluetooth -> enable; audio -> pipewire
+# Profile -> Desktop -> Hyprland - polkit, GPU drivers (opensource), greeter (sddm)
 
-Network Config -> Network Manager
+# Applications - bluetooth -> enable; audio -> pipewire
 
-Timezone
+# Network Config -> Network Manager
 
-NTP
+# Timezone
+
+# NTP
+```
 
 ### EFI / bootloader configs
 

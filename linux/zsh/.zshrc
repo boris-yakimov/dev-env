@@ -23,7 +23,7 @@ export PATH=$PATH:$HOME/bin:~/.local/bin
 export PATH=$PATH:/snap/bin
 
 # Go
-export GOROOT=/usr/local/go
+# export GOROOT=/usr/local/go # GOROOT not needed on Arch
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN:/usr/local/go/bin
