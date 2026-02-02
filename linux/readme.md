@@ -227,11 +227,10 @@ sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-d
 sudo pacman -S adobe-source-code-pro-fonts ttf-hack
 ```
 
-# TODO: check if need those on the next install - the first 2 install commands should be enough for everything
+## Chrome 
+
 ```
-otf-font-awesome
-ttf-nerd-fonts-symbols
-ttf-nerd-fonts-symbols-mono
+yay -S google-chrome
 ```
 
 ## Neovim
@@ -346,8 +345,6 @@ monitor=DP-1,preferred,auto,1.5
 monitor=eDP-1,1920x1200@60,auto,1.33
 monitor=HDMI-A-1,2560x1440@59,auto,1.07
 
-
-
 # can also use the default auto option
 monitor=,preferred,auto,auto
 ```
@@ -394,10 +391,10 @@ sudo pacman -S waybar
 sudo pacman -S ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono otf-font-awesome
 
 # create config dir
+rm -rf ~/.config/waybar/
 mkdir ~/.config/waybar
 
 # copy waybar config and style files
-rm -f ~/.config/waybar/*
 cp ~/repos/boris/dev-env/linux/hyprland/waybar/style.css ~/.config/waybar/
 cp ~/repos/boris/dev-env/linux/hyprland/waybar/config.jsonc ~/.config/waybar/
 ```
@@ -405,7 +402,6 @@ cp ~/repos/boris/dev-env/linux/hyprland/waybar/config.jsonc ~/.config/waybar/
 Hyprlock
 ```
 # copy hyprlock config
-mkdir -p ~/.config/hyprland/
 cp ~/repos/boris/dev-env/linux/hyprland/hyprlock.conf ~/.config/hypr/hyprlock.conf
 ```
 
@@ -418,7 +414,7 @@ cp ~/repos/boris/dev-env/linux/hyprland/hypridle.conf ~/.config/hypr/hypridle.co
 Hyprpaper
 ```
 # copy hypr paper config and images
-mkdir ~/.config/images/
+mkdir -p ~/.config/images/
 # copy images from drive to ~/.config/images folder
 cp ~/repos/boris/dev-env/linux/hyprland/hyprpaper.conf ~/.config/hypr/hyprpaper.conf
 ```
@@ -432,7 +428,7 @@ kvantummanager
 
 Remove initial sddm login screen and go directly to hyprlock
 ```
-sudo mkdir /etc/sddm.conf./
+sudo mkdir /etc/sddm.conf.d/
 sudo vim /etc/sddm.conf.d/boris.conf
 
 [Autologin]
@@ -445,7 +441,7 @@ add multilib repo to pacman
 ```
 sudo vim /etc/pacman.conf
 
-# uncomment the multilib section
+# uncomment the multilib section (both lines)
 [multilib]
 Include = /etc/pacman.d/mirrorlist 
 ```
@@ -462,9 +458,21 @@ sudo pacman -S steam
 
 Ensure the appropriate 32-bit OpenGL or Vulkan drivers are also installed for your graphics card (e.g., lib32-nvidia-utils for NVIDIA, or lib32-mesa for AMD/Intel). The steam package installation should prompt you to select the necessary dependencies. 
 
+install 32bit libraries (needed for the Steam Proton compatibility layer)
+
+For Intel/AMD (Mesa):
+```
+sudo pacman -S lib32-mesa
+```
+
+For NVIDIA:
+```
+sudo pacman -S lib32-nvidia-utils
+```
+
 install Vulkan-Tools
 ```
-sudo pacman -Syu vulkan-tools
+sudo pacman -S vulkan-tools
 ```
 
 check info
@@ -480,18 +488,6 @@ lspci | grep VGA
 check GPU driver
 ```
 vulkaninfo | grep -i driver
-```
-
-install 32bit libraries (needed for the Steam Proton compatibility layer)
-
-For Intel/AMD (Mesa):
-```
-sudo pacman -S lib32-mesa
-```
-
-For NVIDIA:
-```
-sudo pacman -S lib32-nvidia-utils
 ```
 
 Enable Proton in Steam
