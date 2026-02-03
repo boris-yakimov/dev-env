@@ -58,4 +58,7 @@ RocketChat)
 Slack)
   exec slack
   ;;
+Boxes)
+  exec gnome-boxes
+  ;;
 esac

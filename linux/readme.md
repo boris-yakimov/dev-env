@@ -1,6 +1,4 @@
-## Arch
-
-### Arch Install
+## Arch install
 
 ```
 # Disk Config -> btrfs - recommended layout (unless sharing a disk with existing windows, in that case we have to shrink the existing volume, use the free space to create a new partition, create a sub-volume in btrfs for the root partition at /, make sure EFI boots from /boot (do not format the FAT32 EFI partition))  
@@ -22,7 +20,7 @@
 # NTP
 ```
 
-### EFI / bootloader configs
+## EFI / bootloader configs (dual boot Win/Lin)
 
 make sure EFI starts the linux bootloader first and than windows
 ```
@@ -559,10 +557,37 @@ yay -S rocketchat-client-bin
 yay -S slack-desktop
 ```
 
+## Boxes (VMs)
+# TODO: can I keep the Win key on the work laptop and run it inside a VM
+# TODO: test running a VPN inside a VM to not block my internet connection on the main PC when connected (can be useful for work)
 
+install gnome boxes and virtualization dependencies
+```
+sudo pacman -S gnome-boxes
+sudo pacman -S qemu-full libvirt edk2-ovmf dnsmasq iptables-nft virt-viewer
+```
+
+enable and start libvirt
+```
+sudo systemctl enable --now libvirtd
+```
+
+add user to libvirt group
+```
+sudo usermod -aG libvirt $USER
+```
+
+run 
+```
+gnome-boxes
+```
+
+list all libvirt networks, including ones that are active and inactive
+```
+virsh net-list --all
+```
+
+Other
 # TODO: many desktop apps are blurry - rocket, steam, discord, zoom, heroic (and many are fine, dolphin, browser, terminals) - must be something with the 4k screen
-# TODO: boxes for VMs
-  - can run a win vm for some of the work stuff that may not start on linux
-  - can I keep the Win key on the work laptop and run it inside a VM
-  - or in cases where we need restrictive VPN
+
 # TODO: on next install do some tests with hyprlauncher instead of wofi
