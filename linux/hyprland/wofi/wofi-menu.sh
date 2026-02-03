@@ -15,6 +15,7 @@ Kitty
 Zoom
 RocketChat
 Slack
+Boxes
 EOF
 )
 
