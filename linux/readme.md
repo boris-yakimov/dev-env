@@ -478,6 +478,24 @@ check info
 vulkan-info
 ```
 
+check GPU info
+```
+vulkaninfo --summary | grep -E 'GPU|driver'
+```
+
+check kernel module
+```
+modinfo nvidia | grep -E 'version|filename'
+```
+
+check if proprietary or open source drivers are used (for NVIDIA)
+proprietary drivers are recommended for newer nvidia GPUs
+```
+lsmod | grep -E 'nvidia|nouveau'
+# if you see nvidia, you’re on the proprietary driver
+# if you see nouveau, you’re on the open-source driver
+```
+
 check GPU detected by Linux
 ```
 lspci | grep VGA
