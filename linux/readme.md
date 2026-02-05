@@ -475,7 +475,7 @@ sudo pacman -S vulkan-tools
 
 check info
 ```
-vulkan-info
+vulkaninfo
 ```
 
 check GPU info
