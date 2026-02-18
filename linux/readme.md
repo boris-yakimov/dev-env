@@ -535,6 +535,15 @@ flatpak run com.heroicgameslauncher.hgl
 ```
 
 
+## Lutris (stuff like battle.net)
+install lutris
+```
+sudo pacman -S lutris
+```
+
+once we run it let it install its dependencies, than click the + and search for battle.net
+the battle.net installation will also install whatever dependencies it needs and run it in Wine
+
 ## Localsend
 https://localsend.org/
 

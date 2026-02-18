@@ -16,6 +16,7 @@ Zoom
 RocketChat
 Slack
 Boxes
+Lutris
 EOF
 )
 
@@ -61,5 +62,8 @@ Slack)
   ;;
 Boxes)
   exec gnome-boxes
+  ;;
+Lutris)
+  exec lutris
   ;;
 esac
