@@ -146,6 +146,8 @@ neovim
 # for neovim
 ripgrep
 python-neovim
+fd
+tree-sitter-cli
 
 # tools
 curl
