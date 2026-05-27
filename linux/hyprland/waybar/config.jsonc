@@ -17,7 +17,7 @@
     ],
     "modules-right": [
         // "pulseaudio",
-        // "network",
+        "network",
         // "cpu",
         // "memory",
         // "keyboard-state",
@@ -131,12 +131,14 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi": " ",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)   \n{ifname} via {gwaddr} ",
+        "format-ethernet": "󰈀",
+        "tooltip-format-ethernet": "{ipaddr}/{cidr} 󰈀  \n{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ", // what to display when connection is active but no IP has been assigned yet, e.g. wire is connected but DHCP has not assigned an IP yet
+        "format-disconnected": "Disconnected 󰤭",
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}", // (optional) what gets displayed on the bar when you click
+        "on-click": "ghostty -e nmtui-connect" // (optional) what to open on click
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
