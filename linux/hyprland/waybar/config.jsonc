@@ -9,28 +9,20 @@
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/submap"
-        // "sway/scratchpad",
         // "custom/media"
     ],
     "modules-center": [
         "hyprland/window"
     ],
     "modules-right": [
-        // "pulseaudio",
         "network",
         "hyprland/language",
-        // "cpu",
-        // "memory",
-        // "keyboard-state",
-
-        // "bluetooth",
-
-        // for laptops
-        // "power-profiles-daemon",
         "battery",
-    
-        // "tray",
-        "clock"
+        "clock",
+        // "pulseaudio",
+        // "bluetooth",
+        // "power-profiles-daemon",
+        "tray"
         // "custom/power"
     ],
     // Modules configuration
@@ -50,26 +42,10 @@
             "default": ""
         }
     },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
     "hyprland/submap": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    // "sway/scratchpad": {
-    //     "format": "{icon} {count}",
-    //     "show-empty": false,
-    //     "format-icons": ["", ""],
-    //     "tooltip": true,
-    //     "tooltip-format": "{app}: {title}"
-    // },
-    "tray": {
+    "tray": { // The tray module displays system tray icons in Waybar — these are background apps that advertise a status icon (like nm-applet, Bluetooth manager, Discord, Steam, Telegram, etc.)
         // "icon-size": 21,
         "spacing": 10,
         // "icons": {
@@ -93,13 +69,6 @@
                 "today": "<span color='#f7768e'><b><u>{}</u></b></span>" // pink/red today
             }
         },
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
     },
     "battery": {
         "states": {
@@ -168,6 +137,7 @@
         "max-length": 40,
         "format-icons": {
             "spotify": "",
+            "youtube": "🎜", // TODO: update
             "default": "🎜"
         },
         "escape": true,
@@ -176,14 +146,14 @@
     },
     "custom/power": {
         "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+          "shutdown": "shutdown",
+          "reboot": "reboot",
+          "suspend": "systemctl suspend",
+          "hibernate": "systemctl hibernate"
+        }
     }
 }
