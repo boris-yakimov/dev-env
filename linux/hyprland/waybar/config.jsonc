@@ -23,10 +23,11 @@
         // "memory",
         // "keyboard-state",
 
+        // "bluetooth",
+
         // for laptops
         // "power-profiles-daemon",
-        // "battery",
-        // "battery#bat2",
+        "battery",
     
         // "tray",
         "clock"
@@ -114,9 +115,6 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
     },
     "power-profiles-daemon": {
       "format": "{icon}",
