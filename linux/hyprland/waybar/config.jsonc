@@ -35,7 +35,11 @@
             "2": "",
             "3": "",
             "4": "",
-            "5": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
             "urgent": "",
             "focused": "",
             "default": ""
@@ -148,6 +152,10 @@
             "default": "🎜"
         },
         "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    }
+}
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
