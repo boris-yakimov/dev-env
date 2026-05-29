@@ -21,9 +21,8 @@
         "clock",
         // "pulseaudio",
         // "bluetooth",
-        // "power-profiles-daemon",
-        "tray"
-        // "custom/power"
+        // "tray"
+        "custom/power"
     ],
     // Modules configuration
     "hyprland/workspaces": {
@@ -85,17 +84,6 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": " ",
@@ -148,12 +136,12 @@
         "format" : "⏻ ",
         "tooltip": false,
         "menu": "on-click",
-        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        "menu-file": "$HOME/.config/waybar/power_menu.xml",
         "menu-actions": {
           "shutdown": "shutdown",
           "reboot": "reboot",
-          "suspend": "systemctl suspend",
-          "hibernate": "systemctl hibernate"
+          // "suspend": "systemctl suspend",
+          // "hibernate": "systemctl hibernate"
         }
     }
 }

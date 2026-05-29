@@ -397,6 +397,7 @@ mkdir ~/.config/waybar
 # copy waybar config and style files
 cp ~/repos/boris/dev-env/linux/hyprland/waybar/style.css ~/.config/waybar/
 cp ~/repos/boris/dev-env/linux/hyprland/waybar/config.jsonc ~/.config/waybar/
+cp ~/repos/boris/dev-env/linux/hyprland/waybar/power_menu.xml ~/.config/waybar/
 ```
 
 Hyprlock
