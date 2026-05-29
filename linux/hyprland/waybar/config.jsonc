@@ -8,11 +8,11 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/submap"
-        // "custom/media"
+        "hyprland/submap",
     ],
     "modules-center": [
         "clock"
+        // "custom/media"
         // "hyprland/window" // shows info about the curently open window
         // "tray" // allows other apps to display a status icon - like discord, steam, etc
     ],
@@ -75,10 +75,10 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
+        "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format-plugged": "",
         "format-alt": "{time} {icon}",
         "format-good": "", // An empty format will hide the module
         "format-full": "", // An empty format will hide the module
@@ -117,19 +117,6 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "youtube": "🎜", // TODO: update
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
     "custom/power": {
         "format" : "⏻ ",
         "tooltip": false,
@@ -146,9 +133,22 @@
         "format": "",
         "format-disabled": "", // an empty format will hide the module
         "format-connected": " {num_connections} connected",
-        "tooltip-format": "bluetooth status: {status}\ncontroller:\n{controller_alias}\t{controller_address}",
+        "tooltip-format": "bluetooth status: {status}\n\ncontroller:\n{controller_alias}\t{controller_address}",
         "tooltip-format-connected": "controller:\n{controller_alias}\t{controller_address}\n\nconnected devices:\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "on-click": "blueman-manager"
+    },
+    "custom/media": {
+        "format": "{icon} {text}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "youtube": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
 }
