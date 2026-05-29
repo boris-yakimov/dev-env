@@ -134,6 +134,16 @@ sudo pacman -Syu
 
 either install them during archinstall or after with pacman
 ```
+# audio configuration
+sudo pacman -S pipewire wireplumber pipewire-pulse pipewire-alsa pavucontrol
+systemctl --user enable --now pipewire pipewire-pulse wireplumber
+systemctl --user restart pipewire pipewire-pulse wireplumber
+
+# bluetooth
+sudo pacman -S bluez bluez-utils
+sudo systemctl enable --now bluetooth
+sudo pacman -S blueman
+
 # shell / terminal
 zsh
 ghostty
@@ -186,11 +196,6 @@ swaync    # desktop notifications
 hyprlock  # lock screen
 hypridle  # idle management
 hyprpaper # wallpaper management
-
-# audio configuration
-sudo pacman -S pipewire wireplumber pipewire-pulse pipewire-alsa pavucontrol
-systemctl --user enable --now pipewire pipewire-pulse wireplumber
-systemctl --user restart pipewire pipewire-pulse wireplumber
 ```
 
 ## Package management
