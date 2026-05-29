@@ -193,6 +193,7 @@ kvantum # theme for dolphin file manager
 
 # hyprland
 hyprshot  # screenshots
+satty     # to be able to draw on top of screenshots taken by hyprshot
 swaync    # desktop notifications
 hyprlock  # lock screen
 hypridle  # idle management
