@@ -12,8 +12,8 @@
         // "custom/media"
     ],
     "modules-center": [
-        // "hyprland/window"
         "clock"
+        // "hyprland/window" // shows info about the curently open window
         // "tray" // allows other apps to display a status icon - like discord, steam, etc
     ],
     "modules-right": [
@@ -102,21 +102,20 @@
       "tooltip-format": "alt + shift"
     },
     "pulseaudio": {
-        "format": "{volume}% {icon}",
+        "format": "{icon}",
         "format-bluetooth": "{volume}% {icon}",
         "format-bluetooth-muted": " {icon}",
-        "format-muted": "{volume}% ",
+        "format-muted": "",
         "format-source": "",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            // "default": ["", "", ""]
-            "default": ["", ""]
+            // "headphone": "",
+            // "hands-free": "",
+            // "headset": "",
+            // "phone": "",
+            // "portable": "",
+            // "car": "",
+            "default": ["", "", "󰕾", ""]
         },
         "on-click": "pavucontrol"
     },
