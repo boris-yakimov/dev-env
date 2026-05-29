@@ -165,6 +165,7 @@ wget
 less
 git
 unzip
+vlc
 
 # work
 aws-cli-v2
