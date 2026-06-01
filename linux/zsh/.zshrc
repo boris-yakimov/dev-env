@@ -44,21 +44,18 @@ alias vi="nvim"
 # set tmux to use full color mode by default
 alias tmux="TERM=screen-256color-bce tmux"
 
-##  tmux config
+## tmux config
 # dev env
 TMUX_DEV_ENV_SESSION="dev"
-tmux has-session -t $TMUX_DEV_ENV_SESSION&> /dev/null
-if [ $? != 0 ] 
- then
+tmux has-session -t $TMUX_DEV_ENV_SESSION &> /dev/null
+if [ $? != 0 ]; then
     tmux new-session -s $TMUX_DEV_ENV_SESSION -n "dev" -d
-    tmux send-keys -t $TMUX_DEV_ENV_SESSION "~/repos/boris/dev-env/" C-m 
-    
-    # stat new window in session and open readme
-    tmux new-window -d -n "readme" -t $TMUX_DEV_ENV_SESSION:2
+
+    tmux send-keys -t $TMUX_DEV_ENV_SESSION "cd ~/repos/boris/dev-env/ && nvim ./" C-m
+
+    tmux new-window -t $TMUX_DEV_ENV_SESSION:2 -n "dotfile_dir"
     tmux send-keys -t $TMUX_DEV_ENV_SESSION:2 "cd ~/repos/boris/dev-env/" C-m
-    tmux send-keys -t $TMUX_DEV_ENV_SESSION:2 "nvim ./" C-m
-   
-    # when started focus on first nvim window
+
     tmux select-window -t $TMUX_DEV_ENV_SESSION:1
 fi
 
