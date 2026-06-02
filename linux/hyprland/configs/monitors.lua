@@ -1,3 +1,6 @@
+-- disable redundant warnings from lua lsp for this specific file
+---@diagnostic disable: undefined-global
+
 -- https://wiki.hypr.land/Configuring/Basics/Monitors/
 -- default setup
 -- hl.monitor({

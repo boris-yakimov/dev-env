@@ -1,8 +1,12 @@
+-- disable redundant warnings from lua lsp for this specific file
+---@diagnostic disable: undefined-global
+
 require("configs.vars")
 require("configs.autostart")
 require("configs.monitors")
 require("configs.keybinds")
 -- require("configs.permissions")
+require("configs.input")
 require("configs.visuals")
 require("configs.workspaces")
 

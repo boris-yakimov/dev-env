@@ -1,3 +1,6 @@
+-- disable redundant warnings from lua lsp for this specific file
+---@diagnostic disable: undefined-global
+
 hl.config({
 	input = {
 		kb_layout = "us, bg",

@@ -343,6 +343,7 @@ get list of monitors (take note of ID)
 hyprctl monitors all
 ```
 
+# TODO: fix to work with new approach with lua
 configure monitor resolution and scaling
 ```
 vim ~/repos/boris/dev-env/linux/hyprland/hyprland.conf
@@ -356,6 +357,7 @@ monitor=HDMI-A-1,2560x1440@59,auto,1.07
 monitor=,preferred,auto,auto
 ```
 
+# TODO: fix to work with new approach with lua
 Add input language in hyprland
 configuration is already present in the hyprland.conf however we need to make sure that we add the correct keyboard to the bind command because it will be different on each device
 ```
@@ -375,9 +377,12 @@ logitech-g512-rgb-mechanical-gaming-keyboard
   main: yes
 
 ```
-copy the hyprland conf
+
+# TODO: fix to work with new approach with lua
+copy the hyprland configs
 ```
-cp ~/repos/boris/dev-env/linux/hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
+cp -ra ~/repos/boris/dev-env/linux/hyprland/configs/ ~/.config/hypr/configs/
+cp ~/repos/boris/dev-env/linux/hyprland/hyprland.lua ~/.config/hypr/hyprland.lua
 ```
 
 program launcher - Wofi - https://github.com/SimplyCEO/wofi ; https://cloudninja.pw/docs/wofi.html

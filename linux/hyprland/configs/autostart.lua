@@ -1,3 +1,6 @@
+-- disable redundant warnings from lua lsp for this specific file
+---@diagnostic disable: undefined-global
+
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)

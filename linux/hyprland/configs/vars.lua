@@ -1,7 +1,11 @@
-local terminal = "ghostty"
-local fileManager = "dolphin"
-local menu = "~/.config/wofi/wofi-menu.sh" -- TODO: test switching to hyprlauncher
-local notifications = "swaync"
+-- disable redundant warnings from lua lsp for this specific file
+---@diagnostic disable: lowercase-global
+---@diagnostic disable: undefined-global
+
+terminal = "ghostty"
+fileManager = "dolphin"
+menu = "~/.config/wofi/wofi-menu.sh" -- TODO: test switching to hyprlauncher
+notifications = "swaync"
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 hl.env("XCURSOR_SIZE", "24")

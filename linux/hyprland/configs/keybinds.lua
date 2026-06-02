@@ -1,3 +1,6 @@
+-- disable redundant warnings from lua lsp for this specific file
+---@diagnostic disable: undefined-global
+
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
@@ -20,11 +23,11 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 
 -- waybar
 -- TODO: test these
-hl.bind(mainmod .. " + F12", hl.dsp.exec_cmd("pkill -x waybar || waybar"))
+hl.bind(mainMod .. " + F12", hl.dsp.exec_cmd("pkill -x waybar || waybar"))
 
 -- hyprlock
 -- TODO: test these
-hl.bind(mainmod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
 -- screenshot region (satty allows to draw on top of the screnshot)
 -- TODO: test these
