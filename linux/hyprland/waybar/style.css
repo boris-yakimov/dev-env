@@ -310,9 +310,9 @@ label:focus {
     /* background: #97e1ad; */
     background-color: transparent;
     /* color: #000000; */
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
+    /* padding: 0 0px; */
+    /* margin: 0 5px; */
+    /* min-width: 16px; */
 }
 
 #keyboard-state > label {

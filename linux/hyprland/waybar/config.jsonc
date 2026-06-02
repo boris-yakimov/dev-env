@@ -11,7 +11,8 @@
         "hyprland/submap",
     ],
     "modules-center": [
-        "clock"
+        "clock",
+        "custom/capslock" // show indication when caps lock is pressed and nothing when it is not
         // "custom/media"
         // "hyprland/window" // shows info about the curently open window
         // "tray" // allows other apps to display a status icon - like discord, steam, etc
@@ -142,6 +143,11 @@
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "on-click": "blueman-manager"
     },
+    "custom/capslock": {
+        "interval": 1,
+        "exec": "cat /sys/class/leds/input*::capslock/brightness 2>/dev/null | grep -q 1 && echo 'capslock  ' || echo ''",
+        "format": "{}" // display nothing when caps lock is not pressed
+    },
     "custom/media": {
         "format": "{icon} {text}",
         "return-type": "json",
@@ -152,10 +158,6 @@
             "default": "🎜"
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
-}
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
