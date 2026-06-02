@@ -1,5 +1,10 @@
+require("configs.vars")
+require("configs.autostart")
 require("configs.monitors")
 require("configs.keybinds")
+-- require("configs.permissions")
+require("configs.visuals")
+require("configs.workspaces")
 
 hl.config({
 	--  https://wiki.hypr.land/Configuring/Variables/#misc

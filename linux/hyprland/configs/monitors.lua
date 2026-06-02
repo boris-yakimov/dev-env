@@ -7,6 +7,8 @@
 -- 	scale = "auto",
 -- })
 
+-- TODO: check if we can somehow alias primary and secondary monitors so that when I send a program to primary on any device it goes there
+
 -- main PC - 4k / 32 inch
 -- hl.monitor({
 -- 	output = "DP-1",
