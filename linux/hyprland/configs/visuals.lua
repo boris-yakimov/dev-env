@@ -1,3 +1,6 @@
+-- disable redundant warnings from lua lsp for this specific file
+---@diagnostic disable: undefined-global
+
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 
 hl.config({
@@ -8,7 +11,7 @@ hl.config({
 		border_size = 1,
 
 		col = {
-			-- TODO: angle was previously not set, check if its needed
+			-- angle controls in which direction the transition from the first to the second color happens - 45degree angle means the color starts from bottom left corner and transitions towards the top right corner
 			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
 			inactive_border = "rgba(595959aa)",
 		},
@@ -111,9 +114,8 @@ hl.config({
 })
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/ for more
--- TODO: this was previously not part of configuration, check it
 hl.config({
 	scrolling = {
-		fullscreen_on_one_column = true,
+		fullscreen_on_one_column = true, -- when there's only a single window (one column) visible in the workspace, automatically make it fullscreen — so it fills the entire screen without gaps or padding. Once you open a second window, the scrolling behavior takes over normally
 	},
 })

@@ -3,10 +3,10 @@
 
 hl.config({
 	input = {
-		kb_layout = "us, bg",
-		kb_variant = "",
+		kb_layout = "us,bg",
+		kb_variant = ",phonetic",
 		kb_model = "",
-		kb_options = "",
+		kb_options = "grp:alt_shift_toggle",
 		kb_rules = "",
 
 		follow_mouse = 1,
@@ -27,11 +27,10 @@ hl.gesture({
 
 -- Example per-device config
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
--- TODO: should this be updated, it used to be the same in the old config as well ?
-hl.device({
-	name = "epic-mouse-v1",
-	sensitivity = -0.5,
-})
+-- hl.device({
+-- 	name = "epic-mouse-v1",
+-- 	sensitivity = -0.5,
+-- })
 
 hl.config({
 	cursor = {

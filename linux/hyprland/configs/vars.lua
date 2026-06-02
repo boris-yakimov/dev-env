@@ -4,7 +4,7 @@
 
 terminal = "ghostty"
 fileManager = "dolphin"
-menu = "~/.config/wofi/wofi-menu.sh" -- TODO: test switching to hyprlauncher
+menu = "~/.config/wofi/wofi-menu.sh"
 notifications = "swaync"
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/

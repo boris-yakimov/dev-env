@@ -36,8 +36,7 @@ hl.window_rule({
 -- })
 -- overlayLayerRule:set_enabled(false)
 
--- Hyprland-run windowrule
--- TODO: test each of those
+-- Hyprland-run windowrule (pins the Hyprland run/launcher dialog as a small floating window at the bottom-left corner of your monitor)
 hl.window_rule({
 	name = "move-hyprland-run",
 	match = { class = "hyprland-run" },
@@ -89,7 +88,7 @@ hl.window_rule({
 
 hl.window_rule({
 	match = {
-		class = "^(steam|lutris|heroic)$",
+		class = "^(steam|net.lutris.Lutris|com.heroicgameslauncher.hgl|steam_app_default)$",
 	},
 	-- no_initial_focus = true,
 	workspace = "6",

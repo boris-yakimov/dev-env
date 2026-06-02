@@ -6,7 +6,6 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 
--- TODO: test this
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 
@@ -22,30 +21,26 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
 -- waybar
--- TODO: test these
 hl.bind(mainMod .. " + F12", hl.dsp.exec_cmd("pkill -x waybar || waybar"))
 
 -- hyprlock
--- TODO: test these
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
 
 -- screenshot region (satty allows to draw on top of the screnshot)
--- TODO: test these
 hl.bind("CONTROL + ALT + S", hl.dsp.exec_cmd("hyprshot -m region --raw | satty --filename -"))
 -- screenshot window (satty allows to draw on top of the screnshot)
 hl.bind("CONTROL + ALT + W", hl.dsp.exec_cmd("hyprshot -m window --raw | satty --filename -"))
 
--- change language
--- we use bindl because both alt and shift are modifier keys in hyprland
--- TODO: test these ; maybe the keyboard can be a local var
-hl.bindl("LALT + LSHIFT", hl.dsp.exec_cmd("hyprctl switchxkblayout royuan-2.4g-wireless-keyboard next"))
-
 -- Move focus with mainMod + arrow keys
--- TODO: update vim motions
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
+-- vim motions navigation
+hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
+hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -55,13 +50,13 @@ for i = 1, 10 do
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
--- TODO: change these to use primary and secondary monitor aliases
--- Move current workspace to monitor 2
-hl.bind(mainMod .. " + CTRL + SHIFT + 0", hl.dsp.workspace.move({ workspace = "current", monitor = "HDMI-A-1" }))
--- Move current workspace to monitor 1 (eDP-1)
-hl.bind(mainMod .. " + SHIFT + F3", hl.dsp.workspace.move({ workspace = "current", monitor = "eDP-1" }))
+-- Move current workspace to other monitor and back
+hl.bind(mainMod .. " + CTRL + right", hl.dsp.workspace.move({ monitor = "+1" }))
+hl.bind(mainMod .. " + CTRL + left", hl.dsp.workspace.move({ monitor = "-1" }))
+-- vim motions navigation
+hl.bind(mainMod .. " + CTRL + l", hl.dsp.workspace.move({ monitor = "+1" }))
+hl.bind(mainMod .. " + CTRL + h", hl.dsp.workspace.move({ monitor = "-1" }))
 
--- TODO: check if I need this
 -- Example special workspace (scratchpad)
 -- hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 -- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
