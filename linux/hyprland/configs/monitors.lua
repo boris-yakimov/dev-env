@@ -26,7 +26,7 @@ hl.monitor({
 hl.monitor({
 	output = "desc:Dell Inc. DELL S2721D 4X0GP43", -- main monitor at work
 	mode = "2560x1440@59",
-	position = "1536x0", -- 1536 here because main laptop monitor is used at 1920x1200 with a 1.25 scaling which makes the main monitor sit exactly to the right of the laptop monitor (1920/1.25=1536px)
+	position = "1600x0", -- 1600 here because the laptop monitor has a native resolution of 1920x1200 with a 1.2 scale factor, resulting in a logical (effective) resolution of 1600x1000 (1920/1.2=1600)
 	scale = "1",
 })
 
@@ -34,5 +34,5 @@ hl.monitor({
 	output = "desc:BOE 0x0A31", -- work laptop monitor
 	mode = "1920x1200@60",
 	position = "0x0",
-	scale = "1.25",
+	scale = "1.20",
 })
