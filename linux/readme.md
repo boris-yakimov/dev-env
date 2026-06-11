@@ -338,47 +338,6 @@ configuration - https://wiki.hypr.land/Configuring/
 must haves - https://wiki.hypr.land/Useful-Utilities/Must-have/
 hyprland ecosystem - https://wiki.hypr.land/Hypr-Ecosystem/
 
-get list of monitors (take note of ID)
-```
-hyprctl monitors all
-```
-
-# TODO: fix to work with new approach with lua
-configure monitor resolution and scaling
-```
-vim ~/repos/boris/dev-env/linux/hyprland/hyprland.conf
-# home - oled 4k display
-monitor=DP-1,preferred,auto,1.5 
-# work - laptop and 2k monitor
-monitor=eDP-1,1920x1200@60,auto,1.33
-monitor=HDMI-A-1,2560x1440@59,auto,1.07
-
-# can also use the default auto option
-monitor=,preferred,auto,auto
-```
-
-# TODO: fix to work with new approach with lua
-Add input language in hyprland
-configuration is already present in the hyprland.conf however we need to make sure that we add the correct keyboard to the bind command because it will be different on each device
-```
-vim ~/repos/boris/dev-env/linux/hyprland/hyprland.conf
-# find line 
-bindl = LALT, LSHIFT, exec, hyprctl switchxkblayout logitech-g512-rgb-mechanical-gaming-keyboard next
-
-# replace the keyboard name at the end with the correct one taken from 
-hyprctl devices
-# the correct one has its main field set to yes, example :
-logitech-g512-rgb-mechanical-gaming-keyboard
-  rules: r "", m "", l "us,bg", v ",phonetic", o "grp:alt_shift_toggle"
-  active layout index: 0
-  active keymap: English (US)
-  capsLock: no
-  numLock: no
-  main: yes
-
-```
-
-# TODO: fix to work with new approach with lua
 copy the hyprland configs
 ```
 cp -ra ~/repos/boris/dev-env/linux/hyprland/configs/ ~/.config/hypr/configs/

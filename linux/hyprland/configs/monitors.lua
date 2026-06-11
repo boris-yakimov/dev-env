@@ -19,8 +19,22 @@ hl.monitor({
 -- 	scale = "1.5",
 -- })
 --
--- TODO: test with the desktop PC на село
 -- TODO: test with personal laptop
+
+-- main PC - на Село
+hl.monitor({
+	output = "desc:Dell Inc. DELL S2721DGF 1RXZY13", -- main monitor на Село
+	mode = "2560x1440@59",
+	position = "auto",
+	scale = "1",
+})
+
+hl.monitor({
+	output = "desc:BNQ BenQ LCD A9J00468019", -- second monitor на Село
+	mode = "2560x1440@59",
+	position = "0x0",
+	scale = "1",
+})
 
 -- work Laptop
 hl.monitor({
