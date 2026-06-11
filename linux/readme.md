@@ -437,6 +437,12 @@ For Intel/AMD (Mesa):
 sudo pacman -S lib32-mesa
 ```
 
+also needed those on AMD card in order for Lutris to load
+```
+sudo pacman -S vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+```
+```
+
 For NVIDIA:
 ```
 sudo pacman -S lib32-nvidia-utils
