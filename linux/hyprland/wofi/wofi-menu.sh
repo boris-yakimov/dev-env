@@ -17,6 +17,9 @@ RocketChat
 Slack
 Boxes
 Lutris
+Teams
+AWS VPN Client
+Viber
 EOF
 )
 
@@ -65,5 +68,14 @@ Boxes)
   ;;
 Lutris)
   exec lutris
+  ;;
+Teams)
+  exec teams-for-linux
+  ;;
+AWS\ VPN\ Client)
+  systemctl start awsvpnclient.service && exec "/opt/awsvpnclient/AWS VPN Client"
+  ;;
+Viber)
+  exec viber
   ;;
 esac

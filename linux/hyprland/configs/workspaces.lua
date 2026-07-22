@@ -45,6 +45,7 @@ hl.window_rule({
 	float = true,
 })
 
+-- get class name of running programs - hyprctl clients -j | jq '.[].class'
 -- Specify in which workspace to start some programs
 hl.window_rule({
 	match = {
@@ -72,7 +73,7 @@ hl.window_rule({
 
 hl.window_rule({
 	match = {
-		class = "^(Rocket.Chat|slack|discord|teams-for-linux)$",
+		class = "^(rocket-chat|slack|discord|teams-for-linux|viber)$",
 	},
 	-- no_initial_focus = true,
 	workspace = "4",
