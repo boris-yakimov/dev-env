@@ -35,5 +35,6 @@ hl.gesture({
 hl.config({
 	cursor = {
 		inactive_timeout = 2, -- hide the cursor when using keyboard or while idle
+		no_hardware_cursors = true, -- render cursor in software so it's captured during screen sharing (Meet, OBS, etc.)
 	},
 })
