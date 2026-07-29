@@ -548,12 +548,6 @@ run
 flatpak run com.discordapp.Discord
 ```
 
-## Zoom
-```
-# install
-yay -S zoom
-```
-
 ## Rocket chat
 ```
 yay -S rocketchat-client-bin

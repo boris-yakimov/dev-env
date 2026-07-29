@@ -12,7 +12,6 @@ Localsend
 Discord
 Ghostty
 Kitty
-Zoom
 RocketChat
 Slack
 Boxes
@@ -53,9 +52,6 @@ Ghostty)
   ;;
 Kitty)
   exec kitty
-  ;;
-Zoom)
-  exec zoom
   ;;
 RocketChat)
   exec rocketchat-desktop
