@@ -25,7 +25,7 @@ hl.monitor({
 hl.monitor({
 	output = "desc:Dell Inc. DELL S2721DGF 1RXZY13", -- main monitor на Село
 	mode = "2560x1440@59",
-	position = "auto",
+	position = "2560x0",
 	scale = "1",
 })
 
