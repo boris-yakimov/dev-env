@@ -408,6 +408,12 @@ User=boris
 Session=hyprland.desktop
 ```
 
+Swaync
+```
+mkdir -p ~/.config/swaync/
+cp ~/repos/boris/dev-env/linux/hyprland/swaync.conf ~/.config/swaync/config.json
+```
+
 ## Steam
 add multilib repo to pacman
 ```
