@@ -83,6 +83,23 @@ fi
 
 alias lz="tmux a -t lz"
 
+# gcp landing zones project
+TMUX_GCP_LZ_SESSION="gcp"
+tmux has-session -t $TMUX_GCP_LZ_SESSION&> /dev/null
+if [ $? != 0 ]
+ then
+    tmux new-session -s $TMUX_GCP_LZ_SESSION -n "nvim" -d "cd ~/repos/itgix/itgix-aws-landing-zones/gcp-landing-zone/ && nvim ./"
+
+    # stat new window in session and switch to dir
+    tmux new-window -d -n "tf_exec" -t $TMUX_GCP_LZ_SESSION:2
+    tmux send-keys -t $TMUX_GCP_LZ_SESSION:2 "~/repos/itgix/itgix-aws-landing-zones/gcp-landing-zone" C-m
+
+    # when started focus on first nvim window
+    tmux select-window -t $TMUX_GCP_LZ_SESSION:1
+fi
+
+alias gcp-lz="tmux a -t gcp"
+
 ### End Custom config ###
 
 # Set name of the theme to load --- if set to "random", it will
