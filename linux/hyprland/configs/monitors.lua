@@ -10,15 +10,14 @@ hl.monitor({
 	scale = "auto",
 })
 
--- TODO: add the correct config for main monitor at home
 -- main PC - 4k / 32 inch
--- hl.monitor({
--- 	output = "DP-1",
--- 	mode = "preferred",
--- 	position = "auto",
--- 	scale = "1.5",
--- })
---
+hl.monitor({
+	output = "desc:Dell Inc. AW3225QF C1C7YZ3",
+	mode = "preferred",
+	position = "auto",
+	scale = "1.5",
+})
+
 -- TODO: test with personal laptop
 
 -- main PC - на Село
