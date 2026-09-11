@@ -24,14 +24,16 @@ hl.monitor({
 hl.monitor({
 	output = "desc:Dell Inc. DELL S2721DGF 1RXZY13", -- main monitor на Село
 	mode = "2560x1440@59",
-	position = "2560x0",
+	position = "auto-right",
+	-- position = "2560x0",
 	scale = "1",
 })
 
 hl.monitor({
 	output = "desc:BNQ BenQ LCD A9J00468019", -- second monitor на Село
 	mode = "2560x1440@59",
-	position = "0x0",
+	position = "auto-left",
+	-- position = "0x0",
 	scale = "1",
 })
 
@@ -39,13 +41,15 @@ hl.monitor({
 hl.monitor({
 	output = "desc:Dell Inc. DELL S2721D 4X0GP43", -- main monitor at work
 	mode = "2560x1440@59",
-	position = "1600x0", -- 1600 here because the laptop monitor has a native resolution of 1920x1200 with a 1.2 scale factor, resulting in a logical (effective) resolution of 1600x1000 (1920/1.2=1600)
+	position = "auto-right", -- 1600 here because the laptop monitor has a native resolution of 1920x1200 with a 1.2 scale factor, resulting in a logical (effective) resolution of 1600x1000 (1920/1.2=1600)
+	-- position = "1600x0", -- 1600 here because the laptop monitor has a native resolution of 1920x1200 with a 1.2 scale factor, resulting in a logical (effective) resolution of 1600x1000 (1920/1.2=1600)
 	scale = "1",
 })
 
 hl.monitor({
 	output = "desc:BOE 0x0A31", -- work laptop monitor
 	mode = "1920x1200@60",
-	position = "0x0",
+	position = "auto-left",
+	-- position = "0x0",
 	scale = "1.20",
 })
