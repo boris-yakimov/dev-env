@@ -61,12 +61,12 @@ fi
 
 alias dev="tmux a -t dev"
 
-# landing zones project
+# aws landing zones project
 TMUX_LZ_SESSION="lz"
 tmux has-session -t $TMUX_LZ_SESSION&> /dev/null
 if [ $? != 0 ] 
  then
-    tmux new-session -s $TMUX_LZ_SESSION -n "nvim" -d "cd ~/repos/itgix/itgix-aws-landing-zones/ && nvim ./"
+    tmux new-session -s $TMUX_LZ_SESSION -n "nvim" -d "cd ~/repos/itgix/itgix-aws-landing-zones/landing-zone-deployment/ && nvim ./"
  
     # stat new window in session and switch to dir
     tmux new-window -d -n "tf_exec" -t $TMUX_LZ_SESSION:2
@@ -83,13 +83,35 @@ fi
 
 alias lz="tmux a -t lz"
 
+# landing zones project
+TMUX_LZ_SESSION="b99"
+tmux has-session -t $TMUX_LZ_SESSION&> /dev/null
+if [ $? != 0 ] 
+ then
+    tmux new-session -s $TMUX_LZ_SESSION -n "nvim" -d "cd ~/repos/itgix/itgix-aws-landing-zones/bet99-landing-zone/ && nvim ./"
+ 
+    # stat new window in session and switch to dir
+    tmux new-window -d -n "tf_exec" -t $TMUX_LZ_SESSION:2
+    tmux send-keys -t $TMUX_LZ_SESSION:2 "~/repos/itgix/itgix-aws-landing-zones/bet99-landing-zone/" C-m
+
+    tmux new-window -d -n "tf_modules_nvim" -t $TMUX_LZ_SESSION:3 "cd ~/repos/itgix/itgix-aws-landing-zones/terraform-modules/ && nvim ./"
+
+    tmux new-window -d -n "tf_modules_dir" -t $TMUX_LZ_SESSION:4
+    tmux send-keys -t $TMUX_LZ_SESSION:4 "~/repos/itgix/itgix-aws-landing-zones/terraform-modules/" C-m
+
+    # when started focus on first nvim window
+    tmux select-window -t $TMUX_LZ_SESSION:1
+fi
+
+alias b99="tmux a -t b99"
+
 # gcp landing zones project
 TMUX_GCP_LZ_SESSION="gcp"
 tmux has-session -t $TMUX_GCP_LZ_SESSION&> /dev/null
-if [ $? != 0 ]
+if [ $? != 0 ] 
  then
     tmux new-session -s $TMUX_GCP_LZ_SESSION -n "nvim" -d "cd ~/repos/itgix/itgix-aws-landing-zones/gcp-landing-zone/ && nvim ./"
-
+ 
     # stat new window in session and switch to dir
     tmux new-window -d -n "tf_exec" -t $TMUX_GCP_LZ_SESSION:2
     tmux send-keys -t $TMUX_GCP_LZ_SESSION:2 "~/repos/itgix/itgix-aws-landing-zones/gcp-landing-zone" C-m
@@ -99,6 +121,40 @@ if [ $? != 0 ]
 fi
 
 alias gcp-lz="tmux a -t gcp"
+
+# seva project
+TMUX_GCP_LZ_SESSION="seva"
+tmux has-session -t $TMUX_GCP_LZ_SESSION&> /dev/null
+if [ $? != 0 ] 
+ then
+    tmux new-session -s $TMUX_GCP_LZ_SESSION -n "nvim" -d "cd ~/repos/itgix/itgix-aws-landing-zones/seva-aws-landing-zones && nvim ./"
+ 
+    # stat new window in session and switch to dir
+    tmux new-window -d -n "tf_exec" -t $TMUX_GCP_LZ_SESSION:2
+    tmux send-keys -t $TMUX_GCP_LZ_SESSION:2 "~/repos/itgix/itgix-aws-landing-zones/seva-aws-landing-zones" C-m
+
+    # when started focus on first nvim window
+    tmux select-window -t $TMUX_GCP_LZ_SESSION:1
+fi
+
+alias seva="tmux a -t seva"
+
+# softspark project
+TMUX_GCP_LZ_SESSION="softspark"
+tmux has-session -t $TMUX_GCP_LZ_SESSION&> /dev/null
+if [ $? != 0 ] 
+ then
+    tmux new-session -s $TMUX_GCP_LZ_SESSION -n "nvim" -d "cd ~/repos/itgix/itgix-aws-landing-zones/softspark-landing-zone/ && nvim ./"
+ 
+    # stat new window in session and switch to dir
+    tmux new-window -d -n "tf_exec" -t $TMUX_GCP_LZ_SESSION:2
+    tmux send-keys -t $TMUX_GCP_LZ_SESSION:2 "~/repos/itgix/itgix-aws-landing-zones/softspark-landing-zone" C-m
+
+    # when started focus on first nvim window
+    tmux select-window -t $TMUX_GCP_LZ_SESSION:1
+fi
+
+alias softspark="tmux a -t softspark"
 
 ### End Custom config ###
 
