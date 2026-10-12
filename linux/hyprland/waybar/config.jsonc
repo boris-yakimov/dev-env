@@ -83,10 +83,9 @@
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
-        "format-plugged": "",
-        "format-alt": "{time} {icon}",
-        "format-good": "", // An empty format will hide the module
-        "format-full": "", // An empty format will hide the module
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}", // click to toggle remaining time
+        "tooltip-format": "{timeTo}\nPower: {power}W",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {

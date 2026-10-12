@@ -125,6 +125,7 @@ button:hover {
     /* background-color: #64727D; */
     background-color: transparent;
     color: #ffffff;
+    padding-left: 0; /* network already has 10px right padding, avoid a double gap */
 }
 
 #battery.charging, #battery.plugged {
